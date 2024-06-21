@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,17 +16,15 @@ public class InventoryService : MonoBehaviour
 
     public void AddItemOnInventoy(Item item)
     {
-        slots[1].take(item);
-        slots[3].take(item);
-        slots[2].take(item);
-
-        Slot freeSlot = ChechedSlots();
-        if (freeSlot != null)
+        foreach (Slot slot in slots)
         {
-            //InventorySlots.Add(freeSlot,item);
-            freeSlot.take(item);
-        }
-        
+            if(!slot.isFull)
+            {
+                //slot.isFull = true;
+                slot.take(item);
+                break;
+            }
+        } 
     }
 
     private Slot ChechedSlots()

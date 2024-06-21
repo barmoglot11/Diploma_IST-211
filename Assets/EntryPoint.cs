@@ -5,13 +5,14 @@ using Zenject;
 
 public class EntryPoint : MonoInstaller
 {
-    public GameObject inventoryService;
+    public InventoryService inventoryService;
 
 
     public override void InstallBindings()
     {
-       Container.Bind<InventoryService>().FromInstance(inventoryService.GetComponent<InventoryService>());
+        Container.Bind<InventoryService>().FromInstance(inventoryService);
     }
+
 
     
 }
