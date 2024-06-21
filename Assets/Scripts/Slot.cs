@@ -1,13 +1,26 @@
+using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Slot : MonoBehaviour
 {
-    public int slotIndex;
-    public bool isFull;
+    [SerializeField]
+    private TMP_Text countItem;
+    
+    [SerializeField]
+    private Image imageItem;
+
+    [SerializeField]
+    private TMP_Text nameItem;
+    public bool isFull = false;
+
     public void take(Item item)
     {
-        GetComponent<Image>().sprite = item.itemSprite;
+        imageItem.sprite = item.itemSprite;
+        countItem.text = item.countItem.ToString();
+        nameItem.text = item.nameOfItem.text;
+
         isFull = true;
     }
 }

@@ -7,13 +7,9 @@ public class EntryPoint : MonoInstaller
 {
     public InventoryService inventoryService;
 
-
     public override void InstallBindings()
     {
         Container.Bind<InventoryService>().FromInstance(inventoryService);
     }
-
-
-    
 }
 
