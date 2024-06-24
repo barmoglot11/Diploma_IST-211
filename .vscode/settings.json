@@ -58,5 +58,5 @@
         ">>>>>>>Stashedchangestemp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "GitProject.sln"
+    "dotnet.defaultSolution": "Diploma_IST-211.sln"
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.4964127, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -188,8 +188,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c02d4d6c11ec664cb07e83c5fe3ee74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStackable: 1
-  countItem: 1
+  isStackable: 0
+  maxCountItem: 1
   nameOfItem: "\u041F\u0438\u0441\u0442\u043E\u043B\u0435\u0442"
   itemSprite: {fileID: 21300000, guid: 4eb0063c9b86a294a9c0b644a26c9052, type: 3}
 --- !u!1 &324491471 stripped
@@ -592,7 +592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStackable: 1
-  countItem: 40
+  maxCountItem: 15
   nameOfItem: "\u041E\u0442\u043C\u044B\u0447\u043A\u0430"
   itemSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!54 &1108791042
@@ -743,7 +743,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.753279, y: 0.6110749, z: 4.075497}
-  m_LocalScale: {x: 15.188, y: 1, z: 14.609}
+  m_LocalScale: {x: 45.026344, y: 1, z: 72.35692}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -921,7 +921,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStackable: 1
-  countItem: 1
+  maxCountItem: 1
   nameOfItem: "\u0424\u043E\u043D\u0430\u0440\u044C"
   itemSprite: {fileID: 21300000, guid: f9141ccb930b1a08dba64cc9706bd923, type: 3}
 --- !u!1001 &2111783569

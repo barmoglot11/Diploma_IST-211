@@ -426,6 +426,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7656275743694151459}
+  - component: {fileID: 1246996037665271190}
+  - component: {fileID: 4563643370704893966}
+  - component: {fileID: 577183274267159210}
   m_Layer: 0
   m_Name: Pistol
   m_TagString: Untagged
@@ -456,6 +459,70 @@ Transform:
   - {fileID: 3580361921713970528}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1246996037665271190
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4151655283390843895}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.21260738, y: 0.27131927, z: 3.499846}
+  m_Center: {x: 0.013953686, y: 0.36434036, z: -0.15841985}
+--- !u!54 &4563643370704893966
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4151655283390843895}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &577183274267159210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4151655283390843895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c02d4d6c11ec664cb07e83c5fe3ee74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStackable: 0
+  maxCountItem: 1
+  nameOfItem: "\u041F\u0438\u0441\u0442\u043E\u043B\u0435\u0442"
+  itemSprite: {fileID: 21300000, guid: 4eb0063c9b86a294a9c0b644a26c9052, type: 3}
 --- !u!1 &6601690554544664879
 GameObject:
   m_ObjectHideFlags: 0
