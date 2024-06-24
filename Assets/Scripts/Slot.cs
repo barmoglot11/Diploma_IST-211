@@ -19,7 +19,7 @@ public class Slot : MonoBehaviour
     {
         imageItem.sprite = item.itemSprite;
         countItem.text = item.countItem.ToString();
-        nameItem.text = item.nameOfItem.text;
+        nameItem.text = item.nameOfItem;
 
         isFull = true;
     }
