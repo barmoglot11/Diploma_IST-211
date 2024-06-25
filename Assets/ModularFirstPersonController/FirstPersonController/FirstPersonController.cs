@@ -151,7 +151,7 @@ public class FirstPersonController : MonoBehaviour
 
     void Start()
     {
-        if(lockCursor)
+        if(!lockCursor)
         {
             Cursor.lockState = CursorLockMode.Locked;
         }
