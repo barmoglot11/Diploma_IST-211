@@ -1,4 +1,4 @@
-Shader "Hidden/VLB_BuiltIn_SinglePass"
+Shader "Hidden/VLB_HDRP_SinglePass"
 {
     Properties
     {
@@ -63,13 +63,13 @@ Shader "Hidden/VLB_BuiltIn_SinglePass"
             {
                 Cull Front
 
-                CGPROGRAM
+                HLSLPROGRAM
                 #if !defined(SHADER_API_METAL) // Removed shader model spec for Metal support https://github.com/keijiro/Cloner/commit/1120493ca2df265d450de3ec1b38a1d388468964
                 #pragma target 3.0
                 #endif
                 #pragma vertex vert
                 #pragma fragment frag
-                #pragma multi_compile_fog
+                
                 
                 #pragma multi_compile_local __ VLB_ALPHA_AS_BLACK
                 #pragma multi_compile_local __ VLB_NOISE_3D
@@ -81,17 +81,19 @@ Shader "Hidden/VLB_BuiltIn_SinglePass"
 
 
                 #define VLB_PASS_OUTSIDEBEAM_FROM_VS_TO_FS 1
-                #include "UnityCG.cginc"
+                #define VLB_SRP_API 1
+                #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl"
+                #include "Packages/com.unity.render-pipelines.high-definition/Runtime/ShaderLibrary/ShaderVariables.hlsl"
 
                 #include "ShaderDefines.cginc"
                 #include "ShaderProperties.cginc"
-                #include "ShaderSpecificBuiltin.cginc"
+                #include "ShaderSpecificHDRP.hlsl"
                 #include "VolumetricLightBeamShared.cginc"
 
                 v2f vert(vlb_appdata v)         { return vertShared(v, v.texcoord.y); }
                 half4 frag(v2f i) : SV_Target   { return fragShared(i, i.cameraPosObjectSpace_outsideBeam.w); }
 
-                ENDCG
+                ENDHLSL
             }
 
         }

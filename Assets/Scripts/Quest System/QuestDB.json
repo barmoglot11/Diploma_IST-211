@@ -1,0 +1,50 @@
+{
+  "quests": [
+    {
+      "QuestName": "Основная история",
+      "QuestID": 1,
+      "QuestStage": 0,
+      "StagesDescription": [
+        {
+          "StageID": 0,
+          "Description": "Придти на место преступления"
+        },
+        {
+          "StageID": 10,
+          "Description": "Обнаружить тело"
+        },
+        {
+          "StageID": 20,
+          "Description": "Найти зацепки"
+        }
+      ],
+      "QuestDescription": [
+        {
+          "DescriptionID": 10,
+          "Description": "Это описание первого квеста."
+        }
+      ]
+    },
+    {
+      "QuestName": "Второстепенная история",
+      "QuestID": 2,
+      "QuestStage": 0,
+      "StagesDescription": [
+        {
+          "StageID": 0,
+          "Description": "Начало второго квеста"
+        },
+        {
+          "StageID": 10,
+          "Description": "Поиск артефактов"
+        }
+      ],
+      "QuestDescription": [
+        {
+          "DescriptionID": 1,
+          "Description": "Это описание второго квеста."
+        }
+      ]
+    }
+  ]
+}
