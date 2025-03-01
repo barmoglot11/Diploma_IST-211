@@ -76,5 +76,8 @@ public class SwitchToNewCanvasAndCamera : MonoBehaviour
 
         isSwitching = false; // Разблокируем ввод
         currentCoroutine = null; // Сбрасываем текущую корутину
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }
