@@ -29,16 +29,7 @@ public class PanelSwitcher : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1)) // Нажатие на "1"
-        {
-            SwitchPanels(panel2.anchoredPosition, panel1.anchoredPosition, panel2.sizeDelta, panel1.sizeDelta);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2)) // Нажатие на "2"
-        {
-            SwitchPanels(panel1.anchoredPosition, panel2.anchoredPosition, panel1.sizeDelta, panel2.sizeDelta);
-        }
-
-        if (isSwitching)
+        if (isSwitching) // Если анимация выполняется, игнорируем нажатия кнопок
         {
             // Плавное перемещение и изменение размеров
             panel1.anchoredPosition = Vector2.Lerp(panel1.anchoredPosition, panel1TargetPosition, Time.deltaTime * transitionSpeed);
@@ -49,9 +40,23 @@ public class PanelSwitcher : MonoBehaviour
 
             // Проверка завершения перехода
             if (Vector2.Distance(panel1.anchoredPosition, panel1TargetPosition) < 0.1f &&
-                Vector2.Distance(panel2.anchoredPosition, panel2TargetPosition) < 0.1f)
+                Vector2.Distance(panel2.anchoredPosition, panel2TargetPosition) < 0.1f &&
+                Vector2.Distance(panel1.sizeDelta, panel1TargetSize) < 0.1f &&
+                Vector2.Distance(panel2.sizeDelta, panel2TargetSize) < 0.1f)
             {
-                isSwitching = false;
+                isSwitching = false; // Анимация завершена
+            }
+        }
+        else
+        {
+            // Обработка нажатий кнопок только если анимация не выполняется
+            if (Input.GetKeyDown(KeyCode.Q)) // Нажатие на "Q"
+            {
+                SwitchPanels(panel2.anchoredPosition, panel1.anchoredPosition, panel2.sizeDelta, panel1.sizeDelta);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha2)) // Нажатие на "2"
+            {
+                SwitchPanels(panel1.anchoredPosition, panel2.anchoredPosition, panel1.sizeDelta, panel2.sizeDelta);
             }
         }
     }
