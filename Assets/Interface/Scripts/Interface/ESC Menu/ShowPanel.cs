@@ -6,21 +6,22 @@ public class ShowPanel : MonoBehaviour
 {
     [Header("Settings")]
     public Button button; // Кнопка, которая активирует панель
-    public Image panel; // Панель, которая будет появляться
+    public CanvasGroup panelCanvasGroup; // CanvasGroup, который будет управлять прозрачностью панели
     public float fadeSpeed = 1f; // Скорость анимации
 
     private void Start()
     {
-        // Проверяем, назначены ли кнопка и панель
-        if (button == null || panel == null)
+        // Проверяем, назначены ли кнопка и CanvasGroup
+        if (button == null || panelCanvasGroup == null)
         {
-            Debug.LogError("Button or Panel is not assigned in the inspector!");
+            Debug.LogError("Button or CanvasGroup is not assigned in the inspector!");
             return;
         }
 
         // Изначально скрываем панель
-        // panel.gameObject.SetActive(false);
-        // panel.color = new Color(panel.color.r, panel.color.g, panel.color.b, 0);
+        panelCanvasGroup.alpha = 0;
+        panelCanvasGroup.interactable = false;
+        panelCanvasGroup.blocksRaycasts = false;
 
         // Назначаем обработчик события нажатия на кнопку
         button.onClick.AddListener(OnButtonClick);
@@ -35,19 +36,22 @@ public class ShowPanel : MonoBehaviour
     // Анимация появления панели
     private IEnumerator FadeInPanel()
     {
-        panel.gameObject.SetActive(true);
+        // Включаем объект панели (опционально)
+        panelCanvasGroup.gameObject.SetActive(true);
+        panelCanvasGroup.interactable = true;
+        panelCanvasGroup.blocksRaycasts = true;
 
         float elapsed = 0f;
-        Color startColor = panel.color;
-        Color endColor = new Color(startColor.r, startColor.g, startColor.b, 1f); // Полная непрозрачность
+        float startAlpha = panelCanvasGroup.alpha;
+        float endAlpha = 1f; // Полная непрозрачность
 
         while (elapsed < 1f)
         {
             elapsed += Time.deltaTime * fadeSpeed;
-            panel.color = Color.Lerp(startColor, endColor, elapsed);
+            panelCanvasGroup.alpha = Mathf.Lerp(startAlpha, endAlpha, elapsed);
             yield return null;
         }
 
-        panel.color = endColor;
+        panelCanvasGroup.alpha = endAlpha;
     }
 }

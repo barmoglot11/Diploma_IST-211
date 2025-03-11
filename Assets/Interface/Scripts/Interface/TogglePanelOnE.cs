@@ -11,10 +11,11 @@ public class TogglePanelOnE : MonoBehaviour
     public MonoBehaviour cameraScript; // Скрипт, управляющий камерой (например, контроллер движения камеры)
 
     private bool isCanvas1Visible = false;
+    private bool isFading = false; // Флаг для отслеживания выполнения корутин
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKey(KeyCode.E) && !isFading) // Проверяем, не выполняется ли уже анимация
         {
             ToggleCanvases();
         }
@@ -26,8 +27,8 @@ public class TogglePanelOnE : MonoBehaviour
 
         if (isCanvas1Visible)
         {
-            StartCoroutine(FadeCanvas(canvas1, 1f)); // Плавное появление canvas1
-            StartCoroutine(FadeCanvas(canvas2, 0f)); // Плавное исчезновение canvas2
+            StartCoroutine(FadeCanvas(canvas1, 1f, true)); // Плавное появление canvas1
+            StartCoroutine(FadeCanvas(canvas2, 0f, false)); // Плавное исчезновение canvas2
             Cursor.visible = true; // Включаем курсор
             Cursor.lockState = CursorLockMode.None; // Разблокируем курсор
 
@@ -37,23 +38,18 @@ public class TogglePanelOnE : MonoBehaviour
                 cameraScript.enabled = false; // Отключаем скрипт
             }
         }
-        else
-        {
-            StartCoroutine(FadeCanvas(canvas1, 0f)); // Плавное исчезновение canvas1
-            StartCoroutine(FadeCanvas(canvas2, 1f)); // Плавное появление canvas2
-            Cursor.visible = false; // Выключаем курсор
-            Cursor.lockState = CursorLockMode.Locked; // Блокируем курсор
-
-            // Включаем скрипт, управляющий камерой
-            if (cameraScript != null)
-            {
-                cameraScript.enabled = true; // Включаем скрипт
-            }
-        }
     }
 
-    private System.Collections.IEnumerator FadeCanvas(CanvasGroup canvasGroup, float targetAlpha)
+    private System.Collections.IEnumerator FadeCanvas(CanvasGroup canvasGroup, float targetAlpha, bool activateAfterFade)
     {
+        isFading = true; // Устанавливаем флаг, что анимация началась
+
+        // Если targetAlpha > 0, активируем объект перед началом анимации
+        if (targetAlpha > 0)
+        {
+            canvasGroup.gameObject.SetActive(true);
+        }
+
         float startAlpha = canvasGroup.alpha;
         float elapsedTime = 0f;
 
@@ -65,5 +61,23 @@ public class TogglePanelOnE : MonoBehaviour
         }
 
         canvasGroup.alpha = targetAlpha;
+
+        // Если targetAlpha == 0, деактивируем объект после завершения анимации
+        if (targetAlpha == 0)
+        {
+            canvasGroup.gameObject.SetActive(false);
+        }
+
+        // Активируем или деактивируем объект в зависимости от параметра activateAfterFade
+        if (activateAfterFade)
+        {
+            canvasGroup.gameObject.SetActive(true);
+        }
+        else
+        {
+            canvasGroup.gameObject.SetActive(false);
+        }
+
+        isFading = false; // Сбрасываем флаг, что анимация завершена
     }
 }
