@@ -19,7 +19,7 @@ public class SwitchBackToGameObject : MonoBehaviour
         // Блокируем ввод, если идет анимация
         if (isSwitching) return;
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Tab))
         {
             // Если корутина уже запущена, не запускаем новую
             if (currentCoroutine != null) return;
