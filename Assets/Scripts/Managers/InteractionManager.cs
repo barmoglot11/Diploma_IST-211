@@ -1,18 +1,35 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class InteractionManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static InteractionManager Instance;
+    
+    [SerializeField]
+    InputReader input;
+    
+    private void Awake()
     {
-        
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AddInteract(Action action)
     {
-        
+        input.InteractEvent += action;
+    }
+    
+    public void DeleteInteract(Action action)
+    {
+        input.InteractEvent -= action;
     }
 }

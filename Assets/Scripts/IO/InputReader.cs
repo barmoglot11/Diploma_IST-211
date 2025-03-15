@@ -3,7 +3,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [CreateAssetMenu(menuName = "InputReader")]
-public class InputReader : ScriptableObject, PlayerControlPref.IDialogueActions, PlayerControlPref.IUIActions, PlayerControlPref.IGameplayActions
+public class InputReader : ScriptableObject, PlayerControlPref.IDialogueActions, 
+    PlayerControlPref.IUIActions, PlayerControlPref.IGameplayActions, PlayerControlPref.ILokcpickMinigameActions
 {
     private PlayerControlPref _playerControlPref;
     private PlayerControlPref.GameplayActions prevousType;
@@ -26,6 +27,7 @@ public class InputReader : ScriptableObject, PlayerControlPref.IDialogueActions,
         _playerControlPref.Gameplay.Enable();
         _playerControlPref.UI.Disable();
         _playerControlPref.Dialogue.Disable();
+        _playerControlPref.LokcpickMinigame.Disable();
     }
     
     public void SetUI()
@@ -33,21 +35,34 @@ public class InputReader : ScriptableObject, PlayerControlPref.IDialogueActions,
         _playerControlPref.Gameplay.Disable();
         _playerControlPref.UI.Enable();
         _playerControlPref.Dialogue.Disable();
+        _playerControlPref.LokcpickMinigame.Disable();
     }
 
     public void SetDialogue()
     {
         _playerControlPref.Gameplay.Disable();
+        _playerControlPref.LokcpickMinigame.Disable();
         _playerControlPref.UI.Disable();
         _playerControlPref.Dialogue.Enable();
     }
-    
+    public void SetLock()
+    {
+        _playerControlPref.Gameplay.Disable();
+        _playerControlPref.UI.Disable();
+        _playerControlPref.Dialogue.Disable();
+        _playerControlPref.LokcpickMinigame.Enable();
+    }
     public event Action<Vector2> MoveEvent;
-    
+    public event Action<bool> HurryEvent;
     public event Action Prompt;
     public event Action CloseEvent;
     public event Action MenuEvent;
     public event Action InteractEvent;
+    public event Action InvestigationEvent;
+    public event Action ExitEvent;
+    public event Action MoveLockEvent;
+    public event Action ShotEvent;
+    public event Action SnipeEvent;
 
     public void OnMovement(InputAction.CallbackContext context)
     {
@@ -79,6 +94,28 @@ public class InputReader : ScriptableObject, PlayerControlPref.IDialogueActions,
         }
     }
 
+    public void OnInvestigation(InputAction.CallbackContext context)
+    {
+        InvestigationEvent?.Invoke();
+    }
+
+    public void OnHurry(InputAction.CallbackContext context)
+    {
+        HurryEvent?.Invoke(context.action.IsPressed());
+    }
+
+    public void OnShot(InputAction.CallbackContext context)
+    {
+        if(context.phase == InputActionPhase.Performed)
+            ShotEvent?.Invoke();
+    }
+
+    public void OnSnipe(InputAction.CallbackContext context)
+    {
+        
+        SnipeEvent?.Invoke();
+    }
+
     void PlayerControlPref.IDialogueActions.OnMenu(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Performed)
@@ -107,5 +144,15 @@ public class InputReader : ScriptableObject, PlayerControlPref.IDialogueActions,
         {
             SetDialogue();
         }
+    }
+
+    public void OnExit(InputAction.CallbackContext context)
+    {
+        ExitEvent?.Invoke();
+    }
+
+    public void OnMoveLock(InputAction.CallbackContext context)
+    {
+        MoveLockEvent?.Invoke();
     }
 }

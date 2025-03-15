@@ -24,6 +24,198 @@ public partial class @PlayerControlPref: IInputActionCollection2, IDisposable
     ""name"": ""PlayerControlPref"",
     ""maps"": [
         {
+            ""name"": ""Gameplay"",
+            ""id"": ""fae54af5-8301-479f-8893-fdb99f04df30"",
+            ""actions"": [
+                {
+                    ""name"": ""Movement"",
+                    ""type"": ""Value"",
+                    ""id"": ""e128dac2-8c59-4036-a80c-e6220a38213b"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Menu"",
+                    ""type"": ""Button"",
+                    ""id"": ""4112d1c0-383d-4500-97f2-9cdc5189858d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""841bc525-08cd-4f09-a306-825e3b3e120e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Investigation"",
+                    ""type"": ""Button"",
+                    ""id"": ""8e5eae8e-6db1-4973-9ad0-e8b7f4a11a7d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Hurry"",
+                    ""type"": ""Button"",
+                    ""id"": ""46788c2d-04bd-4305-b400-43837afcdbae"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Shot"",
+                    ""type"": ""Button"",
+                    ""id"": ""dffdefd7-6a0a-4067-b12f-bc1a3552b352"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Snipe"",
+                    ""type"": ""Button"",
+                    ""id"": ""a4d0f1ae-5d1a-4690-b2f3-dfe48710bc13"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""eded0ae1-6e40-4279-9434-8e4b4a0738ec"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""a0ff7338-ecba-4b54-af6d-15c8065bbb6f"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""de4ce80f-e76a-48c7-a16a-7fa19be5e4c8"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""d6e806c9-f94f-412d-b3e5-3ba676fd983b"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""4b390440-ce54-4d0b-8762-3c62e5e24cfc"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a2705416-0012-4e55-8095-79d9f511bab3"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3c82e592-2da9-4c8a-8f83-d4c0f0e72083"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d611f9a8-d0bc-428b-a39e-f38cf19a0113"",
+                    ""path"": ""<Keyboard>/leftAlt"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Investigation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5ead8991-8ff1-4a62-b9c5-54696a0103e2"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Hurry"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1146f42e-c17a-4ab2-bf02-b395c8772fe7"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8d9cdca9-aa90-4aa6-a459-5fa6ad5bd7a8"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Snipe"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
             ""name"": ""UI"",
             ""id"": ""a3081961-65ed-4bcd-9100-87c09cf30df3"",
             ""actions"": [
@@ -111,31 +303,22 @@ public partial class @PlayerControlPref: IInputActionCollection2, IDisposable
             ]
         },
         {
-            ""name"": ""Gameplay"",
-            ""id"": ""fae54af5-8301-479f-8893-fdb99f04df30"",
+            ""name"": ""LokcpickMinigame"",
+            ""id"": ""d62c1bdd-7da5-47bd-8e26-b9ec225df12c"",
             ""actions"": [
                 {
-                    ""name"": ""Movement"",
-                    ""type"": ""Value"",
-                    ""id"": ""e128dac2-8c59-4036-a80c-e6220a38213b"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Menu"",
+                    ""name"": ""Exit"",
                     ""type"": ""Button"",
-                    ""id"": ""4112d1c0-383d-4500-97f2-9cdc5189858d"",
+                    ""id"": ""ce66de67-f564-49ce-9724-e2d5408af6cf"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Interact"",
+                    ""name"": ""MoveLock"",
                     ""type"": ""Button"",
-                    ""id"": ""841bc525-08cd-4f09-a306-825e3b3e120e"",
+                    ""id"": ""3e9f0112-3373-4c63-80f9-81248057d300"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -144,79 +327,24 @@ public partial class @PlayerControlPref: IInputActionCollection2, IDisposable
             ],
             ""bindings"": [
                 {
-                    ""name"": ""2D Vector"",
-                    ""id"": ""eded0ae1-6e40-4279-9434-8e4b4a0738ec"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""a0ff7338-ecba-4b54-af6d-15c8065bbb6f"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""de4ce80f-e76a-48c7-a16a-7fa19be5e4c8"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""d6e806c9-f94f-412d-b3e5-3ba676fd983b"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""4b390440-ce54-4d0b-8762-3c62e5e24cfc"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": """",
-                    ""id"": ""a2705416-0012-4e55-8095-79d9f511bab3"",
+                    ""id"": ""1f878f48-be4d-480c-983e-096de7759cc8"",
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Menu"",
+                    ""action"": ""Exit"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""3c82e592-2da9-4c8a-8f83-d4c0f0e72083"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""id"": ""02a2ddf0-14e5-451a-abcd-d797748bf4f4"",
+                    ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Interact"",
+                    ""action"": ""MoveLock"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -225,6 +353,15 @@ public partial class @PlayerControlPref: IInputActionCollection2, IDisposable
     ],
     ""controlSchemes"": []
 }");
+        // Gameplay
+        m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
+        m_Gameplay_Movement = m_Gameplay.FindAction("Movement", throwIfNotFound: true);
+        m_Gameplay_Menu = m_Gameplay.FindAction("Menu", throwIfNotFound: true);
+        m_Gameplay_Interact = m_Gameplay.FindAction("Interact", throwIfNotFound: true);
+        m_Gameplay_Investigation = m_Gameplay.FindAction("Investigation", throwIfNotFound: true);
+        m_Gameplay_Hurry = m_Gameplay.FindAction("Hurry", throwIfNotFound: true);
+        m_Gameplay_Shot = m_Gameplay.FindAction("Shot", throwIfNotFound: true);
+        m_Gameplay_Snipe = m_Gameplay.FindAction("Snipe", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Close = m_UI.FindAction("Close", throwIfNotFound: true);
@@ -232,11 +369,10 @@ public partial class @PlayerControlPref: IInputActionCollection2, IDisposable
         m_Dialogue = asset.FindActionMap("Dialogue", throwIfNotFound: true);
         m_Dialogue_Menu = m_Dialogue.FindAction("Menu", throwIfNotFound: true);
         m_Dialogue_UserPrompt = m_Dialogue.FindAction("UserPrompt", throwIfNotFound: true);
-        // Gameplay
-        m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
-        m_Gameplay_Movement = m_Gameplay.FindAction("Movement", throwIfNotFound: true);
-        m_Gameplay_Menu = m_Gameplay.FindAction("Menu", throwIfNotFound: true);
-        m_Gameplay_Interact = m_Gameplay.FindAction("Interact", throwIfNotFound: true);
+        // LokcpickMinigame
+        m_LokcpickMinigame = asset.FindActionMap("LokcpickMinigame", throwIfNotFound: true);
+        m_LokcpickMinigame_Exit = m_LokcpickMinigame.FindAction("Exit", throwIfNotFound: true);
+        m_LokcpickMinigame_MoveLock = m_LokcpickMinigame.FindAction("MoveLock", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -294,6 +430,100 @@ public partial class @PlayerControlPref: IInputActionCollection2, IDisposable
     {
         return asset.FindBinding(bindingMask, out action);
     }
+
+    // Gameplay
+    private readonly InputActionMap m_Gameplay;
+    private List<IGameplayActions> m_GameplayActionsCallbackInterfaces = new List<IGameplayActions>();
+    private readonly InputAction m_Gameplay_Movement;
+    private readonly InputAction m_Gameplay_Menu;
+    private readonly InputAction m_Gameplay_Interact;
+    private readonly InputAction m_Gameplay_Investigation;
+    private readonly InputAction m_Gameplay_Hurry;
+    private readonly InputAction m_Gameplay_Shot;
+    private readonly InputAction m_Gameplay_Snipe;
+    public struct GameplayActions
+    {
+        private @PlayerControlPref m_Wrapper;
+        public GameplayActions(@PlayerControlPref wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Movement => m_Wrapper.m_Gameplay_Movement;
+        public InputAction @Menu => m_Wrapper.m_Gameplay_Menu;
+        public InputAction @Interact => m_Wrapper.m_Gameplay_Interact;
+        public InputAction @Investigation => m_Wrapper.m_Gameplay_Investigation;
+        public InputAction @Hurry => m_Wrapper.m_Gameplay_Hurry;
+        public InputAction @Shot => m_Wrapper.m_Gameplay_Shot;
+        public InputAction @Snipe => m_Wrapper.m_Gameplay_Snipe;
+        public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(GameplayActions set) { return set.Get(); }
+        public void AddCallbacks(IGameplayActions instance)
+        {
+            if (instance == null || m_Wrapper.m_GameplayActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_GameplayActionsCallbackInterfaces.Add(instance);
+            @Movement.started += instance.OnMovement;
+            @Movement.performed += instance.OnMovement;
+            @Movement.canceled += instance.OnMovement;
+            @Menu.started += instance.OnMenu;
+            @Menu.performed += instance.OnMenu;
+            @Menu.canceled += instance.OnMenu;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
+            @Investigation.started += instance.OnInvestigation;
+            @Investigation.performed += instance.OnInvestigation;
+            @Investigation.canceled += instance.OnInvestigation;
+            @Hurry.started += instance.OnHurry;
+            @Hurry.performed += instance.OnHurry;
+            @Hurry.canceled += instance.OnHurry;
+            @Shot.started += instance.OnShot;
+            @Shot.performed += instance.OnShot;
+            @Shot.canceled += instance.OnShot;
+            @Snipe.started += instance.OnSnipe;
+            @Snipe.performed += instance.OnSnipe;
+            @Snipe.canceled += instance.OnSnipe;
+        }
+
+        private void UnregisterCallbacks(IGameplayActions instance)
+        {
+            @Movement.started -= instance.OnMovement;
+            @Movement.performed -= instance.OnMovement;
+            @Movement.canceled -= instance.OnMovement;
+            @Menu.started -= instance.OnMenu;
+            @Menu.performed -= instance.OnMenu;
+            @Menu.canceled -= instance.OnMenu;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
+            @Investigation.started -= instance.OnInvestigation;
+            @Investigation.performed -= instance.OnInvestigation;
+            @Investigation.canceled -= instance.OnInvestigation;
+            @Hurry.started -= instance.OnHurry;
+            @Hurry.performed -= instance.OnHurry;
+            @Hurry.canceled -= instance.OnHurry;
+            @Shot.started -= instance.OnShot;
+            @Shot.performed -= instance.OnShot;
+            @Shot.canceled -= instance.OnShot;
+            @Snipe.started -= instance.OnSnipe;
+            @Snipe.performed -= instance.OnSnipe;
+            @Snipe.canceled -= instance.OnSnipe;
+        }
+
+        public void RemoveCallbacks(IGameplayActions instance)
+        {
+            if (m_Wrapper.m_GameplayActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IGameplayActions instance)
+        {
+            foreach (var item in m_Wrapper.m_GameplayActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_GameplayActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public GameplayActions @Gameplay => new GameplayActions(this);
 
     // UI
     private readonly InputActionMap m_UI;
@@ -395,67 +625,69 @@ public partial class @PlayerControlPref: IInputActionCollection2, IDisposable
     }
     public DialogueActions @Dialogue => new DialogueActions(this);
 
-    // Gameplay
-    private readonly InputActionMap m_Gameplay;
-    private List<IGameplayActions> m_GameplayActionsCallbackInterfaces = new List<IGameplayActions>();
-    private readonly InputAction m_Gameplay_Movement;
-    private readonly InputAction m_Gameplay_Menu;
-    private readonly InputAction m_Gameplay_Interact;
-    public struct GameplayActions
+    // LokcpickMinigame
+    private readonly InputActionMap m_LokcpickMinigame;
+    private List<ILokcpickMinigameActions> m_LokcpickMinigameActionsCallbackInterfaces = new List<ILokcpickMinigameActions>();
+    private readonly InputAction m_LokcpickMinigame_Exit;
+    private readonly InputAction m_LokcpickMinigame_MoveLock;
+    public struct LokcpickMinigameActions
     {
         private @PlayerControlPref m_Wrapper;
-        public GameplayActions(@PlayerControlPref wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Movement => m_Wrapper.m_Gameplay_Movement;
-        public InputAction @Menu => m_Wrapper.m_Gameplay_Menu;
-        public InputAction @Interact => m_Wrapper.m_Gameplay_Interact;
-        public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
+        public LokcpickMinigameActions(@PlayerControlPref wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Exit => m_Wrapper.m_LokcpickMinigame_Exit;
+        public InputAction @MoveLock => m_Wrapper.m_LokcpickMinigame_MoveLock;
+        public InputActionMap Get() { return m_Wrapper.m_LokcpickMinigame; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(GameplayActions set) { return set.Get(); }
-        public void AddCallbacks(IGameplayActions instance)
+        public static implicit operator InputActionMap(LokcpickMinigameActions set) { return set.Get(); }
+        public void AddCallbacks(ILokcpickMinigameActions instance)
         {
-            if (instance == null || m_Wrapper.m_GameplayActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_GameplayActionsCallbackInterfaces.Add(instance);
-            @Movement.started += instance.OnMovement;
-            @Movement.performed += instance.OnMovement;
-            @Movement.canceled += instance.OnMovement;
-            @Menu.started += instance.OnMenu;
-            @Menu.performed += instance.OnMenu;
-            @Menu.canceled += instance.OnMenu;
-            @Interact.started += instance.OnInteract;
-            @Interact.performed += instance.OnInteract;
-            @Interact.canceled += instance.OnInteract;
+            if (instance == null || m_Wrapper.m_LokcpickMinigameActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_LokcpickMinigameActionsCallbackInterfaces.Add(instance);
+            @Exit.started += instance.OnExit;
+            @Exit.performed += instance.OnExit;
+            @Exit.canceled += instance.OnExit;
+            @MoveLock.started += instance.OnMoveLock;
+            @MoveLock.performed += instance.OnMoveLock;
+            @MoveLock.canceled += instance.OnMoveLock;
         }
 
-        private void UnregisterCallbacks(IGameplayActions instance)
+        private void UnregisterCallbacks(ILokcpickMinigameActions instance)
         {
-            @Movement.started -= instance.OnMovement;
-            @Movement.performed -= instance.OnMovement;
-            @Movement.canceled -= instance.OnMovement;
-            @Menu.started -= instance.OnMenu;
-            @Menu.performed -= instance.OnMenu;
-            @Menu.canceled -= instance.OnMenu;
-            @Interact.started -= instance.OnInteract;
-            @Interact.performed -= instance.OnInteract;
-            @Interact.canceled -= instance.OnInteract;
+            @Exit.started -= instance.OnExit;
+            @Exit.performed -= instance.OnExit;
+            @Exit.canceled -= instance.OnExit;
+            @MoveLock.started -= instance.OnMoveLock;
+            @MoveLock.performed -= instance.OnMoveLock;
+            @MoveLock.canceled -= instance.OnMoveLock;
         }
 
-        public void RemoveCallbacks(IGameplayActions instance)
+        public void RemoveCallbacks(ILokcpickMinigameActions instance)
         {
-            if (m_Wrapper.m_GameplayActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_LokcpickMinigameActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
-        public void SetCallbacks(IGameplayActions instance)
+        public void SetCallbacks(ILokcpickMinigameActions instance)
         {
-            foreach (var item in m_Wrapper.m_GameplayActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_LokcpickMinigameActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_GameplayActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_LokcpickMinigameActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
-    public GameplayActions @Gameplay => new GameplayActions(this);
+    public LokcpickMinigameActions @LokcpickMinigame => new LokcpickMinigameActions(this);
+    public interface IGameplayActions
+    {
+        void OnMovement(InputAction.CallbackContext context);
+        void OnMenu(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
+        void OnInvestigation(InputAction.CallbackContext context);
+        void OnHurry(InputAction.CallbackContext context);
+        void OnShot(InputAction.CallbackContext context);
+        void OnSnipe(InputAction.CallbackContext context);
+    }
     public interface IUIActions
     {
         void OnClose(InputAction.CallbackContext context);
@@ -465,10 +697,9 @@ public partial class @PlayerControlPref: IInputActionCollection2, IDisposable
         void OnMenu(InputAction.CallbackContext context);
         void OnUserPrompt(InputAction.CallbackContext context);
     }
-    public interface IGameplayActions
+    public interface ILokcpickMinigameActions
     {
-        void OnMovement(InputAction.CallbackContext context);
-        void OnMenu(InputAction.CallbackContext context);
-        void OnInteract(InputAction.CallbackContext context);
+        void OnExit(InputAction.CallbackContext context);
+        void OnMoveLock(InputAction.CallbackContext context);
     }
 }

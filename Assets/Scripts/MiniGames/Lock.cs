@@ -1,11 +1,13 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 namespace LOCKPICKING
 {
     public class Lock : MonoBehaviour
     {
+        [Header("Настройка замка")]
         [SerializeField] private Transform _inner;
         [SerializeField] private Transform _pickAnchor;
         [SerializeField] private float _rotationSpeed = 10;
@@ -23,17 +25,7 @@ namespace LOCKPICKING
         public Vector3 PickAnchorPosition => _pickAnchor.position;
         public float MaxRotationAngle => _maxRotationAngle;
     
-        public event Action Unlocked;
-    
-        private void OnEnable()
-        {
-            Unlocked += GenerateUnlockAngle;
-        }
-    
-        private void OnDisable()
-        {
-            Unlocked -= GenerateUnlockAngle;
-        }
+        public UnityEvent Unlocked;
     
         public void Init(Pick pick)
         {

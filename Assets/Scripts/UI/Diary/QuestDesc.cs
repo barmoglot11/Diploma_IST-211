@@ -20,7 +20,7 @@ namespace DIARY
         public void SetUI()
         {
             title.text = quest.QuestName;
-            description.text = quest.QuestDescription.FirstOrDefault(stage => stage.DescriptionID == quest.QuestStage).Description;
+            description.text = quest.QuestDescription.FirstOrDefault(stage => stage.Key == quest.QuestStage).Value;
             SetTasks();
         }
 

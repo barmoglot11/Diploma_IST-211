@@ -25,7 +25,7 @@ namespace DIARY
 
         public void SetUI()
         {
-            var questList = questManager.currentQuests.quests;
+            var questList = questManager.currentQuests;
             for (int i = 0; i < questList.Count; i++)
             {
                 QuestContainers[i].GetComponentInChildren<TextMeshProUGUI>().text = questList[i].QuestName;

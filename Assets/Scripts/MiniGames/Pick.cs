@@ -4,9 +4,10 @@ namespace LOCKPICKING
 {
     public class Pick : MonoBehaviour
     {
+        [Header("Настройка отмычки")]
         private Camera _camera;
         private Lock _lock;
-        private float _eulerAngle;
+        private float _eulerAngle = 0f;
 
         private bool _isMoving = true;
         public bool IsMoving => _isMoving;
@@ -16,13 +17,13 @@ namespace LOCKPICKING
         {
             _camera = camera;
             _lock = lockImpl;
-            _lock.Unlocked += ResetMovement;
+            _lock.Unlocked.AddListener(ResetMovement);
         }
 
         public void OnDestroy()
         {
             if (_lock)
-                _lock.Unlocked -= ResetMovement;
+                _lock.Unlocked.RemoveListener(ResetMovement);
         }
 
         private void Update()
@@ -32,13 +33,8 @@ namespace LOCKPICKING
             if (_isMoving)
             {
                 var maxAngle = _lock.MaxRotationAngle;
-                var direction = Input.mousePosition - _camera.WorldToScreenPoint(transform.position);
 
-                _eulerAngle = Vector3.Angle(direction, Vector3.up);
-
-                var cross = Vector3.Cross(Vector3.up, direction);
-                if (cross.z < 0)
-                    _eulerAngle = -_eulerAngle;
+                _eulerAngle += (-Input.GetAxis("Mouse X")*20 -Input.GetAxis("Mouse Y")*15) * Time.deltaTime;
 
                 _eulerAngle = Mathf.Clamp(_eulerAngle, -maxAngle, maxAngle);
 

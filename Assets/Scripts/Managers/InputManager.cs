@@ -1,3 +1,4 @@
+using Cinemachine;
 using UnityEngine;
 
 public class InputManager : MonoBehaviour
@@ -5,7 +6,8 @@ public class InputManager : MonoBehaviour
     [SerializeField]
     private InputReader IR;
     public static InputManager Instance;
-    
+    public Movement movement;
+    public CinemachineBrain camera;
     private void Awake()
     {
         if (Instance == null)
@@ -18,6 +20,17 @@ public class InputManager : MonoBehaviour
         }
     }
 
+    public void DisableCharMoveAndCamera()
+    {
+        movement.enabled = false;
+        camera.enabled = false;
+    }
+    public void EnableCharMoveAndCamera()
+    {
+        movement.enabled = true;
+        camera.enabled = true;
+    }
+    
     public void ChangeInputStatus(string status)
     {
         switch (status)
@@ -30,6 +43,9 @@ public class InputManager : MonoBehaviour
                 break;
             case "UI":
                 IR.SetUI();
+                break;
+            case "Lock":
+                IR.SetLock();
                 break;
             default:
                 break;

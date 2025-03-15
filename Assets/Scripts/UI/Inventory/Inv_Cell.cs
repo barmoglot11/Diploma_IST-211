@@ -13,12 +13,7 @@ namespace INVENTORY
         public Image imageContainer;
         public void UpdateInfo()
         {
-            imageContainer.sprite = invItem.itemImage;
-        }
-
-        public void AddItem(Inv_Item item)
-        {
-            invItem.CopyData(item);
+            
         }
 
         public void OnPointerEnter(PointerEventData eventData)

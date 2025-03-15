@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEngine;
@@ -7,10 +8,10 @@ namespace QUEST
 	public class QuestManager : MonoBehaviour
 	{
 		public static QuestManager Instance;
-		private static string _questsDB = "Assets/Scripts/Quest System/QuestDB.json";
-		public QuestList currentQuests;
+		private static string _questsDB = Application.dataPath + "/QuestDB.json";
+		public List<Quest> currentQuests;
 		private Quest trackedQuest;
-		public QuestList completedQuests;
+		public List<Quest> completedQuests;
 
 		private void Awake()
 		{
@@ -24,7 +25,7 @@ namespace QUEST
 			}
 		}
 
-		public void SetQuestStage(int questID, int stage)
+		public void SetQuestStage(string questID, int stage)
 		{
 			var quest = GetQuestInfo(questID);
 			
@@ -36,44 +37,44 @@ namespace QUEST
 			
 			quest.QuestStage = stage;
 
-			var maxStage = quest.StagesDescription.Max(sd => sd.StageID);
+			var maxStage = quest.StagesDescription.Max(stage => stage.Key);
 			
 			if (maxStage == stage)
 				CompleteQuest(quest);
 		}
 
-		public Quest GetQuestInfo(int questID)
+		public Quest GetQuestInfo(string questID)
 		{
-			return currentQuests.quests.Find(x => x.QuestID == questID);
+			return currentQuests.Find(x => x.QuestID == questID);
 		}
 
 		public void CompleteQuest(Quest quest)
 		{
-			completedQuests.quests.Add(quest);
-			currentQuests.quests.Remove(quest);
+			completedQuests.Add(quest);
+			currentQuests.Remove(quest);
 		}
 
-		public Quest GetCompletedQuestInfo(int questID)
+		public Quest GetCompletedQuestInfo(string questID)
 		{
-			return completedQuests.quests.Find(x => x.QuestID == questID);
+			return completedQuests.Find(x => x.QuestID == questID);
 		}
 
 		public void TrackQuest(Quest quest) => trackedQuest = quest;
 		
 		public bool IsQuestTracked(Quest quest) => trackedQuest?.Equals(quest) == true;
 		
-		public void StartQuest(int questID)
+		public void StartQuest(string questID)
 		{
-			if (currentQuests.quests.Contains(GetQuestInfo(questID)))
+			if (currentQuests.Contains(GetQuestInfo(questID)))
 				return;
 			var json = File.ReadAllText(_questsDB);
-			var questsReaded = JsonUtility.FromJson<QuestList>(json);
+			var questsReaded = JsonUtility.FromJson<List<Quest>>(json);
 			
-			var quest = questsReaded.quests.FirstOrDefault(x => x.QuestID == questID);
+			var quest = questsReaded.FirstOrDefault(x => x.QuestID == questID);
 			
 			if (quest != null)
 			{
-				currentQuests.quests.Add(quest);
+				currentQuests.Add(quest);
 				SetQuestStage(quest.QuestID, 0);
 			}
 			else

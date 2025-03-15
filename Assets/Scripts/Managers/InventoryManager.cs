@@ -26,7 +26,7 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    private void SetInventory()
+    public void SetInventory()
     {
         for (var i = 0; i < Items.Count; i++)
         {
@@ -39,6 +39,7 @@ public class InventoryManager : MonoBehaviour
     public void AddItem(Inv_Item item)
     {
         Items.Add(item);
+        Debug.Log(Items.Count);
     }
 
     public void ShowItem(Inv_Item item = null)
