@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using SAVELOAD;
 using UnityEngine;
 
 namespace QUEST
@@ -12,6 +13,7 @@ namespace QUEST
 		public List<Quest> currentQuests;
 		private Quest trackedQuest;
 		public List<Quest> completedQuests;
+		private SaveLoadJsonService slService = new SaveLoadJsonService();
 
 		private void Awake()
 		{
@@ -67,8 +69,7 @@ namespace QUEST
 		{
 			if (currentQuests.Contains(GetQuestInfo(questID)))
 				return;
-			var json = File.ReadAllText(_questsDB);
-			var questsReaded = JsonUtility.FromJson<List<Quest>>(json);
+			slService.Load(_questsDB, out List<Quest> questsReaded);
 			
 			var quest = questsReaded.FirstOrDefault(x => x.QuestID == questID);
 			

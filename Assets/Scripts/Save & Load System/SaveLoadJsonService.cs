@@ -9,13 +9,15 @@ namespace SAVELOAD
     {
         public void Save(string key, object data)
         {
+            var path = "Assets/[TEST]" + "/" + key + ".json";
             var json = JsonConvert.SerializeObject(data);
-            File.WriteAllText(Application.dataPath + "/" + key + ".json", json);
+            File.WriteAllText(path, json);
         }
 
         public void Load<T>(string key, out T data)
         {
-            var json = File.ReadAllText(Application.dataPath + "/" + key + ".json");
+            var path = "Assets/[TEST]" + "/" + key + ".json";
+            var json = File.ReadAllText(path);
             data = JsonConvert.DeserializeObject<T>(json);
         }
     }

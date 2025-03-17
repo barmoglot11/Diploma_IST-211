@@ -5,72 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ff6fca5-cd55-4c3e-a7c6-1201f01550b6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Bullet.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Bullet.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Gun.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Gun.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/DialogueInvoker.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/DialogueInvoker.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/ISaveLoadService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/ISaveLoadService.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Investigation System/InvestObject.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Investigation System/InvestObject.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MiniGames/LockStart.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MiniGames/LockStart.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MiniGames/LockpickingManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MiniGames/LockpickingManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Quest System/QuestCharacter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Quest System/QuestCharacter.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Save &amp; Load System/SaveLoadBinService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Save &amp; Load System/SaveLoadBinService.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Save &amp; Load System/SaveLoadJsonService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Save &amp; Load System/SaveLoadJsonService.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SpriteToCamera.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SpriteToCamera.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/[TEST]/LockTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/[TEST]/LockTest.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/[TEST]/Saveloadtest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/[TEST]/Saveloadtest.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[TEST].meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Diploma_IST-211/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Diploma_IST-211/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/IR.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IR.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Breaking.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Breaking.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Enemy/Monster.blend1.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/PlayerControlPref.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/PlayerControlPref.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/PlayerControlPref.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/PlayerControlPref.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Village.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Village.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IO/GameplayController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/IO/GameplayController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IO/InputReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/IO/InputReader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/InteractiveItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/InteractiveItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/InteractiveObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/InteractiveObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Investigation System/InvestigationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Investigation System/InvestigationManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/ChoiceManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/ChoiceManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/InputManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/InteractionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/InteractionManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/InventoryManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/InventoryManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/MenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/MenuManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Village.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Village.unity.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/QuestManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/QuestManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MiniGames/Lock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MiniGames/Lock.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MiniGames/Pick.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MiniGames/Pick.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Movement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Movement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Novel/ChoiceManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Novel/ChoiceManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Movement Controller.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Movement Controller.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quest System/Quest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quest System/Quest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quest System/QuestDB.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quest System/QuestDB.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quest System/QuestList.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quest System/QuestList.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Save &amp; Load System/SaveLoadManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Save &amp; Load System/SaveLoadManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Diary/DiaryInterface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Diary/DiaryInterface.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Diary/QuestDesc.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Diary/QuestDesc.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Inventory/Inv_Cell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Inventory/Inv_Cell.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[TEST]/QuestTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/[TEST]/QuestTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Save &amp; Load System/SaveLoadBinService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Save &amp; Load System/SaveLoadBinService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Save &amp; Load System/SaveLoadJsonService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Save &amp; Load System/SaveLoadJsonService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/battletest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/[TEST]/battletest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/battletest.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/[TEST]/battletest.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,12 +58,15 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/5c/92b8ec18/Action.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6f7018b8b8c149e68c4a65a05ac289be175400/74/f70c14cb/UnityAction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6f7018b8b8c149e68c4a65a05ac289be175400/e8/e56f725d/UnitySynchronizationContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/dc753a1061284f8e971ee88ee4826eee46ac00/b8/2c0ca601/String.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/dc753a1061284f8e971ee88ee4826eee46ac00/cd/079e7053/List`1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4eae6449caa21e90c2ff2d63846343457a0e4192fb25892da80d78feb4774f/JsonSerializer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/QuestManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Novel/Character/Character.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Novel/Character/CharacterConfigData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Novel/Dialogue/Managers/ConversationManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Novel/TextArchitect.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/InputSystem.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -226,6 +181,14 @@
       <workItem from="1741920714138" duration="6291000" />
       <workItem from="1741932169856" duration="1070000" />
       <workItem from="1742003124725" duration="5456000" />
+      <workItem from="1742015835649" duration="175000" />
+      <workItem from="1742055545044" duration="1643000" />
+      <workItem from="1742057317337" duration="277000" />
+      <workItem from="1742058040752" duration="2269000" />
+      <workItem from="1742060345858" duration="1909000" />
+      <workItem from="1742062409491" duration="164000" />
+      <workItem from="1742062598753" duration="3261000" />
+      <workItem from="1742145000343" duration="492000" />
     </task>
     <task id="LOCAL-00001" summary="Developing game&#10;Created dialogue system, inventory, diary and input&#10;Reorganized script folder">
       <option name="closed" value="true" />
@@ -235,7 +198,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740277935258</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Ending developing mechanics&#10;Begin merging branches">
+      <option name="closed" value="true" />
+      <created>1742016013289</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1742016013289</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,6 +234,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Developing game&#10;Created dialogue system, inventory, diary and input&#10;Reorganized script folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="Developing game&#10;Created dialogue system, inventory, diary and input&#10;Reorganized script folder" />
+    <MESSAGE value="Ending developing mechanics&#10;Begin merging branches" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ending developing mechanics&#10;Begin merging branches" />
   </component>
 </project>

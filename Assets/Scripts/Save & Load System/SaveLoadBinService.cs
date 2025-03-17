@@ -1,6 +1,7 @@
 using System.IO;
-using Interfaces;
 using Newtonsoft.Json;
+using Interfaces;
+using MessagePack;
 using UnityEngine;
 
 namespace SAVELOAD
@@ -9,14 +10,27 @@ namespace SAVELOAD
     {
         public void Save(string key, object data)
         {
-            //var json = JsonConvert.SerializeObject(data);
-            //File.WriteAllText(Application.dataPath + "/" + key + ".json", json);
+            byte[] bytes = MessagePackSerializer.Serialize(data);
+            string filePath = "Assets/[TEST]" + "/" + key + ".msgpack";
+            
+            File.WriteAllBytes(filePath, bytes);
+            Debug.Log($"Данные сохранены по ключу '{key}' в файл: {filePath}");
         }
 
         public void Load<T>(string key, out T data)
         {
-            var bin = File.ReadAllText(Application.dataPath + "/" + key + ".json");
-            data = JsonConvert.DeserializeObject<T>(bin);
+            string filePath = "Assets/[TEST]" + "/" + key + ".msgpack";
+
+            if (File.Exists(filePath))
+            {
+                byte[] bytes = File.ReadAllBytes(filePath);
+                data = MessagePackSerializer.Deserialize<T>(bytes);
+            }
+            else
+            {
+                data = default(T);
+                Debug.LogWarning($"Файл с ключом '{key}' не найден.");
+            }
         }
     }
 }
