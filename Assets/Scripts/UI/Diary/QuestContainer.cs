@@ -1,6 +1,7 @@
 using QUEST;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace DIARY
 {
@@ -8,14 +9,17 @@ namespace DIARY
     {
         public Quest quest;
         public TextMeshProUGUI title;
-        public GameObject trackingIndicator;
+        public Image trackingIndicator;
 
         public void SetContainer(Quest quest)
         {
             this.quest = quest;
             title.text = this.quest.QuestName;
-            if(QuestManager.Instance.IsQuestTracked(quest))
-                trackingIndicator.SetActive(true);
+        }
+
+        public void OpenQuest()
+        {
+            DiaryInterface.Instance.OnClickReload(quest);
         }
     }
 }

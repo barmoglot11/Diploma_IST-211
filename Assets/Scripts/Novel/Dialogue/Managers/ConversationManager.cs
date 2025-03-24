@@ -15,6 +15,8 @@ namespace DIALOGUE
         private TextArchitect architect = null;
         private bool userPrompt = false;
 
+        
+        
         public ConversationManager(TextArchitect architect) 
         {
             this.architect = architect;

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using AYellowpaper.SerializedCollections;
 using QUEST;
 using SAVELOAD;
 using UnityEngine;
@@ -13,7 +14,7 @@ namespace _TEST_
             Quest quest1 = new Quest();
             quest1.QuestID = "mq101";
             quest1.QuestName = "mq101";
-            quest1.QuestDescription = new Dictionary<int, string>()
+            quest1.QuestDescription = new SerializedDictionary<int, string>()
             {
                 {1, "dfafa"},
                 {2, "fasfas"},

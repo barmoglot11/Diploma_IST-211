@@ -9,9 +9,9 @@ namespace QUEST
 	public class QuestManager : MonoBehaviour
 	{
 		public static QuestManager Instance;
-		private static string _questsDB = Application.dataPath + "/QuestDB.json";
+		public QuestsConfigData questsConfig;
 		public List<Quest> currentQuests;
-		private Quest trackedQuest;
+		public Quest trackedQuest;
 		public List<Quest> completedQuests;
 		private SaveLoadJsonService slService = new SaveLoadJsonService();
 
@@ -36,7 +36,7 @@ namespace QUEST
 				Debug.LogError($"Квест с ID {questID} не найден.");
 				return;
 			}
-			
+			quest.PreviousTaskStage = stage;
 			quest.QuestStage = stage;
 
 			var maxStage = quest.StagesDescription.Max(stage => stage.Key);
@@ -63,15 +63,14 @@ namespace QUEST
 
 		public void TrackQuest(Quest quest) => trackedQuest = quest;
 		
-		public bool IsQuestTracked(Quest quest) => trackedQuest?.Equals(quest) == true;
+		public bool IsQuestTracked(Quest quest) => trackedQuest.QuestID?.Equals(quest.QuestID) == true;
 		
 		public void StartQuest(string questID)
 		{
 			if (currentQuests.Contains(GetQuestInfo(questID)))
 				return;
-			slService.Load(_questsDB, out List<Quest> questsReaded);
 			
-			var quest = questsReaded.FirstOrDefault(x => x.QuestID == questID);
+			var quest = questsConfig.GetConfig(questID);
 			
 			if (quest != null)
 			{

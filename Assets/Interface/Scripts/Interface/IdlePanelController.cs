@@ -1,43 +1,46 @@
+using System;
 using UnityEngine;
+using System.Collections;
 using UnityEngine.UI;
 
 public class IdlePanelController : MonoBehaviour
 {
-    public CanvasGroup panelCanvasGroup; // Ссылка на CanvasGroup панели
-    public float fadeDuration = 1.0f; // Длительность плавного появления/исчезновения
-    public float idleTimeToShow = 5.0f; // Время бездействия для появления панели
+    public CanvasGroup panelCanvasGroup; // РЎСЃС‹Р»РєР° РЅР° CanvasGroup РїР°РЅРµР»Рё
+    public float fadeDuration = 1.0f; // Р”Р»РёС‚РµР»СЊРЅРѕСЃС‚СЊ РїР»Р°РІРЅРѕРіРѕ РїРѕСЏРІР»РµРЅРёСЏ/РёСЃС‡РµР·РЅРѕРІРµРЅРёСЏ
+    public float idleTimeToShow = 5.0f; // Р’СЂРµРјСЏ Р±РµР·РґРµР№СЃС‚РІРёСЏ РґР»СЏ РїРѕСЏРІР»РµРЅРёСЏ РїР°РЅРµР»Рё
 
-    private float idleTimer = 0f; // Таймер бездействия
-    private bool isPanelVisible = false; // Флаг, указывающий, видна ли панель
-    private bool isFading = false; // Флаг, указывающий, идет ли процесс изменения прозрачности
+    private float idleTimer = 0f; // РўР°Р№РјРµСЂ Р±РµР·РґРµР№СЃС‚РІРёСЏ
+    private bool isPanelVisible = false; // Р¤Р»Р°Рі, СѓРєР°Р·С‹РІР°СЋС‰РёР№, РІРёРґРЅР° Р»Рё РїР°РЅРµР»СЊ
+    private bool isFading = false; // Р¤Р»Р°Рі, СѓРєР°Р·С‹РІР°СЋС‰РёР№, РёРґРµС‚ Р»Рё РїСЂРѕС†РµСЃСЃ РёР·РјРµРЅРµРЅРёСЏ РїСЂРѕР·СЂР°С‡РЅРѕСЃС‚Рё
 
+    private Coroutine process = null;
     void Update()
     {
-        // Проверяем, было ли какое-либо действие пользователя
+        // РџСЂРѕРІРµСЂСЏРµРј, Р±С‹Р»Рѕ Р»Рё РєР°РєРѕРµ-Р»РёР±Рѕ РґРµР№СЃС‚РІРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
         if (Input.anyKeyDown || Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0 || Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)
         {
-            idleTimer = 0f; // Сбрасываем таймер бездействия
+            idleTimer = 0f; // РЎР±СЂР°СЃС‹РІР°РµРј С‚Р°Р№РјРµСЂ Р±РµР·РґРµР№СЃС‚РІРёСЏ
 
-            // Если панель видна, начинаем скрывать её
-            if (isPanelVisible && !isFading)
+            // Р•СЃР»Рё РїР°РЅРµР»СЊ РІРёРґРЅР°, РЅР°С‡РёРЅР°РµРј СЃРєСЂС‹РІР°С‚СЊ РµС‘
+            if (isPanelVisible && !isFading && process == null)
             {
-                StartCoroutine(FadePanel(0f)); // Плавно скрываем панель
+                process = StartCoroutine(FadePanel(0f)); // РџР»Р°РІРЅРѕ СЃРєСЂС‹РІР°РµРј РїР°РЅРµР»СЊ
             }
         }
         else
         {
-            // Увеличиваем таймер бездействия
+            // РЈРІРµР»РёС‡РёРІР°РµРј С‚Р°Р№РјРµСЂ Р±РµР·РґРµР№СЃС‚РІРёСЏ
             idleTimer += Time.deltaTime;
 
-            // Если время бездействия превысило порог и панель не видна, начинаем показывать её
-            if (idleTimer >= idleTimeToShow && !isPanelVisible && !isFading)
+            // Р•СЃР»Рё РІСЂРµРјСЏ Р±РµР·РґРµР№СЃС‚РІРёСЏ РїСЂРµРІС‹СЃРёР»Рѕ РїРѕСЂРѕРі Рё РїР°РЅРµР»СЊ РЅРµ РІРёРґРЅР°, РЅР°С‡РёРЅР°РµРј РїРѕРєР°Р·С‹РІР°С‚СЊ РµС‘
+            if (idleTimer >= idleTimeToShow && !isPanelVisible && !isFading&& process == null)
             {
-                StartCoroutine(FadePanel(1f)); // Плавно показываем панель
+                process = StartCoroutine(FadePanel(1f)); // РџР»Р°РІРЅРѕ РїРѕРєР°Р·С‹РІР°РµРј РїР°РЅРµР»СЊ
             }
         }
     }
 
-    private System.Collections.IEnumerator FadePanel(float targetAlpha)
+    private IEnumerator FadePanel(float targetAlpha)
     {
         isFading = true;
 
@@ -48,15 +51,23 @@ public class IdlePanelController : MonoBehaviour
         {
             elapsedTime += Time.deltaTime;
             float alpha = Mathf.Lerp(startAlpha, targetAlpha, elapsedTime / fadeDuration);
-            panelCanvasGroup.alpha = alpha; // Плавно изменяем прозрачность CanvasGroup
+            panelCanvasGroup.alpha = alpha; // РџР»Р°РІРЅРѕ РёР·РјРµРЅСЏРµРј РїСЂРѕР·СЂР°С‡РЅРѕСЃС‚СЊ CanvasGroup
             yield return null;
         }
 
-        // Устанавливаем конечное значение прозрачности
+        // РЈСЃС‚Р°РЅР°РІР»РёРІР°РµРј РєРѕРЅРµС‡РЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РїСЂРѕР·СЂР°С‡РЅРѕСЃС‚Рё
         panelCanvasGroup.alpha = targetAlpha;
 
-        // Обновляем флаги
+        // РћР±РЅРѕРІР»СЏРµРј С„Р»Р°РіРё
         isPanelVisible = (targetAlpha == 1f);
         isFading = false;
+        process = null;
+    }
+
+    private void OnDisable()
+    {
+        isPanelVisible = false;
+        isFading = false;
+        process = null;
     }
 }

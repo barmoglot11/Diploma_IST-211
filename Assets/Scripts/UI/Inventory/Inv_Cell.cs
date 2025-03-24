@@ -5,7 +5,7 @@ using UnityEngine.UI;
 namespace INVENTORY
 {
     [RequireComponent(typeof(BoxCollider))]
-    public class Inv_Cell : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    public class Inv_Cell : MonoBehaviour
     {
         InventoryManager Inventory => InventoryManager.Instance;
         public Inv_Item invItem;
@@ -13,17 +13,25 @@ namespace INVENTORY
         public Image imageContainer;
         public void UpdateInfo()
         {
-            
+            if (!string.IsNullOrEmpty(invItem.itemName))
+            {
+                imageContainer.sprite = invItem.itemImage;
+                GetComponent<Button>().onClick.AddListener(ShowThisItem);
+            }
+            else
+                imageContainer.color = new Color(0, 0, 0, 0);
         }
 
-        public void OnPointerEnter(PointerEventData eventData)
+        private void ShowThisItem()
         {
             Inventory.ShowItem(invItem);
+            Debug.Log($"Created link for {invItem}");
+            Inventory.previewButton.onClick.AddListener(SetPreview);
         }
-
-        public void OnPointerExit(PointerEventData eventData)
+        
+        private void SetPreview()
         {
-            Inventory.ShowItem();
+            Inventory.SetPreview(invItem);
         }
     }
 }

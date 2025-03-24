@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25222afb73ca43ba8445c89bf5aec6d8, type: 3}
+  m_Name: ItemsConfigData
+  m_EditorClassIdentifier: 
+  items:
+  - itemName: Carbon gun
+    itemImage: {fileID: 21300000, guid: 7ffd399374214c54f9a2bed50fa4b01a, type: 3}
+    itemPrefab: {fileID: 4151655283390843895, guid: c92a312a99c6dd641a73199e6d76a266, type: 3}
+    itemDescription: "\u041F\u0418\u0421\u0422\u041E\u041B\u0415\u0422"
+  - itemName: Pick
+    itemImage: {fileID: 21300000, guid: 9375a3018dd3a9042ab0febb13cb8132, type: 3}
+    itemPrefab: {fileID: 2020351214594856148, guid: 0d933a9b2768a3849b0e73a1f5e72d9f, type: 3}
+    itemDescription: "\u041E\u0422\u041C\u042B\u0427\u041A\u0410"
+  - itemName: Note
+    itemImage: {fileID: 21300000, guid: 47fa6d0bc58f83645a95858c68997bbf, type: 3}
+    itemPrefab: {fileID: 0}
+    itemDescription: "\u0417\u0410\u041F\u0418\u0421\u041A\u0410"

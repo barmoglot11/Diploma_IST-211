@@ -10,7 +10,7 @@ namespace _TEST_
 {
     public class DialogueTest : MonoBehaviour
     {
-        private void Start()
+        public void StartDialogue()
         {
             StartCoroutine(Test());
         }

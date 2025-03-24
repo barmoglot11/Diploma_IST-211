@@ -10,7 +10,8 @@ namespace Interaction
         public UnityEvent OnInteract;
         private void OnTriggerEnter(Collider other)
         {
-            OnInteract?.Invoke();
+            InteractionManager.Instance.AddInteract(() => OnInteract?.Invoke());
+            
         }
     }
 }

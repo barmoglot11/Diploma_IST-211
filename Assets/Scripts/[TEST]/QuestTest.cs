@@ -10,7 +10,6 @@ namespace _TEST_
         public DiaryInterface diaryInterface;
         private void Start()
         {
-            QuestManager.Instance.StartQuest("mc1");
             diaryInterface.SetUI();
         }
     }

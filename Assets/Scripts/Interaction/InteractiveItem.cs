@@ -1,15 +1,15 @@
-using System;
+using INVENTORY;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
 public class InteractiveItem : MonoBehaviour, IInteractable
 {
     public InventoryManager Inventory => InventoryManager.Instance;
-    public Inv_Item item;
+    public string itemName;
     
     public void Interact()
     {
-        Inventory.AddItem(item);
+        Inventory.AddItem(itemName);
         gameObject.SetActive(false);
     }
     

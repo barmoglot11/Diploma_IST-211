@@ -8,6 +8,10 @@ public class InputManager : MonoBehaviour
     public static InputManager Instance;
     public Movement movement;
     public CinemachineBrain camera;
+
+    public GameObject MenuButton;
+    private bool _openMenuSetted = false;
+    private bool _closeMenuSetted = false;
     private void Awake()
     {
         if (Instance == null)
@@ -22,15 +26,35 @@ public class InputManager : MonoBehaviour
 
     public void DisableCharMoveAndCamera()
     {
-        movement.enabled = false;
-        camera.enabled = false;
+        if (camera != null && movement != null)
+        {
+            movement.enabled = false;
+            camera.enabled = false;
+        }
+        
     }
     public void EnableCharMoveAndCamera()
     {
-        movement.enabled = true;
-        camera.enabled = true;
+        if (camera != null && movement != null)
+        {
+            movement.enabled = true;
+            camera.enabled = true;
+        }
     }
-    
+
+    public void Update()
+    {
+        if (MenuButton.activeSelf && !_openMenuSetted)
+        {
+            //открыть меню event
+        }
+
+        if (!MenuButton.activeSelf && !_closeMenuSetted)
+        {
+            //закрыть меню event
+        }
+    }
+
     public void ChangeInputStatus(string status)
     {
         switch (status)

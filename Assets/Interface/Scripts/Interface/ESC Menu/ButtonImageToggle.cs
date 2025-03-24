@@ -2,40 +2,41 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ButtonImageToggle : MonoBehaviour
 {
-    [Header("Settings")]
-    public Image appearImage; // Изображение, которое появляется
-    public Image[] disappearImages; // Массив изображений, которые исчезают
-    public float animationSpeed = 1f; // Скорость анимации
+    [Header("Settings")] 
+    public Image appearImage; // РР·РѕР±СЂР°Р¶РµРЅРёРµ, РєРѕС‚РѕСЂРѕРµ Р±СѓРґРµС‚ РїРѕСЏРІР»СЏС‚СЊСЃСЏ
+    public List<Image> disappearImages; // РњР°СЃСЃРёРІ РёР·РѕР±СЂР°Р¶РµРЅРёР№, РєРѕС‚РѕСЂС‹Рµ Р±СѓРґСѓС‚ РёСЃС‡РµР·Р°С‚СЊ
+    public float animationSpeed = 1f; // РЎРєРѕСЂРѕСЃС‚СЊ Р°РЅРёРјР°С†РёРё
 
     // private void Start()
     // {
-        // Изначально скрываем все изображения
-        // if (appearImage != null)
-        // {
-            // appearImage.gameObject.SetActive(false);
-        // }
+    //     // РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РёР·РѕР±СЂР°Р¶РµРЅРёР№
+    //     if (appearImage != null)
+    //     {
+    //         appearImage.gameObject.SetActive(false);
+    //     }
 
-        // foreach (var image in disappearImages)
-        // {
-            // if (image != null)
-            // {
-               // image.gameObject.SetActive(false);
-            // }
-        // }
+    //     foreach (var image in disappearImages)
+    //     {
+    //         if (image != null)
+    //         {
+    //             image.gameObject.SetActive(false);
+    //         }
+    //     }
     // }
 
     public void OnButtonClick()
     {
-        // Запускаем анимацию появления и исчезновения
+        // Р—Р°РїСѓСЃРє Р°РЅРёРјР°С†РёРё РїРѕСЏРІР»РµРЅРёСЏ Рё РёСЃС‡РµР·РЅРѕРІРµРЅРёСЏ РёР·РѕР±СЂР°Р¶РµРЅРёР№
         StartCoroutine(AnimateImages());
     }
 
     private IEnumerator AnimateImages()
     {
-        // Анимация исчезновения других изображений
+        // РСЃС‡РµР·РЅРѕРІРµРЅРёРµ РёР·РѕР±СЂР°Р¶РµРЅРёР№
         foreach (var image in disappearImages)
         {
             if (image != null && image.gameObject.activeSelf)
@@ -44,7 +45,7 @@ public class ButtonImageToggle : MonoBehaviour
             }
         }
 
-        // Анимация появления выбранного изображения
+        // РџРѕСЏРІР»РµРЅРёРµ РЅРѕРІРѕРіРѕ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ
         if (appearImage != null)
         {
             appearImage.gameObject.SetActive(true);
@@ -54,7 +55,7 @@ public class ButtonImageToggle : MonoBehaviour
         yield return null;
     }
 
-    // Анимация увеличения (появление)
+    // РЈРІРµР»РёС‡РµРЅРёРµ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ (РїРѕСЏРІР»РµРЅРёРµ)
     private IEnumerator ScaleUp(Image image)
     {
         float elapsed = 0f;
@@ -73,7 +74,7 @@ public class ButtonImageToggle : MonoBehaviour
         image.transform.localScale = endScale;
     }
 
-    // Анимация уменьшения (исчезновение)
+    // РЈРјРµРЅСЊС€РµРЅРёРµ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ (РёСЃС‡РµР·РЅРѕРІРµРЅРёРµ)
     private IEnumerator ScaleDown(Image image)
     {
         float elapsed = 0f;

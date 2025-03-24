@@ -10,6 +10,7 @@ namespace DIALOGUE
     public class ChoiceManager : MonoBehaviour
     {
         public static ChoiceManager Instance;
+        public GameObject buttonContainer;
         public List<Button> choicesContainer;
 
         private void Awake()
@@ -36,13 +37,14 @@ namespace DIALOGUE
         {
             for (var i = 0; i < actions.Count; i++)
             {
+                choicesContainer[i].onClick.RemoveAllListeners();
                 choicesContainer[i].onClick.AddListener(actions[i]);
                 choicesContainer[i].onClick.AddListener(HideChoices);
             }
         }
         public void ShowChoices()
         {
-            gameObject.SetActive(true);
+            buttonContainer.gameObject.SetActive(true);
         }
 
         public void HideChoices()
@@ -52,7 +54,7 @@ namespace DIALOGUE
                 button.onClick.RemoveAllListeners();
             }
             
-            gameObject.SetActive(false);
+            buttonContainer.gameObject.SetActive(false);
         }
     }
 }

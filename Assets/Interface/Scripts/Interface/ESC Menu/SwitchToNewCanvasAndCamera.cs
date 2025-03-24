@@ -4,24 +4,24 @@ using System.Collections;
 
 public class SwitchToNewCanvasAndCamera : MonoBehaviour
 {
-    public Canvas newCanvas; // Новый Canvas, который нужно включить
-    public Camera newCamera; // Новая камера, которую нужно включить
-    public GameObject objectToDisable; // GameObject, который нужно отключить
+    public Canvas newCanvas; // РќРѕРІС‹Р№ Canvas, РєРѕС‚РѕСЂС‹Р№ РЅСѓР¶РЅРѕ РІРєР»СЋС‡РёС‚СЊ
+    public Camera newCamera; // РќРѕРІР°СЏ РєР°РјРµСЂР°, РєРѕС‚РѕСЂСѓСЋ РЅСѓР¶РЅРѕ РІРєР»СЋС‡РёС‚СЊ
+    public GameObject objectToDisable; // GameObject, РєРѕС‚РѕСЂС‹Р№ РЅСѓР¶РЅРѕ РѕС‚РєР»СЋС‡РёС‚СЊ
 
-    public float fadeSpeed = 2f; // Скорость плавного перехода
-    public float delayBeforeActivation = 0.5f; // Задержка перед активацией новых элементов
+    public float fadeSpeed = 2f; // РЎРєРѕСЂРѕСЃС‚СЊ РїР»Р°РІРЅРѕРіРѕ РїРµСЂРµС…РѕРґР°
+    public float delayBeforeActivation = 0.5f; // Р—Р°РґРµСЂР¶РєР° РїРµСЂРµРґ Р°РєС‚РёРІР°С†РёРµР№ РЅРѕРІС‹С… СЌР»РµРјРµРЅС‚РѕРІ
 
-    private bool isSwitching = false; // Флаг для блокировки ввода
-    private Coroutine currentCoroutine; // Текущая активная корутина
+    private bool isSwitching = false; // Р¤Р»Р°Рі РґР»СЏ Р±Р»РѕРєРёСЂРѕРІРєРё РІРІРѕРґР°
+    private Coroutine currentCoroutine; // РўРµРєСѓС‰Р°СЏ Р°РєС‚РёРІРЅР°СЏ РєРѕСЂСѓС‚РёРЅР°
 
     void Update()
     {
-        // Блокируем ввод, если идет анимация
+        // Р‘Р»РѕРєРёСЂСѓРµРј РІРІРѕРґ, РµСЃР»Рё РёРґРµС‚ Р°РЅРёРјР°С†РёСЏ
         if (isSwitching) return;
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            // Если корутина уже запущена, не запускаем новую
+            // Р•СЃР»Рё РєРѕСЂСѓС‚РёРЅР° СѓР¶Рµ Р·Р°РїСѓС‰РµРЅР°, РЅРµ Р·Р°РїСѓСЃРєР°РµРј РЅРѕРІСѓСЋ
             if (currentCoroutine != null) return;
 
             currentCoroutine = StartCoroutine(SwitchToNewView());
@@ -30,19 +30,19 @@ public class SwitchToNewCanvasAndCamera : MonoBehaviour
 
     private IEnumerator SwitchToNewView()
     {
-        isSwitching = true; // Блокируем ввод
+        isSwitching = true; // Р‘Р»РѕРєРёСЂСѓРµРј РІРІРѕРґ
 
-        // Задержка перед активацией новых элементов
+        // Р—Р°РґРµСЂР¶РєР° РїРµСЂРµРґ Р°РєС‚РёРІР°С†РёРµР№ РЅРѕРІС‹С… СЌР»РµРјРµРЅС‚РѕРІ
         yield return new WaitForSeconds(delayBeforeActivation);
 
-        // Включаем новый Canvas и камеру
+        // Р’РєР»СЋС‡Р°РµРј РЅРѕРІС‹Р№ Canvas Рё РєР°РјРµСЂСѓ
         if (newCanvas != null)
         {
             newCanvas.gameObject.SetActive(true);
             CanvasGroup canvasGroup = newCanvas.GetComponent<CanvasGroup>();
             if (canvasGroup == null) canvasGroup = newCanvas.gameObject.AddComponent<CanvasGroup>();
 
-            // Плавное появление нового Canvas
+            // РџР»Р°РІРЅРѕРµ РїРѕСЏРІР»РµРЅРёРµ РЅРѕРІРѕРіРѕ Canvas
             float alpha = 0;
             while (alpha < 1)
             {
@@ -57,7 +57,7 @@ public class SwitchToNewCanvasAndCamera : MonoBehaviour
             newCamera.gameObject.SetActive(true);
         }
 
-        // Плавное отключение GameObject
+        // РџР»Р°РІРЅРѕРµ РѕС‚РєР»СЋС‡РµРЅРёРµ GameObject
         if (objectToDisable != null)
         {
             CanvasGroup objectCanvasGroup = objectToDisable.GetComponent<CanvasGroup>();
@@ -74,8 +74,8 @@ public class SwitchToNewCanvasAndCamera : MonoBehaviour
             objectToDisable.SetActive(false);
         }
 
-        isSwitching = false; // Разблокируем ввод
-        currentCoroutine = null; // Сбрасываем текущую корутину
+        isSwitching = false; // Р Р°Р·Р±Р»РѕРєРёСЂСѓРµРј РІРІРѕРґ
+        currentCoroutine = null; // РЎР±СЂР°СЃС‹РІР°РµРј С‚РµРєСѓС‰СѓСЋ РєРѕСЂСѓС‚РёРЅСѓ
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
