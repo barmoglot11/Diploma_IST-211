@@ -8,8 +8,7 @@ public class InteractionManager : MonoBehaviour
 {
     public static InteractionManager Instance;
     
-    [SerializeField]
-    InputReader input;
+    InputReader input => InputManager.Instance.IR;
     
     private void Awake()
     {

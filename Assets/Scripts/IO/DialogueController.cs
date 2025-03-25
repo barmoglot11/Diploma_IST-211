@@ -3,8 +3,7 @@ using DIALOGUE;
 
 public class DialogueController: MonoBehaviour
 {
-    [SerializeField] private InputReader input;
-    [SerializeField] private ConversationManager conversationManager;
+    InputReader input => InputManager.Instance.IR;
     private void Start()
     {
         input.Prompt += HandleHurry;

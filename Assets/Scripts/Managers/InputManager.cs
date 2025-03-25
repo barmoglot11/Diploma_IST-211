@@ -3,15 +3,10 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
-    [SerializeField]
-    private InputReader IR;
+    public InputReader IR;
     public static InputManager Instance;
     public Movement movement;
     public CinemachineBrain camera;
-
-    public GameObject MenuButton;
-    private bool _openMenuSetted = false;
-    private bool _closeMenuSetted = false;
     private void Awake()
     {
         if (Instance == null)
@@ -39,19 +34,6 @@ public class InputManager : MonoBehaviour
         {
             movement.enabled = true;
             camera.enabled = true;
-        }
-    }
-
-    public void Update()
-    {
-        if (MenuButton.activeSelf && !_openMenuSetted)
-        {
-            //открыть меню event
-        }
-
-        if (!MenuButton.activeSelf && !_closeMenuSetted)
-        {
-            //закрыть меню event
         }
     }
 

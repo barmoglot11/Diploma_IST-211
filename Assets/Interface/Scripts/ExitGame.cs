@@ -3,19 +3,20 @@ using UnityEngine.UI;
 
 public class ExitGame : MonoBehaviour
 {
-    public Button exitButton; // Кнопка выхода из игры
+    public Button exitButton; // РљРЅРѕРїРєР° РІС‹С…РѕРґР° РёР· РёРіСЂС‹
 
     void Start()
     {
+        // Р”РѕР±Р°РІР»РµРЅРёРµ СЃР»СѓС€Р°С‚РµР»СЏ РґР»СЏ РєРЅРѕРїРєРё РІС‹С…РѕРґР°
         exitButton.onClick.AddListener(QuitGame);
     }
 
     void QuitGame()
     {
-        #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false; // Останавливает игру в редакторе
-        #else
-        Application.Quit(); // Закрывает приложение
-        #endif
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false; // РћСЃС‚Р°РЅРѕРІРёС‚СЊ РёРіСЂСѓ РІ СЂРµРґР°РєС‚РѕСЂРµ
+#else
+        Application.Quit(); // Р’С‹Р№С‚Рё РёР· РїСЂРёР»РѕР¶РµРЅРёСЏ
+#endif
     }
 }

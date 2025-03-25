@@ -6,8 +6,7 @@ public class Movement : MonoBehaviour
     [SerializeField]
     CharacterController controller;
     
-    [SerializeField]
-    InputReader input;
+    InputReader input => InputManager.Instance.IR;
     
     private Vector2 _moveDirection;
 
@@ -28,6 +27,7 @@ public class Movement : MonoBehaviour
     private void Update()
     {
         Move();
+        
     }
 
     private void HandleMove(Vector2 direction)
