@@ -1,0 +1,96 @@
+Begin Object Class=/Script/Engine.PhysicsAsset Name="SM_Fisherman03_Animated_PhysicsAsset" ExportPath="/Script/Engine.PhysicsAsset'/Game/Village/Meshes/SM_Fisherman03_Animated_PhysicsAsset.SM_Fisherman03_Animated_PhysicsAsset'"
+   Begin Object Class=/Script/Engine.PhysicsConstraintTemplate Name="PhysicsConstraintTemplate_0" ExportPath="/Script/Engine.PhysicsConstraintTemplate'/Game/Village/Meshes/SM_Fisherman03_Animated_PhysicsAsset.SM_Fisherman03_Animated_PhysicsAsset:PhysicsConstraintTemplate_0'"
+   End Object
+   Begin Object Class=/Script/Engine.PhysicsConstraintTemplate Name="PhysicsConstraintTemplate_1" ExportPath="/Script/Engine.PhysicsConstraintTemplate'/Game/Village/Meshes/SM_Fisherman03_Animated_PhysicsAsset.SM_Fisherman03_Animated_PhysicsAsset:PhysicsConstraintTemplate_1'"
+   End Object
+   Begin Object Class=/Script/Engine.PhysicsConstraintTemplate Name="PhysicsConstraintTemplate_2" ExportPath="/Script/Engine.PhysicsConstraintTemplate'/Game/Village/Meshes/SM_Fisherman03_Animated_PhysicsAsset.SM_Fisherman03_Animated_PhysicsAsset:PhysicsConstraintTemplate_2'"
+   End Object
+   Begin Object Class=/Script/Engine.PhysicsConstraintTemplate Name="PhysicsConstraintTemplate_3" ExportPath="/Script/Engine.PhysicsConstraintTemplate'/Game/Village/Meshes/SM_Fisherman03_Animated_PhysicsAsset.SM_Fisherman03_Animated_PhysicsAsset:PhysicsConstraintTemplate_3'"
+   End Object
+   Begin Object Class=/Script/UnrealEd.SceneThumbnailInfo Name="SceneThumbnailInfo_0" ExportPath="/Script/UnrealEd.SceneThumbnailInfo'/Game/Village/Meshes/SM_Fisherman03_Animated_PhysicsAsset.SM_Fisherman03_Animated_PhysicsAsset:SceneThumbnailInfo_0'"
+   End Object
+   Begin Object Class=/Script/Engine.SkeletalBodySetup Name="SkeletalBodySetup_0" ExportPath="/Script/Engine.SkeletalBodySetup'/Game/Village/Meshes/SM_Fisherman03_Animated_PhysicsAsset.SM_Fisherman03_Animated_PhysicsAsset:SkeletalBodySetup_0'"
+   End Object
+   Begin Object Class=/Script/Engine.SkeletalBodySetup Name="SkeletalBodySetup_1" ExportPath="/Script/Engine.SkeletalBodySetup'/Game/Village/Meshes/SM_Fisherman03_Animated_PhysicsAsset.SM_Fisherman03_Animated_PhysicsAsset:SkeletalBodySetup_1'"
+   End Object
+   Begin Object Class=/Script/Engine.SkeletalBodySetup Name="SkeletalBodySetup_2" ExportPath="/Script/Engine.SkeletalBodySetup'/Game/Village/Meshes/SM_Fisherman03_Animated_PhysicsAsset.SM_Fisherman03_Animated_PhysicsAsset:SkeletalBodySetup_2'"
+   End Object
+   Begin Object Class=/Script/Engine.SkeletalBodySetup Name="SkeletalBodySetup_3" ExportPath="/Script/Engine.SkeletalBodySetup'/Game/Village/Meshes/SM_Fisherman03_Animated_PhysicsAsset.SM_Fisherman03_Animated_PhysicsAsset:SkeletalBodySetup_3'"
+   End Object
+   Begin Object Class=/Script/Engine.SkeletalBodySetup Name="SkeletalBodySetup_4" ExportPath="/Script/Engine.SkeletalBodySetup'/Game/Village/Meshes/SM_Fisherman03_Animated_PhysicsAsset.SM_Fisherman03_Animated_PhysicsAsset:SkeletalBodySetup_4'"
+   End Object
+   Begin Object Class=/Script/Engine.SkeletalBodySetup Name="SkeletalBodySetup_5" ExportPath="/Script/Engine.SkeletalBodySetup'/Game/Village/Meshes/SM_Fisherman03_Animated_PhysicsAsset.SM_Fisherman03_Animated_PhysicsAsset:SkeletalBodySetup_5'"
+   End Object
+   Begin Object Class=/Script/Engine.SkeletalBodySetup Name="SkeletalBodySetup_6" ExportPath="/Script/Engine.SkeletalBodySetup'/Game/Village/Meshes/SM_Fisherman03_Animated_PhysicsAsset.SM_Fisherman03_Animated_PhysicsAsset:SkeletalBodySetup_6'"
+   End Object
+   Begin Object Name="PhysicsConstraintTemplate_0" ExportPath="/Script/Engine.PhysicsConstraintTemplate'/Game/Village/Meshes/SM_Fisherman03_Animated_PhysicsAsset.SM_Fisherman03_Animated_PhysicsAsset:PhysicsConstraintTemplate_0'"
+      DefaultInstance=(JointName="Bone_041",ConstraintBone1="Bone_041",ConstraintBone2="Bone_005",Pos2=(X=0.001004,Y=-0.421912,Z=0.008708),PriAxis2=(X=0.999960,Y=0.008740,Z=0.001755),SecAxis2=(X=-0.002779,Y=0.118466,Z=0.992954),ProfileInstance=(ConeLimit=(Swing1Motion=ACM_Limited,Swing2Motion=ACM_Limited),TwistLimit=(TwistMotion=ACM_Limited)))
+   End Object
+   Begin Object Name="PhysicsConstraintTemplate_1" ExportPath="/Script/Engine.PhysicsConstraintTemplate'/Game/Village/Meshes/SM_Fisherman03_Animated_PhysicsAsset.SM_Fisherman03_Animated_PhysicsAsset:PhysicsConstraintTemplate_1'"
+      DefaultInstance=(JointName="Bone_008",ConstraintBone1="Bone_008",ConstraintBone2="Bone_005",Pos2=(X=-0.000000,Y=-0.248897,Z=-0.000000),PriAxis2=(X=0.361865,Y=0.918529,Z=-0.159241),SecAxis2=(X=-0.841824,Y=0.248586,Z=-0.479101),ProfileInstance=(ConeLimit=(Swing1Motion=ACM_Limited,Swing2Motion=ACM_Limited),TwistLimit=(TwistMotion=ACM_Limited)))
+   End Object
+   Begin Object Name="PhysicsConstraintTemplate_2" ExportPath="/Script/Engine.PhysicsConstraintTemplate'/Game/Village/Meshes/SM_Fisherman03_Animated_PhysicsAsset.SM_Fisherman03_Animated_PhysicsAsset:PhysicsConstraintTemplate_2'"
+      DefaultInstance=(JointName="Bone_020",ConstraintBone1="Bone_020",ConstraintBone2="Bone_005",Pos2=(X=-0.271181,Y=-0.097819,Z=0.510254),PriAxis2=(X=-0.471221,Y=-0.868423,Z=-0.154245),SecAxis2=(X=-0.768429,Y=0.490058,Z=-0.411533),ProfileInstance=(ConeLimit=(Swing1Motion=ACM_Limited,Swing2Motion=ACM_Limited),TwistLimit=(TwistMotion=ACM_Limited)))
+   End Object
+   Begin Object Name="PhysicsConstraintTemplate_3" ExportPath="/Script/Engine.PhysicsConstraintTemplate'/Game/Village/Meshes/SM_Fisherman03_Animated_PhysicsAsset.SM_Fisherman03_Animated_PhysicsAsset:PhysicsConstraintTemplate_3'"
+      DefaultInstance=(JointName="Bone_034",ConstraintBone1="Bone_034",ConstraintBone2="Bone_020",Pos2=(X=0.627635,Y=-1.223371,Z=0.125370),PriAxis2=(X=0.802803,Y=0.593774,Z=-0.054227),SecAxis2=(X=-0.596138,Y=0.801056,Z=-0.054127),ProfileInstance=(ConeLimit=(Swing1Motion=ACM_Limited,Swing2Motion=ACM_Limited),TwistLimit=(TwistMotion=ACM_Limited)))
+   End Object
+   Begin Object Name="SceneThumbnailInfo_0" ExportPath="/Script/UnrealEd.SceneThumbnailInfo'/Game/Village/Meshes/SM_Fisherman03_Animated_PhysicsAsset.SM_Fisherman03_Animated_PhysicsAsset:SceneThumbnailInfo_0'"
+   End Object
+   Begin Object Name="SkeletalBodySetup_0" ExportPath="/Script/Engine.SkeletalBodySetup'/Game/Village/Meshes/SM_Fisherman03_Animated_PhysicsAsset.SM_Fisherman03_Animated_PhysicsAsset:SkeletalBodySetup_0'"
+      AggGeom=(SphylElems=((Center=(X=-0.018471,Y=-0.207249,Z=0.159067),Rotation=(Pitch=0.000000,Yaw=-160.420471,Roll=-65.063530),Radius=0.316589,Length=0.549792)))
+      BoneName="Bone_005"
+      CollisionTraceFlag=CTF_UseSimpleAsComplex
+   End Object
+   Begin Object Name="SkeletalBodySetup_1" ExportPath="/Script/Engine.SkeletalBodySetup'/Game/Village/Meshes/SM_Fisherman03_Animated_PhysicsAsset.SM_Fisherman03_Animated_PhysicsAsset:SkeletalBodySetup_1'"
+      AggGeom=(SphylElems=((Center=(X=0.003785,Y=0.024034,Z=0.210730),Rotation=(Pitch=0.000000,Yaw=-178.779022,Roll=-46.968559),Radius=0.187933,Length=0.228195)))
+      BoneName="Bone_041"
+      CollisionTraceFlag=CTF_UseSimpleAsComplex
+   End Object
+   Begin Object Name="SkeletalBodySetup_2" ExportPath="/Script/Engine.SkeletalBodySetup'/Game/Village/Meshes/SM_Fisherman03_Animated_PhysicsAsset.SM_Fisherman03_Animated_PhysicsAsset:SkeletalBodySetup_2'"
+      AggGeom=(SphylElems=((Center=(X=0.085390,Y=-0.291337,Z=0.189218),Rotation=(Pitch=-12.664748,Yaw=-89.999992,Roll=16.178738),Radius=0.304822,Length=0.413185)))
+      BoneName="Bone_008"
+      CollisionTraceFlag=CTF_UseSimpleAsComplex
+   End Object
+   Begin Object Name="SkeletalBodySetup_3" ExportPath="/Script/Engine.SkeletalBodySetup'/Game/Village/Meshes/SM_Fisherman03_Animated_PhysicsAsset.SM_Fisherman03_Animated_PhysicsAsset:SkeletalBodySetup_3'"
+      AggGeom=(SphylElems=((Center=(X=0.218546,Y=-0.623721,Z=0.054660),Rotation=(Pitch=0.000000,Yaw=31.481123,Roll=-83.399620),Radius=0.178920,Length=0.721751)))
+      BoneName="Bone_020"
+      CollisionTraceFlag=CTF_UseSimpleAsComplex
+   End Object
+   Begin Object Name="SkeletalBodySetup_4" ExportPath="/Script/Engine.SkeletalBodySetup'/Game/Village/Meshes/SM_Fisherman03_Animated_PhysicsAsset.SM_Fisherman03_Animated_PhysicsAsset:SkeletalBodySetup_4'"
+      AggGeom=(SphylElems=((Center=(X=-0.362892,Y=0.366140,Z=-0.404756),Rotation=(Pitch=0.000007,Yaw=26.486012,Roll=-63.012344),Radius=0.316191,Length=0.838810)))
+      BoneName="Bone_034"
+      CollisionTraceFlag=CTF_UseSimpleAsComplex
+   End Object
+   Begin Object Name="SkeletalBodySetup_5" ExportPath="/Script/Engine.SkeletalBodySetup'/Game/Village/Meshes/SM_Fisherman03_Animated_PhysicsAsset.SM_Fisherman03_Animated_PhysicsAsset:SkeletalBodySetup_5'"
+      AggGeom=(SphylElems=((Center=(X=0.009769,Y=-0.446844,Z=-0.195420),Rotation=(Pitch=0.000000,Yaw=173.027847,Roll=-48.772018),Radius=0.287857,Length=0.482028)))
+      BoneName="Bone_009"
+      CollisionTraceFlag=CTF_UseSimpleAsComplex
+   End Object
+   Begin Object Name="SkeletalBodySetup_6" ExportPath="/Script/Engine.SkeletalBodySetup'/Game/Village/Meshes/SM_Fisherman03_Animated_PhysicsAsset.SM_Fisherman03_Animated_PhysicsAsset:SkeletalBodySetup_6'"
+      AggGeom=(SphylElems=((Center=(X=0.028127,Y=-0.479857,Z=-0.202468),Rotation=(Pitch=0.000000,Yaw=-167.403168,Roll=-54.507278),Radius=0.250964,Length=0.515448)))
+      BoneName="Bone_025"
+      CollisionTraceFlag=CTF_UseSimpleAsComplex
+   End Object
+   PreviewSkeletalMesh="/Game/Village/Meshes/SM_Fisherman03_Animated.SM_Fisherman03_Animated"
+   BoundsBodies(0)=0
+   BoundsBodies(1)=1
+   BoundsBodies(2)=2
+   BoundsBodies(3)=3
+   BoundsBodies(4)=4
+   BoundsBodies(5)=5
+   BoundsBodies(6)=6
+   SkeletalBodySetups(0)="/Script/Engine.SkeletalBodySetup'SkeletalBodySetup_0'"
+   SkeletalBodySetups(1)="/Script/Engine.SkeletalBodySetup'SkeletalBodySetup_1'"
+   SkeletalBodySetups(2)="/Script/Engine.SkeletalBodySetup'SkeletalBodySetup_2'"
+   SkeletalBodySetups(3)="/Script/Engine.SkeletalBodySetup'SkeletalBodySetup_3'"
+   SkeletalBodySetups(4)="/Script/Engine.SkeletalBodySetup'SkeletalBodySetup_4'"
+   SkeletalBodySetups(5)="/Script/Engine.SkeletalBodySetup'SkeletalBodySetup_5'"
+   SkeletalBodySetups(6)="/Script/Engine.SkeletalBodySetup'SkeletalBodySetup_6'"
+   ConstraintSetup(0)="/Script/Engine.PhysicsConstraintTemplate'PhysicsConstraintTemplate_0'"
+   ConstraintSetup(1)="/Script/Engine.PhysicsConstraintTemplate'PhysicsConstraintTemplate_1'"
+   ConstraintSetup(2)="/Script/Engine.PhysicsConstraintTemplate'PhysicsConstraintTemplate_2'"
+   ConstraintSetup(3)="/Script/Engine.PhysicsConstraintTemplate'PhysicsConstraintTemplate_3'"
+   SolverSettings=(CullDistance=1.000000,bUseLinearJointSolver=False,bUseManifolds=False)
+   ThumbnailInfo="/Script/UnrealEd.SceneThumbnailInfo'SceneThumbnailInfo_0'"
+End Object
