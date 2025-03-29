@@ -11,7 +11,6 @@ namespace Interaction
         private void OnTriggerEnter(Collider other)
         {
             InteractionManager.Instance.AddInteract(() => OnInteract?.Invoke());
-            
         }
     }
 }

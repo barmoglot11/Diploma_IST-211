@@ -50,8 +50,8 @@ namespace LOCKPICKING
             var maxRotation = (percentage / 100) * _maxRotationAngle;
             var lockRotation = maxRotation * rotationCoefficient;
     
-            var lockLerp = Mathf.LerpAngle(_inner.eulerAngles.z, lockRotation, Time.deltaTime * _rotationSpeed);
-            _inner.eulerAngles = new Vector3(0, 0, lockLerp);
+            var lockLerp = Mathf.LerpAngle(_inner.localEulerAngles.z, lockRotation, Time.deltaTime * _rotationSpeed);
+            _inner.localEulerAngles = new Vector3(0, 0, lockLerp);
     
             if (lockLerp >= maxRotation -1)
             {

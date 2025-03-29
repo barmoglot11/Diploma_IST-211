@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3580361921713970528}
   - component: {fileID: 7960708394127517680}
   - component: {fileID: 7597798368860487311}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Trunk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 77218343711614268}
   - component: {fileID: 250379681400226223}
   - component: {fileID: 8321111885666743994}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Insert1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 8726949134705697855}
   - component: {fileID: 4602191618049001054}
   - component: {fileID: 4449772790274992029}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Insert2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 3880453273053973592}
   - component: {fileID: 6680029061089496420}
   - component: {fileID: 1091555624561205566}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 1663219330742880685}
   - component: {fileID: 1551860388812567536}
   - component: {fileID: 36311885293966251}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,7 +426,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7656275743694151459}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -467,7 +467,7 @@ GameObject:
   - component: {fileID: 2651204251766651022}
   - component: {fileID: 5869316111965362720}
   - component: {fileID: 6616962293387785689}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -550,7 +550,7 @@ GameObject:
   - component: {fileID: 1278112498007649903}
   - component: {fileID: 4586915111139841962}
   - component: {fileID: 4734274377534964729}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Gate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -633,7 +633,7 @@ GameObject:
   - component: {fileID: 2747840007399004553}
   - component: {fileID: 8697466652394101984}
   - component: {fileID: 6996564758310749359}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}

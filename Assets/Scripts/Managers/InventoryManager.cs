@@ -42,12 +42,9 @@ public class InventoryManager : MonoBehaviour
     }
     public void SetInventory()
     {
-        foreach (var cell in cells)
+        foreach (var cell in cells.Where(cell => !string.IsNullOrEmpty(cell.invItem.itemName)))
         {
-            if (cell.invItem != null)
-            {
-                cell.UpdateInfo();
-            }
+            cell.UpdateInfo();
         }
     }
 
@@ -78,6 +75,14 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    public Inv_Item GetItem(string itemName)
+    {
+        return configData.items.FirstOrDefault
+            (i => string.Equals
+                (i.itemName, itemName, StringComparison.CurrentCultureIgnoreCase)
+            );
+    }
+    
     public void ShowItem(Inv_Item item = null)
     {
         if (item == null) return;

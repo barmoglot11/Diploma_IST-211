@@ -17,8 +17,8 @@ namespace CHARACTER
         private const string CHARACTER_CASTING_ID = " as ";
         private const string CHARACTER_NAME_ID = "<charname>";
         public string characterRootPathFormat => $"Characters/{CHARACTER_NAME_ID}";
-        public string characterPrefabNameFormat => $"Character - [{CHARACTER_NAME_ID}";
-        public string charaterPrefabPathFormat => $"{characterRootPathFormat}/{characterPrefabNameFormat}]";
+        public string characterPrefabNameFormat => $"Character - [{CHARACTER_NAME_ID}]";
+        public string charaterPrefabPathFormat => $"{characterRootPathFormat}/{characterPrefabNameFormat}";
 
         [SerializeField] private RectTransform _characterPanel = null;
         [SerializeField] private RectTransform _characterPanel_live2D = null;
@@ -82,7 +82,7 @@ namespace CHARACTER
 
             result.prefab = GetPrefabForCharacter(result.castingName);
 
-            result.rootCharacterFolder = FormatCharacterPath(charaterPrefabPathFormat, result.castingName);
+            result.rootCharacterFolder = FormatCharacterPath(characterRootPathFormat, result.castingName);
 
             return result;
         }

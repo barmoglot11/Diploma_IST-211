@@ -15,14 +15,14 @@ MonoBehaviour:
   characters:
   - name: "\u0413\u043B\u0430\u0432\u043D\u044B\u0439 \u0433\u0435\u0440\u043E\u0439"
     alias: mc
-    characterType: 0
+    characterType: 2
     nameColor: {r: 1, g: 1, b: 1, a: 1}
     dialogueColor: {r: 1, g: 1, b: 1, a: 1}
     nameFont: {fileID: 11400000, guid: 3c4981b23f4eafc45a2dcc5a09c52196, type: 2}
     dialogueFont: {fileID: 11400000, guid: 3c4981b23f4eafc45a2dcc5a09c52196, type: 2}
   - name: "\u041A\u0443\u0447\u0435\u0440"
     alias: coachman
-    characterType: 0
+    characterType: 2
     nameColor: {r: 1, g: 1, b: 1, a: 1}
     dialogueColor: {r: 1, g: 1, b: 1, a: 1}
     nameFont: {fileID: 11400000, guid: 3c4981b23f4eafc45a2dcc5a09c52196, type: 2}

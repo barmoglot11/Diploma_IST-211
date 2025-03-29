@@ -25,7 +25,7 @@ namespace INVENTORY
         private void ShowThisItem()
         {
             Inventory.ShowItem(invItem);
-            Debug.Log($"Created link for {invItem}");
+            Debug.Log($"Created link for {invItem.itemName}");
             Inventory.previewButton.onClick.AddListener(SetPreview);
         }
         
