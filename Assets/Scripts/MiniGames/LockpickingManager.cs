@@ -13,6 +13,7 @@ namespace LOCKPICKING
         [SerializeField]
         private Pick _pick;
 
+        public Lock Lock { get { return _lock; } }
         public static LockpickingManager Instance;
 
         private void Awake()

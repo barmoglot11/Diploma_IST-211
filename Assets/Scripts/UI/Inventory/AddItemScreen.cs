@@ -7,14 +7,15 @@ namespace INVENTORY
     public class AddItemScreen : MonoBehaviour
     {
         public Image itemImage;
-        public TextMeshProUGUI itemName;
-        public TextMeshProUGUI itemDescription;
+        public TextMeshProUGUI itemNameText;
+        public TextMeshProUGUI itemDescriptionText;
 
-        public void SetupScreen(Inv_Item item)
+        public void SetupScreen(string itemName)
         {
+            var item = InventoryManager.Instance.GetItem(itemName);
             itemImage.sprite = item.itemImage;
-            itemName.text = item.itemName;
-            itemDescription.text = item.itemDescription;
+            itemNameText.text = item.itemName;
+            itemDescriptionText.text = item.itemDescription;
         }
     }
 }

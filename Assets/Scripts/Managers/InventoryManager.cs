@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using INVENTORY;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 public class InventoryManager : MonoBehaviour
@@ -13,10 +14,13 @@ public class InventoryManager : MonoBehaviour
     public ItemsConfigData configData;
     public List<Inv_Cell> cells;
 
+    [SerializeField]
+    GameObject cellsContainer;
+    
     public Image itemImage;
     public TextMeshProUGUI itemName;
     public TextMeshProUGUI itemDesc;
-    public Button previewButton;
+    public GameObject previewButton;
     public PreviewScreen PreviewScreen;
     private void Awake()
     {
@@ -32,20 +36,23 @@ public class InventoryManager : MonoBehaviour
 
     public void Start()
     {
+        cells.AddRange(cellsContainer.GetComponentsInChildren<Inv_Cell>());
         StartTest();
         SetInventory();
     }
 
     private void StartTest()
     {
-        AddItem("Carbon Gun");
+        AddItem("Кремниевый пистолет");
     }
     public void SetInventory()
     {
-        foreach (var cell in cells.Where(cell => !string.IsNullOrEmpty(cell.invItem.itemName)))
+        foreach (var cell in cells)
         {
             cell.UpdateInfo();
+            cell.SetHover(cells);
         }
+        ShowItem(cells[0].invItem);
     }
 
     public void AddItem(string itemName)
@@ -83,17 +90,30 @@ public class InventoryManager : MonoBehaviour
             );
     }
     
-    public void ShowItem(Inv_Item item = null)
+    public void ShowItem(Inv_Item item)
     {
-        if (item == null) return;
         itemName.text = item.itemName;
-        itemImage.sprite = item.itemImage;
+
+        if (!string.IsNullOrEmpty(item.itemName))
+        {
+            itemImage.sprite = item.itemImage;
+            itemImage.color = new Color(255, 255, 255, 255);
+        }
+        else
+        {
+            itemImage.sprite = null;
+            itemImage.color = new Color(0, 0, 0, 0);
+        }
+
         itemDesc.text = item.itemDescription;
-        if(item.itemPrefab == null)
-            previewButton.gameObject.SetActive(false);
-        
+        previewButton.gameObject.SetActive(!string.IsNullOrEmpty(item.itemName));
     }
 
+    public void SetPreviewAction(UnityAction action)
+    {
+        previewButton.GetComponentInChildren<Button>().onClick.AddListener(action);
+    }
+    
     public void SetPreview(Inv_Item item)
     {
         PreviewScreen.CreateItem(item.itemPrefab);

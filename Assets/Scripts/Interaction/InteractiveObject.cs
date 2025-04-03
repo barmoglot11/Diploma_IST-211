@@ -24,4 +24,9 @@ public class InteractiveObject : MonoBehaviour, IInteractable
             return;
         InteractionManager.Instance.DeleteInteract(Interact);
     }
+
+    private void OnDisable()
+    {
+        InteractionManager.Instance.DeleteInteract(Interact);
+    }
 }

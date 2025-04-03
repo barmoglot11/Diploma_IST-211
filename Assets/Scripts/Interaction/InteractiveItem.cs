@@ -8,12 +8,15 @@ public class InteractiveItem : MonoBehaviour, IInteractable
     public string itemName;
     public AddItemScreen addItemScreen;
     public TogglePanelOnE toggleScript;
+    public GameObject objectToEnable;
     
     public void Interact()
     {
         Inventory.AddItem(itemName);
-        addItemScreen.SetupScreen(Inventory.GetItem(itemName));
+        addItemScreen.SetupScreen(itemName);
         toggleScript.TogglePanelAction();
+        if(objectToEnable != null)
+            objectToEnable.SetActive(true);
     }
     
     private void OnTriggerEnter(Collider other)

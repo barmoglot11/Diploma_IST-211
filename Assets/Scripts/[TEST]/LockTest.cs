@@ -7,7 +7,7 @@ namespace _TEST_
     {
         private void Start()
         {
-            InputManager.Instance.ChangeInputStatus("Lock");
+            InputManager.Instance.ChangeInputStatus(InputStatus.Lock);
             LockpickingManager.Instance.Picking();
         }
     }

@@ -79,5 +79,6 @@ public class SwitchToNewCanvasAndCamera : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        InputManager.Instance.DisableCharMoveAndCamera();
     }
 }

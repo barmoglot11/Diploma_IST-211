@@ -6,12 +6,17 @@
     <file url="file://$PROJECT_DIR$/Assets/Interface/Scripts/Interface/BillboardCanvas.cs" charset="UTF-16" />
     <file url="file://$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ChangeSpriteOnLAlt.cs" charset="UTF-16" />
     <file url="file://$PROJECT_DIR$/Assets/Interface/Scripts/Interface/CubeCanvasController.cs" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/ActivateObjectOnButtonPress.cs" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/BestiaryController.cs" charset="UTF-16" />
     <file url="file://$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/ButtonPanelManager.cs" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/OpenClosePanel.cs" charset="UTF-16" />
     <file url="file://$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/QuestButton.cs" charset="UTF-16" />
     <file url="file://$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/ShowPanel.cs" charset="UTF-16" />
     <file url="file://$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/SwitchBackToGameObject.cs" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/SwitchToNewCanvasAndCameraTAB.cs" charset="UTF-16" />
     <file url="file://$PROJECT_DIR$/Assets/Interface/Scripts/Interface/FadeOutCanvasWithDelay.cs" charset="UTF-16" />
     <file url="file://$PROJECT_DIR$/Assets/Interface/Scripts/Interface/FadeOutPanelBlackScreen.cs" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/Assets/Interface/Scripts/Interface/MarkerIndicator.cs" charset="UTF-16" />
     <file url="file://$PROJECT_DIR$/Assets/Interface/Scripts/Interface/TogglePanelOnE.cs" charset="UTF-16" />
     <file url="file://$PROJECT_DIR$/Assets/Interface/Scripts/Interface/TypewriterEffect.cs" charset="UTF-16" />
     <file url="file://$PROJECT_DIR$/Assets/Interface/Scripts/RandomTextSelector.cs" charset="UTF-16" />

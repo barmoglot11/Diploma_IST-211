@@ -1,3 +1,4 @@
+using System;
 using Cinemachine;
 using UnityEngine;
 
@@ -5,7 +6,7 @@ public class InputManager : MonoBehaviour
 {
     public InputReader IR;
     public static InputManager Instance;
-    public Movement movement;
+    public MainCharacter movement;
     public CinemachineBrain camera;
     private void Awake()
     {
@@ -25,6 +26,7 @@ public class InputManager : MonoBehaviour
         {
             movement.enabled = false;
             camera.enabled = false;
+            Debug.Log("Disabling character");
         }
         
     }
@@ -34,27 +36,39 @@ public class InputManager : MonoBehaviour
         {
             movement.enabled = true;
             camera.enabled = true;
+            Debug.Log("Enabling character");
         }
     }
 
-    public void ChangeInputStatus(string status)
+    public void ChangeInputStatus(InputStatus status)
     {
         switch (status)
         {
-            case "Dialogue":
+            case InputStatus.Dialogue:
                 IR.SetDialogue();
                 break;
-            case "Gameplay":
+            case InputStatus.Gameplay:
                 IR.SetGameplay();
                 break;
-            case "UI":
+            case InputStatus.UI:
                 IR.SetUI();
                 break;
-            case "Lock":
+            case InputStatus.Lock:
                 IR.SetLock();
                 break;
             default:
                 break;
         }
     }
+
+    
+}
+
+[Serializable]
+public enum InputStatus
+{
+    Gameplay,
+    Dialogue,
+    UI,
+    Lock
 }

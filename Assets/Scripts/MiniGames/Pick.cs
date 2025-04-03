@@ -39,7 +39,7 @@ namespace LOCKPICKING
                 _eulerAngle = Mathf.Clamp(_eulerAngle, -maxAngle, maxAngle);
 
                 var targetRotation = Quaternion.AngleAxis(_eulerAngle, Vector3.forward);
-                transform.rotation = targetRotation;
+                transform.localRotation = targetRotation;
             }
 
             if (Input.GetKeyDown(KeyCode.D))

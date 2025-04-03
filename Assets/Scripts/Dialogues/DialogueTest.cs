@@ -1,4 +1,3 @@
-using System;
 using CHARACTER;
 using DIALOGUE;
 using System.Collections;

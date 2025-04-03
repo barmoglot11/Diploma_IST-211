@@ -7,7 +7,8 @@ namespace INVENTORY
     {
         public string itemName;
         public Sprite itemImage;
-        public GameObject itemPrefab; 
+        public GameObject itemPrefab;
+        [TextArea(minLines: 5, maxLines: 20)]
         public string itemDescription;
 
         public void CopyData(Inv_Item other)

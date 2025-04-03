@@ -2,10 +2,11 @@ using System;
 using MANAGER;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class MainCharacter : MonoBehaviour
 {
     [SerializeField]
-    CharacterController controller;
+    Rigidbody rb => GetComponent<Rigidbody>();
+    
     AnimationManager animManager => AnimationManager.Instance;
     InputReader input => InputManager.Instance.IR;
     
@@ -14,23 +15,43 @@ public class Movement : MonoBehaviour
     [SerializeField]
     private Transform cam;
     
-    public float speed = 6f;
+    public float speed = 5f;
+    public int speedMult = 3;
 
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
     public bool Hurry = false;
     private void Start()
     {
+        SetupInput();
+    }
+
+    void SetupInput()
+    {
         input.MoveEvent += HandleMove;
         input.HurryEvent += HandleHurry;
+        input.SnipeEvent += Snipe;
+    }
+    
+    private void OnEnable()
+    {
+        SetupInput();
+    }
+
+    private void OnDisable()
+    {
+        input.MoveEvent -= HandleMove;
+        input.HurryEvent -= HandleHurry;
+        input.SnipeEvent -= Snipe;
     }
 
     private void Update()
     {
         Move();
-        
     }
 
+    public void Snipe(bool state) => animManager.IsSniping = state;
+    
     private void HandleMove(Vector2 direction)
     {
         _moveDirection = direction;
@@ -48,7 +69,7 @@ public class Movement : MonoBehaviour
         {
             var SpeedFinal = speed;
             if (Hurry)
-                SpeedFinal *= 2;
+                SpeedFinal *= speedMult;
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity,
                 turnSmoothTime);
@@ -56,7 +77,7 @@ public class Movement : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            controller.Move(moveDir.normalized * (SpeedFinal * Time.deltaTime));
+            rb.velocity = moveDir.normalized * SpeedFinal;
             animManager.IsWalking = true;
         }
         else

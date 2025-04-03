@@ -62,7 +62,7 @@ public class InputReader : ScriptableObject, PlayerControlPref.IDialogueActions,
     public event Action ExitEvent;
     public event Action MoveLockEvent;
     public event Action ShotEvent;
-    public event Action SnipeEvent;
+    public event Action<bool> SnipeEvent;
 
     public void OnMovement(InputAction.CallbackContext context)
     {
@@ -112,8 +112,7 @@ public class InputReader : ScriptableObject, PlayerControlPref.IDialogueActions,
 
     public void OnSnipe(InputAction.CallbackContext context)
     {
-        
-        SnipeEvent?.Invoke();
+        SnipeEvent?.Invoke(context.action.IsPressed());
     }
 
     void PlayerControlPref.IDialogueActions.OnMenu(InputAction.CallbackContext context)

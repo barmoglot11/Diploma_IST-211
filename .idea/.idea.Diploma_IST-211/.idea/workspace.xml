@@ -5,31 +5,64 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ff6fca5-cd55-4c3e-a7c6-1201f01550b6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/AnimationManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/AnimationManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Inventory/AddItemScreen.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Inventory/AddItemScreen.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TeleportPoint.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TeleportPoint.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Bestiary.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Bestiary/BestiaryConfigData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Bestiary/BestiaryConfigData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Bestiary/BestiaryConfigSO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Bestiary/BestiaryConfigSO.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Bestiary/BestiaryManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Bestiary/BestiaryManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Map.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Map/MapController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Map/MapController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/[TEST]/AddItemOnActivate.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/[TEST]/AddItemOnActivate.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/[TEST]/BestTest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/[TEST]/BestTest.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/[TEST]/QuestHandleMonoBeh.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/[TEST]/QuestHandleMonoBeh.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Diploma_IST-211/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Diploma_IST-211/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Diploma_IST-211/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Diploma_IST-211/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Andrew/Animation/Coachman.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Andrew/Animation/Coachman.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Andrew/Animation/Hero.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Andrew/Animation/Hero.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/CubeCanvasController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/CubeCanvasController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/List 3D/Monster 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Interface/List 3D/Monster 1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/List 3D/Monster none.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Interface/List 3D/Monster none.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/ActivateObjectOnButtonPress.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/ActivateObjectOnButtonPress.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/BestiaryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/BestiaryController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/OpenClosePanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/OpenClosePanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/QuestButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/QuestButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/SwitchBackToGameObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/SwitchBackToGameObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/SwitchToNewCanvasAndCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/SwitchToNewCanvasAndCamera.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/SwitchToNewCanvasAndCameraTAB.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/SwitchToNewCanvasAndCameraTAB.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/MarkerIndicator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/MarkerIndicator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/TogglePanelOnE.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/TogglePanelOnE.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Items/Flashlight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Items/Flashlight.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Items/MasterKey.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Items/MasterKey.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Items/Pistol.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Items/Pistol.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObjects/Character Configuration Asset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObjects/Character Configuration Asset.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObjects/Dialogue System Configuration.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObjects/Dialogue System Configuration.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObjects/ItemsConfigData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObjects/ItemsConfigData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObjects/QuestsConfigData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObjects/QuestsConfigData.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SaintPetersburg 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SaintPetersburg 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/DialogueInvoker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/DialogueInvoker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IO/GameplayController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/IO/GameplayController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IO/InputReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/IO/InputReader.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/InteractiveItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/InteractiveItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/InteractiveObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/InteractiveObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Investigation System/InvestObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Investigation System/InvestObjectController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Investigation System/InvestObject.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Investigation System/InvestObjectController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/InputManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/InventoryManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/InventoryManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MiniGames/Lock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MiniGames/Lock.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Movement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Movement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Novel/Character/CharacterManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Novel/Character/CharacterManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/QuestManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/QuestManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MiniGames/LockStart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MiniGames/LockStart.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MiniGames/LockpickingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MiniGames/LockpickingManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MiniGames/Pick.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MiniGames/Pick.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Movement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainCharacter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Movement.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainCharacter.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Novel/Dialogue/DialogueSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Novel/Dialogue/DialogueSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Inventory/AddItemScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Inventory/AddItemScreen.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Inventory/Inv_Cell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Inventory/Inv_Cell.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Inventory/Inv_Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Inventory/Inv_Item.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[TEST]/LockTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/[TEST]/LockTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[TEST]/battletest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/[TEST]/battletest.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,24 +122,34 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/52f66f0a2edb4e51b70e238ffa2df44e10fc00/bd/f0b6543d/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/5c/92b8ec18/Action.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6f7018b8b8c149e68c4a65a05ac289be175400/18/6f36339c/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6f7018b8b8c149e68c4a65a05ac289be175400/50/22a76259/UnityEvent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6f7018b8b8c149e68c4a65a05ac289be175400/74/f70c14cb/UnityAction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6f7018b8b8c149e68c4a65a05ac289be175400/81/781fa987/Renderer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6f7018b8b8c149e68c4a65a05ac289be175400/85/91c65ed0/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6f7018b8b8c149e68c4a65a05ac289be175400/e8/e56f725d/UnitySynchronizationContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/dc753a1061284f8e971ee88ee4826eee46ac00/b8/2c0ca601/String.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/dc753a1061284f8e971ee88ee4826eee46ac00/cd/079e7053/List`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e244b8df75b241bdbc0bc148644e6bbd3c00/a8/f669bd6b/NativeInputSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4eae6449caa21e90c2ff2d63846343457a0e4192fb25892da80d78feb4774f/JsonSerializer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../-CHRONOS-/Assets/_MAIN/Scriptes/Novel/Core/ScriptableObjects/CharacterConfigSO.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/UnityProject/Diploma_IST-211/Assets/Interface/Scripts/Interface/ActivateOnTrigger.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/UnityProject/Diploma_IST-211/Assets/Interface/Scripts/Interface/CubeCanvasController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Interface/Scripts/Interface/CubeCanvasController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/Actions/InputActionState.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/InputManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/InputManagerStateMonitors.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/InputSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/NativeInputRuntime.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/ExecuteEvents.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -127,7 +170,7 @@
     &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.6056604&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.4127726&quot;,
     &quot;git-widget-placeholder&quot;: &quot;Danil&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -248,7 +291,15 @@
       <workItem from="1742903137717" duration="5176000" />
       <workItem from="1743230671809" duration="2107000" />
       <workItem from="1743234597937" duration="24000" />
-      <workItem from="1743234635521" duration="1197000" />
+      <workItem from="1743234635521" duration="1356000" />
+      <workItem from="1743247115701" duration="1271000" />
+      <workItem from="1743261309790" duration="5110000" />
+      <workItem from="1743268037964" duration="382000" />
+      <workItem from="1743301779182" duration="9514000" />
+      <workItem from="1743336968321" duration="16377000" />
+      <workItem from="1743386629831" duration="3837000" />
+      <workItem from="1743416974085" duration="16000" />
+      <workItem from="1743417155504" duration="2656000" />
     </task>
     <task id="LOCAL-00001" summary="Developing game&#10;Created dialogue system, inventory, diary and input&#10;Reorganized script folder">
       <option name="closed" value="true" />
@@ -282,7 +333,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742178562189</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Linking animations">
+      <option name="closed" value="true" />
+      <created>1743235951143</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1743235951143</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,7 +389,27 @@
     <MESSAGE value="Ending developing mechanics&#10;Begin merging branches" />
     <MESSAGE value="Create save system for json and bin" />
     <MESSAGE value="Merged From Sany branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merged From Sany branch" />
+    <MESSAGE value="Linking animations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Linking animations" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/MiniGames/Lock.cs</url>
+          <line>60</line>
+          <properties documentPath="D:\UnityProject\Diploma_IST-211\Assets\Scripts\MiniGames\Lock.cs" containingFunctionPresentation="Method 'Update'">
+            <startOffsets>
+              <option value="2105" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2124" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

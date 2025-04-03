@@ -36,7 +36,11 @@ namespace QUEST
 				Debug.LogError($"Квест с ID {questID} не найден.");
 				return;
 			}
-			quest.PreviousTaskStage = stage;
+			
+			if(quest.QuestStage == stage)
+				return;
+			
+			quest.PreviousTaskStage = quest.QuestStage;
 			quest.QuestStage = stage;
 
 			var maxStage = quest.StagesDescription.Max(stage => stage.Key);
