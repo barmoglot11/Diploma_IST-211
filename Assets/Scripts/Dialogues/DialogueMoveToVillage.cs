@@ -3,16 +3,12 @@ using DIALOGUE;
 using System.Collections;
 using UnityEngine;
 
-namespace DIALOGUES
+namespace Dialogues
 {
-    public class DialogueStart : MonoBehaviour
+    public class DialogueMoveToVillage : MonoBehaviour
     {
         public void StartDialogue()
         {
-            //Вкл черный экран
-            //вкл объекты
-            //выкл черный экран
-            //вкл диалог
             StartCoroutine(Dialogue());
         }
 
@@ -32,14 +28,12 @@ namespace DIALOGUES
                 MC.Flip(immediate:true);
             MC.SetPosition(Vector2.zero);
             
-            Coach.Show();
-            yield return Coach.Say("Ваше благородье, доехали. Мне вас здесь ждать или как?");
-            Coach.Hide();
             MC.Show();
-            yield return MC.Say("Здесь жди, я здесь все равно не надолго.");
+            yield return MC.Say("Serviteur (Слуга), надо ехать в место, описанное в письме. Знаешь где оно?");
             MC.Hide();
             Coach.Show();
-            yield return Coach.Say("Ну, как изволите.");
+            yield return Coach.Say("Как жеж, знаю. Быстро доедем, господин.");
+            yield return Coach.Say("Садитесь.");
             Coach.Hide();
             DialogueSystem.instance.CloseDialogue();
         }

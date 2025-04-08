@@ -31,7 +31,6 @@ namespace DIALOGUE
         public Coroutine StartConversation(List<string> conversation)
         {
             StopConversation();
-
             process = dialogueSystem.StartCoroutine(RunningConversation(conversation));
             return process;
         }

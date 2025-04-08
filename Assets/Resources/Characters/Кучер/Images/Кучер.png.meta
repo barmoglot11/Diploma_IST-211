@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rag
+      name: Rage
       rect:
         serializedVersion: 2
         x: 328
@@ -168,69 +168,6 @@ TextureImporter:
       bones: []
       spriteID: cb27dabfae60d034bb4877169278bcef
       internalID: 1943264056
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jjkkj121_3
-      rect:
-        serializedVersion: 2
-        x: 1888
-        y: 1975
-        width: 41
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 92b134719c30c1f4d98463b20281487a
-      internalID: -1566222627
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jjkkj121_4
-      rect:
-        serializedVersion: 2
-        x: 3753
-        y: 1975
-        width: 37
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dd5bac1f0348e514d9db7e9462f16507
-      internalID: 466741998
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jjkkj121_5
-      rect:
-        serializedVersion: 2
-        x: 5635
-        y: 1975
-        width: 40
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cefdb6624bb867747adaf09c14daef1d
-      internalID: 1819452162
       vertices: []
       indices: 
       edges: []
@@ -298,69 +235,6 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: jjkkj121_9
-      rect:
-        serializedVersion: 2
-        x: 1905
-        y: 0
-        width: 21
-        height: 12
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b51b853ea0bb4714db7de1208255387c
-      internalID: -665758956
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jjkkj121_10
-      rect:
-        serializedVersion: 2
-        x: 3770
-        y: 0
-        width: 20
-        height: 12
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4e862297baa4346449f297ce640c1ad3
-      internalID: -246311107
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jjkkj121_11
-      rect:
-        serializedVersion: 2
-        x: 5655
-        y: 0
-        width: 20
-        height: 12
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: afc7e74eaa2000746801b41d884d7dbd
-      internalID: 1605269550
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -375,7 +249,7 @@ TextureImporter:
       Angry: -1791528016
       Default: 1943264056
       Question: -1502566438
-      Rag: -476672635
+      Rage: -476672635
       Scared: 1543467100
       Shocked: 627850273
       jjkkj121_10: -246311107
@@ -384,6 +258,7 @@ TextureImporter:
       jjkkj121_4: 466741998
       jjkkj121_5: 1819452162
       jjkkj121_9: -665758956
+      "\u041A\u0443\u0447\u0435\u0440_0": 2108454417
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

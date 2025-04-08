@@ -18,7 +18,8 @@ namespace DIARY
         public Quest OpenedQuest;
         public QuestDesc Description;
         public CanvasGroup DescriptionCanvasGroup => Description.GetComponent<CanvasGroup>();
-        
+        public GameObject QuestPrefab;
+        public GameObject QuestListObject;
         [Header("Настройки визуала")]
         public float fadeSpeed = 5f;
 
@@ -48,6 +49,11 @@ namespace DIARY
             var questList = questManager.currentQuests;
             for (int i = 0; i < questList.Count; i++)
             {
+                if(QuestContainers[i] == null)
+                {
+                    var questCont = Instantiate(QuestPrefab, QuestListObject.transform);
+                    QuestContainers.Add(questCont.GetComponent<QuestContainer>());
+                }
                 QuestContainers[i].SetContainer(questList[i]);
             }
             OpenedQuest = QuestContainers[0].quest;

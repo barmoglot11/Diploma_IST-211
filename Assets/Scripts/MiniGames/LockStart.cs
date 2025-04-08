@@ -10,6 +10,7 @@ namespace LOCKPICKING
         
         public void StartMinigame()
         {
+            InputManager.Instance.ChangeInputStatus(InputStatus.Lock);
             LockpickingManager.Instance.Picking();
             LockpickingManager.Instance.Lock.Unlocked = UnlockEvent;
         }

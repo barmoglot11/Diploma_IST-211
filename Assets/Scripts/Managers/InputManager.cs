@@ -46,15 +46,19 @@ public class InputManager : MonoBehaviour
         {
             case InputStatus.Dialogue:
                 IR.SetDialogue();
+                DisableCharMoveAndCamera();
                 break;
             case InputStatus.Gameplay:
                 IR.SetGameplay();
+                EnableCharMoveAndCamera();
                 break;
             case InputStatus.UI:
                 IR.SetUI();
+                DisableCharMoveAndCamera();
                 break;
             case InputStatus.Lock:
                 IR.SetLock();
+                DisableCharMoveAndCamera();
                 break;
             default:
                 break;

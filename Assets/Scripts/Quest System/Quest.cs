@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using AYellowpaper.SerializedCollections;
 using MessagePack;
 

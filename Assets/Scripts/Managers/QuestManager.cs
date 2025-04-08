@@ -15,6 +15,7 @@ namespace QUEST
 		public List<Quest> completedQuests;
 		private SaveLoadJsonService slService = new SaveLoadJsonService();
 
+
 		private void Awake()
 		{
 			if (Instance == null)
