@@ -8,7 +8,8 @@ namespace LOCKPICKING
         private Camera _camera;
         private Lock _lock;
         private float _eulerAngle = 0f;
-
+        [SerializeField]
+        private Vector3 _position;
         private bool _isMoving = true;
         public bool IsMoving => _isMoving;
         public float Angle => _eulerAngle;
@@ -17,6 +18,7 @@ namespace LOCKPICKING
         {
             _camera = camera;
             _lock = lockImpl;
+            transform.position = _position;
             _lock.Unlocked.AddListener(ResetMovement);
         }
 

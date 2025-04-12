@@ -14,6 +14,8 @@ namespace BATTLE
         public int currentAmmo = 2;
         private bool isCoolingDown = false;
     
+        //TODO: Пускать raycast из пистолета на расстояние N и проверять попадание - вызвать стаггер
+        
         public void Shot()
         {
             if (currentAmmo > 0)

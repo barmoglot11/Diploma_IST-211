@@ -7,7 +7,7 @@ namespace DIALOGUE
     public class DialogueHistory : MonoBehaviour
     {
         public static DialogueHistory Instance;
-        public DialogueHistoryCont dialogueBoxPrefab;
+        public GameObject dialogueBoxPrefab;
 
         public GameObject dialogueBoxContainer;
 
@@ -25,8 +25,9 @@ namespace DIALOGUE
 
         public void AddDialogue(string nameStr, string replica)
         {
-            var dialCont = Instantiate(dialogueBoxPrefab, dialogueBoxContainer.transform).GetComponent<DialogueHistoryCont>();
-            dialCont.SetupContainer(nameStr, replica);
+            var dialCont = Instantiate(dialogueBoxPrefab, dialogueBoxContainer.transform);
+            var dialContainer = dialCont.GetComponent<DialogueHistoryCont>();
+            dialContainer.SetupContainer(nameStr, replica);
         }
         
         public void AddDialogue(string nameStr, List<string> replica)

@@ -43,11 +43,17 @@ namespace QUEST
 			
 			quest.PreviousTaskStage = quest.QuestStage;
 			quest.QuestStage = stage;
-
-			var maxStage = quest.StagesDescription.Max(stage => stage.Key);
 			
-			if (maxStage == stage)
-				CompleteQuest(quest);
+			if(trackedQuest == quest)
+				trackedQuest.QuestStage = stage;
+			
+			var maxStage = quest.StagesDescription.Max(stage => stage.Key);
+
+			if (maxStage != stage) return;
+			
+			CompleteQuest(quest);
+			trackedQuest = currentQuests.FirstOrDefault(q => q.QuestID != quest.QuestID);
+
 		}
 
 		public Quest GetQuestInfo(string questID)
@@ -85,6 +91,11 @@ namespace QUEST
 			else
 			{
 				Debug.LogError($"Квест с ID {questID} не найден.");
+			}
+
+			if (currentQuests.Count == 1)
+			{
+				trackedQuest = currentQuests[0];
 			}
 		}
 	}
