@@ -8,6 +8,9 @@ public class InputManager : MonoBehaviour
     public static InputManager Instance;
     public MainCharacter movement;
     public CinemachineBrain camera;
+    
+    public InputStatus currentInputStatus;
+    public InputStatus previousInputStatus;
     private void Awake()
     {
         if (Instance == null)
@@ -46,18 +49,22 @@ public class InputManager : MonoBehaviour
         {
             case InputStatus.Dialogue:
                 IR.SetDialogue();
+                SwitchStatus(InputStatus.Dialogue);
                 DisableCharMoveAndCamera();
                 break;
             case InputStatus.Gameplay:
                 IR.SetGameplay();
+                SwitchStatus(InputStatus.Gameplay);
                 EnableCharMoveAndCamera();
                 break;
             case InputStatus.UI:
                 IR.SetUI();
+                SwitchStatus(InputStatus.UI);
                 DisableCharMoveAndCamera();
                 break;
             case InputStatus.Lock:
                 IR.SetLock();
+                SwitchStatus(InputStatus.Lock);
                 DisableCharMoveAndCamera();
                 break;
             default:
@@ -65,12 +72,22 @@ public class InputManager : MonoBehaviour
         }
     }
 
-    
+    public void SwitchStatus(InputStatus currentStatus)
+    {
+        previousInputStatus = currentInputStatus;
+        currentInputStatus = currentStatus;
+    }
+
+    public void ReturnToLastStatus()
+    {
+        ChangeInputStatus(previousInputStatus);
+    }
 }
 
 [Serializable]
 public enum InputStatus
 {
+    None = -1,
     Gameplay,
     Dialogue,
     UI,

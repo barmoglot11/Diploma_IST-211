@@ -5,25 +5,24 @@ using UnityEngine.UI;
 
 public class CloseItemDescription : MonoBehaviour
 {
-    public CanvasGroup canvasGroupToHide; // CanvasGroup, который нужно скрыть
-    public CanvasGroup canvasGroupToShow; // CanvasGroup, который нужно показать
-    public float fadeDuration = 1f; // Длительность анимации исчезновения/появления
-    public MonoBehaviour cameraScript; // Скрипт, управляющий камерой
-    public Button closeButton; // Кнопка, которая запускает скрипт
-
-    private bool isFading = false; // Флаг, чтобы избежать множественных вызовов
+    public CanvasGroup canvasGroupToHide; // CanvasGroup, пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+    public CanvasGroup canvasGroupToShow; // CanvasGroup, пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    public float fadeDuration = 1f; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ/пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    public Button closeButton; // пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+    public InputStatus inputStatus = InputStatus.None;
+    private bool isFading = false; // пїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
     private void Start()
     {
-        // Проверяем, назначена ли кнопка
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         if (closeButton != null)
         {
-            // Подписываемся на событие нажатия кнопки
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
             closeButton.onClick.AddListener(StartCloseDescription);
         }
         else
         {
-            Debug.LogWarning("Кнопка не назначена в инспекторе!");
+            Debug.LogWarning("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ!");
         }
     }
 
@@ -39,7 +38,7 @@ public class CloseItemDescription : MonoBehaviour
     {
         isFading = true;
 
-        // Плавное исчезновение текущего CanvasGroup
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ CanvasGroup
         float elapsedTime = 0f;
         float startAlpha = canvasGroupToHide.alpha;
 
@@ -50,9 +49,9 @@ public class CloseItemDescription : MonoBehaviour
             yield return null;
         }
 
-        canvasGroupToHide.alpha = 0f; // Убедимся, что alpha = 0
+        canvasGroupToHide.alpha = 0f; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ alpha = 0
 
-        // Включаем другой CanvasGroup и плавно его показываем
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ CanvasGroup пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         if (canvasGroupToShow != null)
         {
             canvasGroupToShow.gameObject.SetActive(true);
@@ -66,21 +65,24 @@ public class CloseItemDescription : MonoBehaviour
                 yield return null;
             }
 
-            canvasGroupToShow.alpha = 1f; // Убедимся, что alpha = 1
+            canvasGroupToShow.alpha = 1f; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ alpha = 1
         }
+        
 
-        // Включаем вращение камеры
-        if (cameraScript != null)
-        {
-            cameraScript.enabled = true;
-            Debug.Log("Скрипт камеры включен: " + cameraScript.enabled);
-        }
-
-        // Управление курсором
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        Debug.Log("Курсор скрыт и заблокирован.");
-        canvasGroupToHide.gameObject.SetActive(false); // Деактивируем панель
+        Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.");
+        canvasGroupToHide.gameObject.SetActive(false); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         isFading = false;
+        if(inputStatus != InputStatus.None)
+            InputManager.Instance.ReturnToLastStatus();
+        else
+            InputManager.Instance.ChangeInputStatus(inputStatus);
+        
+        inputStatus = InputStatus.None;
     }
+
+    public void ChangeInputStatus(InputStatus status) => inputStatus = status;
+    
 }

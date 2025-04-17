@@ -288,17 +288,6 @@ public partial class @PlayerControlPref: IInputActionCollection2, IDisposable
                     ""action"": ""UserPrompt"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""62cef51b-cd30-4e6c-9d38-8ac30ce92bc8"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""UserPrompt"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         },

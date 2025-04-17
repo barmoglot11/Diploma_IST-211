@@ -24,3 +24,34 @@ MonoBehaviour:
         Value: {x: -90, y: 9, z: 10}
       - Key: 15
         Value: {x: 0, y: 0, z: 0}
+    isActiveAtStage:
+      _serializedList:
+      - Key: 0
+        Value: 0
+      - Key: 5
+        Value: 0
+      - Key: 10
+        Value: 0
+      - Key: 15
+        Value: 0
+  - questID: mq002
+    points:
+      _serializedList:
+      - Key: 0
+        Value: {x: -0.95, y: 1.6, z: 4}
+      - Key: 5
+        Value: {x: -94, y: 8, z: 11}
+      - Key: 10
+        Value: {x: -90, y: 9, z: 10}
+      - Key: 15
+        Value: {x: 0, y: 0, z: 0}
+    isActiveAtStage:
+      _serializedList:
+      - Key: 0
+        Value: 0
+      - Key: 5
+        Value: 0
+      - Key: 10
+        Value: 0
+      - Key: 15
+        Value: 0

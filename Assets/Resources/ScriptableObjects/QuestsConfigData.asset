@@ -38,3 +38,31 @@ MonoBehaviour:
         Value: 
       - Key: 15
         Value: 
+  - QuestName: "\u041E\u0441\u043D\u043E\u0432\u043D\u0430\u044F \u0438\u0441\u0442\u043E\u0440\u0438\u044F
+      - \u0425\u0443\u0442\u043E\u0440\u043E\u043A"
+    QuestID: mq002
+    QuestStage: 0
+    PreviousTaskStage: 0
+    StagesDescription:
+      _serializedList:
+      - Key: 0
+        Value: "\u0420\u0430\u0437\u0433\u043E\u0432\u043E\u0440\u0438\u0442\u044C
+          \u0436\u0438\u0442\u0435\u043B\u0435\u0439"
+      - Key: 5
+        Value: "\u041E\u0431\u0441\u043B\u0435\u0434\u043E\u0432\u0430\u0442\u044C
+          \u043B\u0435\u0441"
+      - Key: 10
+        Value: "\u0412\u042B\u0416\u0418\u0422\u042C"
+      - Key: 15
+        Value: "\u041E\u0431\u0441\u043B\u0435\u0434\u043E\u0432\u0430\u0442\u044C
+          \u0434\u043E\u043C"
+    QuestDescription:
+      _serializedList:
+      - Key: 0
+        Value: 
+      - Key: 5
+        Value: 
+      - Key: 10
+        Value: 
+      - Key: 15
+        Value: 

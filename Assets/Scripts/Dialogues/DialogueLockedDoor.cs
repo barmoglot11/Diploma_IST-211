@@ -1,11 +1,12 @@
 using CHARACTER;
 using DIALOGUE;
 using System.Collections;
+using Interfaces;
 using UnityEngine;
 
 namespace Dialogues
 {
-    public class DialogueLockedDoor : MonoBehaviour
+    public class DialogueLockedDoor : MonoBehaviour, IDialogue
     {
         public void StartDialogue()
         {
@@ -16,7 +17,7 @@ namespace Dialogues
             StartCoroutine(Dialogue());
         }
 
-        IEnumerator Dialogue()
+        public IEnumerator Dialogue()
         {
             InputManager.Instance.ChangeInputStatus(InputStatus.Dialogue);
             Character_Sprite MC = CharacterManager.Instance.GetCharacter("Главный герой", createIfDoesNotExist:true) as Character_Sprite;

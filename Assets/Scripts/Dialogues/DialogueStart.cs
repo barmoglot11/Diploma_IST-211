@@ -1,11 +1,12 @@
 using CHARACTER;
 using DIALOGUE;
 using System.Collections;
+using Interfaces;
 using UnityEngine;
 
 namespace DIALOGUES
 {
-    public class DialogueStart : MonoBehaviour
+    public class DialogueStart : MonoBehaviour, IDialogue
     {
         public void StartDialogue()
         {
@@ -16,9 +17,10 @@ namespace DIALOGUES
             StartCoroutine(Dialogue());
         }
 
-        IEnumerator Dialogue()
+        public IEnumerator Dialogue()
         {
             InputManager.Instance.ChangeInputStatus(InputStatus.Dialogue);
+            Character_Text narrator = CharacterManager.Instance.GetCharacter("Narrator", createIfDoesNotExist:true) as Character_Text;
             Character_Sprite MC = CharacterManager.Instance.GetCharacter("Главный герой", createIfDoesNotExist:true) as Character_Sprite;
             Character_Sprite Coach = CharacterManager.Instance.GetCharacter("Кучер", createIfDoesNotExist:true) as Character_Sprite;
             /*MC.Show();

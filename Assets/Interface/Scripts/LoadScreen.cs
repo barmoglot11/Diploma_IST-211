@@ -11,6 +11,7 @@ public class LoadScreen : MonoBehaviour
     public GameObject LoadingScreen;
     public TextMeshProUGUI textComponent;
     public Slider scale;
+    public int SceneID = 1;
 
     // Start is called before the first frame update
     public void Loading()
@@ -23,7 +24,7 @@ public class LoadScreen : MonoBehaviour
     IEnumerator LoadAsync()
     {
         yield return new WaitForSeconds(2.2f);
-        AsyncOperation loadAsync = SceneManager.LoadSceneAsync(1);
+        AsyncOperation loadAsync = SceneManager.LoadSceneAsync(SceneID);
         loadAsync.allowSceneActivation = false;
         textComponent.color = Color.white;
         while (!loadAsync.isDone)

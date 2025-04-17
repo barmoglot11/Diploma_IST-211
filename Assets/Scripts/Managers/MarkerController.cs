@@ -17,19 +17,41 @@ namespace Managers
         private void Update()
         {
             CurrentQuest = QuestManager.Instance.trackedQuest;
-            if(CurrentQuest != null)
-                ChangeMarkerPosition();
+            if (!string.IsNullOrEmpty(CurrentQuest.QuestID))
+            {
+                if(markerObject.activeSelf)
+                    ChangeMarkerPosition();
+            }
             else
             {
-                markerObject.SetActive(false);
-                markerCanvasObject.SetActive(false);
+                DisableMarkers();
             }
         }
 
         void ChangeMarkerPosition()
         {
             var markerLoc = markerConfig.GetConfig(CurrentQuest.QuestID);
-            markerObject.GetComponent<RectTransform>().anchoredPosition3D = markerLoc.points[CurrentQuest.QuestStage];
+            if (markerLoc.isActiveAtStage[CurrentQuest.QuestStage])
+            {
+                EnableMarkers();
+                markerObject.GetComponent<RectTransform>().anchoredPosition3D = markerLoc.points[CurrentQuest.QuestStage];
+            }
+            else
+            {
+                DisableMarkers();
+            }
+        }
+
+        void EnableMarkers()
+        {
+            markerObject.SetActive(true);
+            markerCanvasObject.SetActive(true);
+        }
+        
+        void DisableMarkers()
+        {
+            markerObject.SetActive(false);
+            markerCanvasObject.SetActive(false);
         }
     }
 }

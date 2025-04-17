@@ -13,6 +13,7 @@ namespace LOCKPICKING
         private bool _isMoving = true;
         public bool IsMoving => _isMoving;
         public float Angle => _eulerAngle;
+        AudioSource Source => GetComponent<AudioSource>();
 
         public void Init(Camera camera, Lock lockImpl)
         {
@@ -42,6 +43,8 @@ namespace LOCKPICKING
 
                 var targetRotation = Quaternion.AngleAxis(_eulerAngle, Vector3.forward);
                 transform.localRotation = targetRotation;
+                if(!Source.isPlaying)
+                    Source.Play();
             }
 
             if (Input.GetKeyDown(KeyCode.D))

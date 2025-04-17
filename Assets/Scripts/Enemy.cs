@@ -1,4 +1,4 @@
-using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,8 +10,8 @@ namespace BATTLE
     {
         public NavMeshAgent Agent => GetComponent<NavMeshAgent>();
         public GameObject Target => GameObject.FindGameObjectWithTag("Player");
-        public bool IsStaggered = false;
         public float speed;
+        public float staggerTime = 1.5f;
 
         public void OnEnable()
         {
@@ -23,17 +23,26 @@ namespace BATTLE
             Agent.SetDestination(Target.transform.position);
         }
 
-        public void OnCollisionEnter(Collision collision)
+        public void Stagger()
         {
-            if (collision.gameObject.CompareTag("Bullet"))
-                Stagger();
+                StartCoroutine(Staggering());
         }
 
-        void Stagger()
+        public IEnumerator Staggering()
         {
-            IsStaggered = true;
             Debug.Log("Staggered");
-            // Проиграть анимацию и в ней убрать стаггер
+            Agent.isStopped = true;
+            yield return new WaitForSeconds(staggerTime);
+            Agent.isStopped = false;
+        }
+
+        private void OnCollisionEnter(Collision other)
+        {
+            if (other.gameObject.CompareTag("Player"))
+            {
+                Debug.Log("Player Hit!");
+                //kill player => main menu load
+            }
         }
     }
 }

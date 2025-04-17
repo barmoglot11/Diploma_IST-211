@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -6,27 +7,55 @@ namespace BATTLE
     public class Gun : MonoBehaviour
     {
         [Header("Настройки пистолета")]
+        [SerializeField]
+        MainCharacter MC;
+        AudioSource Source => GetComponent<AudioSource>();
+        public AudioClip shotSound;
+        public AudioClip getSound;
+        
         public Transform shotTransform;
-        public GameObject bulletPrefab;
-        public float bulletSpeed = 20f;
         public float cooldown = 1f;
-    
         public int currentAmmo = 2;
         private bool isCoolingDown = false;
-    
+        private Vector3 forvatdDir = -Vector3.forward;
+        private RaycastHit hit;
         //TODO: Пускать raycast из пистолета на расстояние N и проверять попадание - вызвать стаггер
-        
+
+        public void OnEnable()
+        {
+            Source.PlayOneShot(getSound);
+        }
+        public void OnDisable()
+        {
+            Source.PlayOneShot(getSound);
+        }
+        private void FixedUpdate()
+        {
+                
+            if (Physics.Raycast(shotTransform.position, transform.TransformDirection(forvatdDir), out hit, 10))
+            { 
+                Debug.DrawRay(shotTransform.position, transform.TransformDirection(forvatdDir) * hit.distance, Color.green); 
+            }
+            else
+            { 
+                Debug.DrawRay(shotTransform.position, transform.TransformDirection(forvatdDir) * 10, Color.red); 
+            }
+        }
+
         public void Shot()
         {
             if (currentAmmo > 0)
             {
                 if (!isCoolingDown)
                 {
-                    var bullet = Instantiate(bulletPrefab, shotTransform);
-                    bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeed;
-                    
-                    currentAmmo--;
-                    Debug.Log("Выстрел! Осталось патронов: " + currentAmmo);
+                    if (Physics.Raycast(transform.position, transform.TransformDirection(forvatdDir), out hit, 10))
+                    {
+                        Source.PlayOneShot(shotSound);
+                        if (hit.collider.gameObject.TryGetComponent<Enemy>(out var enemy))
+                        {
+                            enemy.Stagger();
+                        }
+                    }
                     
                     if (currentAmmo == 0)
                     {
@@ -44,10 +73,6 @@ namespace BATTLE
             }
         }
 
-        public void Snipe()
-        {
-            
-        }
         private IEnumerator Reload()
         {
             isCoolingDown = true;

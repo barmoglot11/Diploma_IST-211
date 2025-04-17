@@ -1,19 +1,20 @@
 using CHARACTER;
 using DIALOGUE;
 using System.Collections;
+using Interfaces;
 using UnityEngine;
 
 
 namespace Dialogues
 {
-    public class DialogueTakenLockpick : MonoBehaviour
+    public class DialogueTakenLockpick : MonoBehaviour, IDialogue
     {
         public void StartDialogue()
         {
             StartCoroutine(Dialogue());
         }
 
-        IEnumerator Dialogue()
+        public IEnumerator Dialogue()
         {
             InputManager.Instance.ChangeInputStatus(InputStatus.Dialogue);
             Character_Sprite MC = CharacterManager.Instance.GetCharacter("Главный герой", createIfDoesNotExist:true) as Character_Sprite;

@@ -14,5 +14,6 @@ namespace UI
         /// Точки нахождения маркера в пространстве на стадии квеста
         /// </summary>
         public SerializedDictionary<int, Vector3> points;
+        public SerializedDictionary<int, bool> isActiveAtStage;
     }
 }
