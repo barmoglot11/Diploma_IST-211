@@ -6,13 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="9ff6fca5-cd55-4c3e-a7c6-1201f01550b6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Diploma_IST-211/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Diploma_IST-211/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/CloseItemDescription.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/CloseItemDescription.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Andrew/Resources/New Terrain.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Andrew/Resources/New Terrain.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/animator/Camera.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/animator/Camera.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/animator/Prolet.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/animator/Prolet.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SaintPetersburg 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SaintPetersburg 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/animator/Prolet2.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/animator/Prolet2.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Village.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Village.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainCharacter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainCharacter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/InputManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/MarkerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/MarkerController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,6 +273,8 @@
       <workItem from="1744912466593" duration="166000" />
       <workItem from="1744957211327" duration="2481000" />
       <workItem from="1744967288586" duration="4204000" />
+      <workItem from="1744979253192" duration="1490000" />
+      <workItem from="1744980934041" duration="1119000" />
     </task>
     <task id="LOCAL-00001" summary="Developing game&#10;Created dialogue system, inventory, diary and input&#10;Reorganized script folder">
       <option name="closed" value="true" />
@@ -340,7 +340,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744912640884</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Fixing bugs">
+      <option name="closed" value="true" />
+      <created>1744979337715</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1744979337715</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -392,7 +400,8 @@
     <MESSAGE value="Creating first act of demo" />
     <MESSAGE value="Start finalizing of development" />
     <MESSAGE value="Fixed bug with struct" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug with struct" />
+    <MESSAGE value="Fixing bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing bugs" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="XDebuggerManager">
