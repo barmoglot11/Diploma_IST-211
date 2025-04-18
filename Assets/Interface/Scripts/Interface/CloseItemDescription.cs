@@ -75,7 +75,7 @@ public class CloseItemDescription : MonoBehaviour
         Debug.Log("������ ����� � ������������.");
         canvasGroupToHide.gameObject.SetActive(false); // ������������ ������
         isFading = false;
-        if(inputStatus != InputStatus.None)
+        if(inputStatus == InputStatus.None)
             InputManager.Instance.ReturnToLastStatus();
         else
             InputManager.Instance.ChangeInputStatus(inputStatus);

@@ -5,71 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ff6fca5-cd55-4c3e-a7c6-1201f01550b6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CameraSettings.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CameraSettings.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueHouseDeadBody.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueHouseDeadBody.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueHousePapers.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueHousePapers.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueInfoVillage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueInfoVillage.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueNoInfoVillage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueNoInfoVillage.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ExtractTreeCollidersFromTerrain.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ExtractTreeCollidersFromTerrain.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/ActivateOnTrigger.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/ActivateOnTrigger.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/DoorOpener.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/DoorOpener.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/InvestigationDialogueTrigger.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/InvestigationDialogueTrigger.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IDialogue.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IDialogue.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Diploma_IST-211/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Diploma_IST-211/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Andrew/Animation/Hero/SnipeStand.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Andrew/Animation/Hero/SnipeStand.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Andrew/Prefabs/tree2_LOD_single.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Andrew/Prefabs/tree2_LOD_single.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Andrew/Prefabs/tree_LOD_single.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Andrew/Prefabs/tree_LOD_single.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Andrew/Resources/New Terrain.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Andrew/Resources/New Terrain.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/IR.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/IR.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/ButtonSoundEffects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Interface/Scripts/ButtonSoundEffects.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/CloseItemDescription.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/CloseItemDescription.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/TypewriterEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/TypewriterEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/LoadScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Interface/Scripts/LoadScreen.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Items/Pistol.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Items/Pistol.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New Terrain.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/New Terrain.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/PlayerControlPref.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/PlayerControlPref.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/PlayerControlPref.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/PlayerControlPref.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObjects/MarkerConf.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObjects/MarkerConf.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObjects/QuestsConfigData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObjects/QuestsConfigData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/animator/Camera.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/animator/Camera.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/animator/Prolet.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/animator/Prolet.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SaintPetersburg 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SaintPetersburg 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueEnterHouse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueEnterHouse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueLockedDoor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueLockedDoor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueMoveToVillage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueMoveToVillage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueOpenTreasure.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueOpenTreasure.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueStart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueStart.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueTakenLockpick.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueTakenLockpick.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueUseInvestigation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueUseInvestigation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gun.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Investigation System/InvestigationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Investigation System/InvestigationManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Village.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Village.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainCharacter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainCharacter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/InputManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/MarkerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/MarkerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MiniGames/Pick.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MiniGames/Pick.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Novel/Dialogue/DialogueSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Novel/Dialogue/DialogueSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Novel/Dialogue/Managers/ConversationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Novel/Dialogue/Managers/ConversationManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MarkerLocation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MarkerLocation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sound.mixer" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sound.mixer.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Terrain.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Terrain.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/VolumetricLightBeam/Shaders/VLBGeneratedShaderHD.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/VolumetricLightBeam/Shaders/VLBGeneratedShaderHD.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/VolumetricLightBeam/Shaders/VLBGeneratedShaderSD.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/VolumetricLightBeam/Shaders/VLBGeneratedShaderSD.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -329,6 +272,9 @@
       <workItem from="1744866532632" duration="4800000" />
       <workItem from="1744887377000" duration="1006000" />
       <workItem from="1744906594419" duration="5331000" />
+      <workItem from="1744912466593" duration="166000" />
+      <workItem from="1744957211327" duration="2481000" />
+      <workItem from="1744967288586" duration="4204000" />
     </task>
     <task id="LOCAL-00001" summary="Developing game&#10;Created dialogue system, inventory, diary and input&#10;Reorganized script folder">
       <option name="closed" value="true" />
@@ -378,7 +324,23 @@
       <option name="project" value="LOCAL" />
       <updated>1743669295935</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Start finalizing of development">
+      <option name="closed" value="true" />
+      <created>1744912546294</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1744912546294</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Fixed bug with struct">
+      <option name="closed" value="true" />
+      <created>1744912640884</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1744912640884</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -428,7 +390,9 @@
     <MESSAGE value="Merged From Sany branch" />
     <MESSAGE value="Linking animations" />
     <MESSAGE value="Creating first act of demo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creating first act of demo" />
+    <MESSAGE value="Start finalizing of development" />
+    <MESSAGE value="Fixed bug with struct" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug with struct" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="XDebuggerManager">

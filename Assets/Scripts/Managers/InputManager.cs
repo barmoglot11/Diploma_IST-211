@@ -74,8 +74,17 @@ public class InputManager : MonoBehaviour
 
     public void SwitchStatus(InputStatus currentStatus)
     {
-        previousInputStatus = currentInputStatus;
-        currentInputStatus = currentStatus;
+        // Проверка на изменение статуса
+        if (currentStatus != this.currentInputStatus)
+        {
+            previousInputStatus = this.currentInputStatus;
+            this.currentInputStatus = currentStatus;
+            Debug.Log($"Input status changed from {previousInputStatus} to {currentInputStatus}");
+        }
+        else
+        {
+            Debug.Log("Input status remains the same.");
+        }
     }
 
     public void ReturnToLastStatus()

@@ -5,9 +5,12 @@ using BATTLE;
 using Cinemachine;
 using MANAGER;
 using UnityEngine;
+[System.Serializable]
 public struct CameraOrbits
 {
+    [SerializeField]
     public float Height;
+    [SerializeField]
     public float Radius;
 
     public CameraOrbits(float height, float radius)

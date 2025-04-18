@@ -17,15 +17,16 @@ namespace Managers
         private void Update()
         {
             CurrentQuest = QuestManager.Instance.trackedQuest;
-            if (!string.IsNullOrEmpty(CurrentQuest.QuestID))
-            {
-                if(markerObject.activeSelf)
-                    ChangeMarkerPosition();
+            if (CurrentQuest != null)
+            { 
+                if (!string.IsNullOrEmpty(CurrentQuest.QuestID))
+                {
+                        ChangeMarkerPosition();
+                        return;
+                }
             }
-            else
-            {
-                DisableMarkers();
-            }
+            
+            DisableMarkers();
         }
 
         void ChangeMarkerPosition()
