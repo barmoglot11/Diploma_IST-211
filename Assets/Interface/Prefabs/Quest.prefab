@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6915854945466626673}
   - component: {fileID: 4383361772980282448}
   - component: {fileID: 8618437590500563691}
+  - component: {fileID: 772681105274175425}
   m_Layer: 5
   m_Name: Quest
   m_TagString: Untagged
@@ -157,6 +158,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverSound: {fileID: 0}
   clickSound: {fileID: 8300000, guid: 42534ad8cb49450438d5946a2d46ca7b, type: 3}
+--- !u!114 &772681105274175425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549310597660669689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48587d0011c94bfe8df22b02b36f0b76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: {fileID: 5201022567572685031}
+  trackingIndicator: {fileID: 3631948817802359018}
 --- !u!1 &7405052022757198264
 GameObject:
   m_ObjectHideFlags: 0

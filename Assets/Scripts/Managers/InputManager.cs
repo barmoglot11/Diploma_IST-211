@@ -2,98 +2,174 @@ using System;
 using Cinemachine;
 using UnityEngine;
 
+/// <summary>
+/// Централизованный менеджер управления вводом с поддержкой состояний и событий
+/// </summary>
 public class InputManager : MonoBehaviour
 {
-    public InputReader IR;
-    public static InputManager Instance;
-    public MainCharacter movement;
-    public CinemachineBrain camera;
-    
-    public InputStatus currentInputStatus;
-    public InputStatus previousInputStatus;
+    #region Singleton Pattern
+    public static InputManager Instance { get; private set; }
+
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
+            //DontDestroyOnLoad(gameObject); // Раскомментировать для сохранения между сценами
         }
         else
         {
             Destroy(gameObject);
         }
     }
+    #endregion
 
-    public void DisableCharMoveAndCamera()
-    {
-        if (camera != null && movement != null)
-        {
-            movement.enabled = false;
-            camera.enabled = false;
-            Debug.Log("Disabling character");
-        }
-        
-    }
-    public void EnableCharMoveAndCamera()
-    {
-        if (camera != null && movement != null)
-        {
-            movement.enabled = true;
-            camera.enabled = true;
-            Debug.Log("Enabling character");
-        }
-    }
+    #region Serialized Fields
+    [Header("Основные компоненты")]
+    [SerializeField] private InputReader _inputReader;
+    [SerializeField] private MainCharacter _characterMovement;
+    [SerializeField] private CinemachineBrain _cinemachineBrain;
+    #endregion
 
-    public void ChangeInputStatus(InputStatus status)
+    public InputReader IR {get { return _inputReader; } }
+    
+    #region Input State Management
+    [Header("Состояния ввода")]
+    [SerializeField] private InputStatus _currentInputStatus = InputStatus.Gameplay;
+    [SerializeField] private InputStatus _previousInputStatus = InputStatus.None;
+
+    // Событие изменения состояния ввода
+    public event Action<InputStatus, InputStatus> OnInputStatusChanged;
+    
+    /// <summary>
+    /// Текущее активное состояние ввода
+    /// </summary>
+    public InputStatus CurrentInputStatus
     {
-        switch (status)
+        get => _currentInputStatus;
+        private set
         {
-            case InputStatus.Dialogue:
-                IR.SetDialogue();
-                SwitchStatus(InputStatus.Dialogue);
-                DisableCharMoveAndCamera();
-                break;
+            if (_currentInputStatus != value)
+            {
+                _previousInputStatus = _currentInputStatus;
+                _currentInputStatus = value;
+                OnInputStatusChanged?.Invoke(_previousInputStatus, _currentInputStatus);
+            }
+        }
+    }
+    #endregion
+
+    #region Public Methods
+    /// <summary>
+    /// Изменить состояние ввода с автоматическим управлением компонентами
+    /// </summary>
+    public void ChangeInputStatus(InputStatus newStatus)
+    {
+        if (CurrentInputStatus == newStatus) return;
+
+        switch (newStatus)
+        {
             case InputStatus.Gameplay:
-                IR.SetGameplay();
-                SwitchStatus(InputStatus.Gameplay);
-                EnableCharMoveAndCamera();
+                SetGameplayState();
+                break;
+            case InputStatus.Dialogue:
+                SetDialogueState();
                 break;
             case InputStatus.UI:
-                IR.SetUI();
-                SwitchStatus(InputStatus.UI);
-                DisableCharMoveAndCamera();
+                SetUIState();
                 break;
             case InputStatus.Lock:
-                IR.SetLock();
-                SwitchStatus(InputStatus.Lock);
-                DisableCharMoveAndCamera();
+                SetLockState();
                 break;
             default:
+                Debug.LogWarning($"Unhandled input status: {newStatus}");
                 break;
         }
+
+        LogStatusChange(newStatus);
     }
 
-    public void SwitchStatus(InputStatus currentStatus)
+    /// <summary>
+    /// Вернуться к предыдущему состоянию ввода
+    /// </summary>
+    public void ReturnToPreviousStatus()
     {
-        // Проверка на изменение статуса
-        if (currentStatus != this.currentInputStatus)
+        if (_previousInputStatus != InputStatus.None)
         {
-            previousInputStatus = this.currentInputStatus;
-            this.currentInputStatus = currentStatus;
-            Debug.Log($"Input status changed from {previousInputStatus} to {currentInputStatus}");
+            ChangeInputStatus(_previousInputStatus);
         }
-        else
-        {
-            Debug.Log("Input status remains the same.");
-        }
+    }
+    #endregion
+
+    #region State Handlers
+    private void SetGameplayState()
+    {
+        _inputReader?.SetGameplay();
+        EnableCharacterControls(true);
+        CurrentInputStatus = InputStatus.Gameplay;
     }
 
-    public void ReturnToLastStatus()
+    private void SetDialogueState()
     {
-        ChangeInputStatus(previousInputStatus);
+        _inputReader?.SetDialogue();
+        EnableCharacterControls(false);
+        CurrentInputStatus = InputStatus.Dialogue;
     }
+
+    private void SetUIState()
+    {
+        _inputReader?.SetUI();
+        EnableCharacterControls(false);
+        CurrentInputStatus = InputStatus.UI;
+    }
+
+    private void SetLockState()
+    {
+        _inputReader?.SetLockpickMinigame();
+        EnableCharacterControls(false);
+        CurrentInputStatus = InputStatus.Lock;
+    }
+    #endregion
+
+    #region Control Management
+    /// <summary>
+    /// Включить/отключить управление персонажем и камерой
+    /// </summary>
+    public void EnableCharacterControls(bool enable)
+    {
+        if (_characterMovement != null)
+        {
+            _characterMovement.enabled = enable;
+        }
+
+        if (_cinemachineBrain != null)
+        {
+            _cinemachineBrain.enabled = enable;
+        }
+
+        Debug.Log($"Character controls {(enable ? "enabled" : "disabled")}");
+    }
+    #endregion
+
+    #region Utility Methods
+    private void LogStatusChange(InputStatus newStatus)
+    {
+        Debug.Log($"Input status changed from {_previousInputStatus} to {newStatus}");
+    }
+
+    private void OnValidate()
+    {
+        // Автоматическое заполнение ссылок если они пустые
+        if (_inputReader == null) _inputReader = GetComponent<InputReader>();
+        if (_characterMovement == null) _characterMovement = FindObjectOfType<MainCharacter>();
+        if (_cinemachineBrain == null) _cinemachineBrain = FindObjectOfType<CinemachineBrain>();
+    }
+    #endregion
 }
 
-[Serializable]
+/// <summary>
+/// Возможные состояния системы ввода
+/// </summary>
 public enum InputStatus
 {
     None = -1,

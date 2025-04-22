@@ -4,38 +4,27 @@ using UnityEngine;
 
 namespace Managers
 {
+    /// <summary>
+    /// Контроллер для управления маркерами квестов на UI/сцене
+    /// </summary>
     public class MarkerController : MonoBehaviour
     {
-        public MarkerConfigData markerConfig;
-
-        public GameObject markerObject;
+        [Header("Конфигурация")]
+        public MarkerConfigData markerConfig; // Конфиг с позициями маркеров для квестов
         
-        public GameObject markerCanvasObject;
+        [Header("UI элементы")]
+        public GameObject markerObject;       // 3D объект маркера в мире
+        public GameObject markerCanvasObject; // UI элемент маркера на канвасе
 
-        public Quest CurrentQuest;
+        private Quest CurrentQuest;          // Текущий отслеживаемый квест
 
         private void Update()
         {
-            CurrentQuest = QuestManager.Instance.trackedQuest;
-            if (CurrentQuest != null)
-            { 
-                if (!string.IsNullOrEmpty(CurrentQuest.QuestID))
-                {
-                        ChangeMarkerPosition();
-                        return;
-                }
-            }
+            UpdateCurrentQuest();
             
-            DisableMarkers();
-        }
-
-        void ChangeMarkerPosition()
-        {
-            var markerLoc = markerConfig.GetConfig(CurrentQuest.QuestID);
-            if (markerLoc.isActiveAtStage[CurrentQuest.QuestStage])
+            if (HasActiveQuest())
             {
-                EnableMarkers();
-                markerObject.GetComponent<RectTransform>().anchoredPosition3D = markerLoc.points[CurrentQuest.QuestStage];
+                ChangeMarkerPosition();
             }
             else
             {
@@ -43,13 +32,61 @@ namespace Managers
             }
         }
 
-        void EnableMarkers()
+        /// <summary>
+        /// Обновляет ссылку на текущий квест
+        /// </summary>
+        private void UpdateCurrentQuest()
+        {
+            CurrentQuest = QuestManager.Instance.TrackedQuest;
+        }
+
+        /// <summary>
+        /// Проверяет есть ли активный квест для отображения
+        /// </summary>
+        private bool HasActiveQuest()
+        {
+            return CurrentQuest != null && !string.IsNullOrEmpty(CurrentQuest.QuestID);
+        }
+
+        /// <summary>
+        /// Изменяет позицию маркера в соответствии с текущим этапом квеста
+        /// </summary>
+        private void ChangeMarkerPosition()
+        {
+            var markerLoc = markerConfig.GetConfig(CurrentQuest.QuestID);
+            
+            if (markerLoc.isActiveAtStage[CurrentQuest.QuestStage])
+            {
+                EnableMarkers();
+                UpdateMarkerPosition(markerLoc.points[CurrentQuest.QuestStage]);
+            }
+            else
+            {
+                DisableMarkers();
+            }
+        }
+
+        /// <summary>
+        /// Обновляет позицию маркера
+        /// </summary>
+        private void UpdateMarkerPosition(Vector3 newPosition)
+        {
+            markerObject.GetComponent<RectTransform>().anchoredPosition3D = newPosition;
+        }
+
+        /// <summary>
+        /// Активирует маркеры
+        /// </summary>
+        private void EnableMarkers()
         {
             markerObject.SetActive(true);
             markerCanvasObject.SetActive(true);
         }
         
-        void DisableMarkers()
+        /// <summary>
+        /// Деактивирует маркеры
+        /// </summary>
+        private void DisableMarkers()
         {
             markerObject.SetActive(false);
             markerCanvasObject.SetActive(false);

@@ -5,12 +5,164 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ff6fca5-cd55-4c3e-a7c6-1201f01550b6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueCoachCycle.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueCoachCycle.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueStartVillage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueStartVillage.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DrawLine.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DrawLine.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Investigation System/InvestigationZone.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Investigation System/InvestigationZone.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/PostProcessingManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/PostProcessingManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Diploma_IST-211/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Diploma_IST-211/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Diploma_IST-211/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Diploma_IST-211/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Andrew/Prefabs/rock1_LOD_single.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Andrew/Prefabs/rock1_LOD_single.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Andrew/Prefabs/tree2_LOD_single.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Andrew/Prefabs/tree2_LOD_single.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Andrew/Prefabs/tree_LOD_single.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Andrew/Prefabs/tree_LOD_single.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Andrew/Resources/New Terrain.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Andrew/Resources/New Terrain.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Andrew/SSMS-master/SSMS.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Prefabs/Quest.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Interface/Prefabs/Quest.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/ButtonSoundEffects.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/ButtonSoundEffects.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/ExitGame.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/ExitGame.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/FadeOutPanel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/FadeOutPanel.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/GradientButton.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/GradientButton.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ActivateOnTrigger.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ActivateOnTrigger.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/BillboardCanvas.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/BillboardCanvas.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ChangeSpriteOnLAlt.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ChangeSpriteOnLAlt.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/CloseItemDescription.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/CloseItemDescription.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/CubeCanvasController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/CubeCanvasController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/ActivateObjectOnButtonPress.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/ActivateObjectOnButtonPress.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/BestiaryController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/BestiaryController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/ButtonImageHover.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/ButtonImageHover.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/ButtonImageToggle.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/ButtonImageToggle.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/ButtonPanelManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/ButtonPanelManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/FadeAndSwitchScene.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/FadeAndSwitchScene.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/GrabAndRotateObject.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/GrabAndRotateObject.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/HidePanel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/HidePanel.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/OpenClosePanel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/OpenClosePanel.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/QuestButton.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/QuestButton.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/ShowPanel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/ShowPanel.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/SwitchBackToGameObject.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/SwitchBackToGameObject.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/SwitchToNewCanvasAndCamera.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/SwitchToNewCanvasAndCamera.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/SwitchToNewCanvasAndCameraTAB.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/ESC Menu/SwitchToNewCanvasAndCameraTAB.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/FadeOutCanvasWithDelay.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/FadeOutCanvasWithDelay.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/FadeOutPanelBlackScreen.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/FadeOutPanelBlackScreen.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/IdlePanelController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/IdlePanelController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/MarkerIndicator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/MarkerIndicator.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/TogglePanelOnE.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/TogglePanelOnE.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/TypewriterEffect.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/TypewriterEffect.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/[TEST] PanelSwitcher.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/Interface/[TEST] PanelSwitcher.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/LoadScreen.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/LoadScreen.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/RandomTextSelector.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/RandomTextSelector.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/ShowPanelOnClick.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/ShowPanelOnClick.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/TextHoverColor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Scripts/TextHoverColor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MANAGERS.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MANAGERS.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObjects/BestiaryConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObjects/BestiaryConfig.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObjects/ItemsConfigData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObjects/ItemsConfigData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObjects/MarkerConf.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObjects/MarkerConf.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObjects/QuestsConfigData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObjects/QuestsConfigData.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/animator/Camera.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/animator/Camera.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/animator/Prolet.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/animator/Prolet.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/animator/Prolet2.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/animator/Prolet2.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SaintPetersburg 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SaintPetersburg 1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Village.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Village.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Village/NavMesh-LocationVillage 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Village/NavMesh-LocationVillage 1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueEnterHouse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueEnterHouse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueHouseDeadBody.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueHouseDeadBody.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueHousePapers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueHousePapers.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueInfoVillage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueInfoVillage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueLockedDoor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueLockedDoor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueMoveToVillage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueMoveToVillage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueNoInfoVillage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueNoInfoVillage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueOpenTreasure.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueOpenTreasure.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueStart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueStart.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueTakenLockpick.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueTakenLockpick.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueUseInvestigation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueUseInvestigation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gun.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IO/DialogueController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/IO/DialogueController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IO/InputReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/IO/InputReader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/DoorOpener.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/DoorOpener.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/InteractiveItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/InteractiveItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/InteractiveObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/InteractiveObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/InvestigationDialogueTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/InvestigationDialogueTrigger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Investigation System/InvestObjectController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Investigation System/InvestObjectController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Investigation System/InvestigationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Investigation System/InvestigationManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainCharacter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainCharacter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/AnimationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/AnimationManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/InputManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/InteractionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/InteractionManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/InventoryManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/InventoryManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/MarkerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/MarkerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/MenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/MenuManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/QuestManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/QuestManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MiniGames/Lock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MiniGames/Lock.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MiniGames/LockStart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MiniGames/LockStart.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MiniGames/LockpickingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MiniGames/LockpickingManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MiniGames/Pick.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MiniGames/Pick.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Novel/Dialogue/DialogueSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Novel/Dialogue/DialogueSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Novel/DialogueHistory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Novel/DialogueHistory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quest System/Quest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quest System/Quest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TeleportPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TeleportPoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Bestiary/BestiaryManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Bestiary/BestiaryManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Diary/DiaryInterface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Diary/DiaryInterface.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Diary/QuestContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Diary/QuestContainer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Diary/QuestDesc.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Diary/QuestDesc.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Diary/TaskContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Diary/TaskContainer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Inventory/AddItemScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Inventory/AddItemScreen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Inventory/PreviewScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Inventory/PreviewScreen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Map/MapController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Map/MapController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[TEST]/BestTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/[TEST]/BestTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[TEST]/LockTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/[TEST]/LockTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Anton SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Anton SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +270,7 @@
     &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.39811322&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.32897863&quot;,
     &quot;git-widget-placeholder&quot;: &quot;Danil&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -129,6 +281,14 @@
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../DiplomaBuild\GogolGame.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="D:\DiplomaBuild" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="D:\UnityHub\Hub\2022.3.20f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath D:\UnityProject\Diploma_IST-211 -debugCodeOptimization" />
@@ -275,6 +435,19 @@
       <workItem from="1744967288586" duration="4204000" />
       <workItem from="1744979253192" duration="1490000" />
       <workItem from="1744980934041" duration="1119000" />
+      <workItem from="1745080033859" duration="214000" />
+      <workItem from="1745120017455" duration="9131000" />
+      <workItem from="1745160838043" duration="36000" />
+      <workItem from="1745162353060" duration="838000" />
+      <workItem from="1745205696802" duration="1085000" />
+      <workItem from="1745207108965" duration="5640000" />
+      <workItem from="1745224908923" duration="7298000" />
+      <workItem from="1745247910745" duration="3405000" />
+      <workItem from="1745252081185" duration="4644000" />
+      <workItem from="1745292939622" duration="3583000" />
+      <workItem from="1745307094841" duration="1021000" />
+      <workItem from="1745310145171" duration="9889000" />
+      <workItem from="1745328880314" duration="92000" />
     </task>
     <task id="LOCAL-00001" summary="Developing game&#10;Created dialogue system, inventory, diary and input&#10;Reorganized script folder">
       <option name="closed" value="true" />
@@ -403,24 +576,5 @@
     <MESSAGE value="Fixing bugs" />
     <option name="LAST_COMMIT_MESSAGE" value="Fixing bugs" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/MiniGames/Lock.cs</url>
-          <line>60</line>
-          <properties documentPath="D:\UnityProject\Diploma_IST-211\Assets\Scripts\MiniGames\Lock.cs" containingFunctionPresentation="Method 'Update'">
-            <startOffsets>
-              <option value="2105" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2124" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

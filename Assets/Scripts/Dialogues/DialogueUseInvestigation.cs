@@ -4,11 +4,13 @@ using System.Collections;
 using Interfaces;
 using UnityEngine;
 
-namespace Dialogues
+namespace DIALOGUES
 {
     public class DialogueUseInvestigation : MonoBehaviour, IDialogue
     {
         public AudioSource source;
+        public GameObject ToDisable;
+        public GameObject ToEnable;
         public void StartDialogue()
         {
             source.Play();
@@ -24,16 +26,40 @@ namespace Dialogues
                 MC.Flip(immediate:true);
             MC.SetPosition(Vector2.zero);
             MC.Show();
+            // Активация режима расследования
+            yield return narrator.Say("ВКЛ режим расследования");
+            yield return narrator.Say("Внезапная волна боли сжимает виски, в ушах звучит далёкий колокольный звон. Воздух становится густым, затрудняя дыхание.");
+
+// Реакция Михаила на боль
             MC.UnHightlight();
-            yield return narrator.Say("Головная боль, сравнимая с ударами самым тяжелым молотом, растекается по вискам, стремясь заполнить всю голову");
-            yield return narrator.Say("Странные звуки, крики и перешептывания окружают Михаила. Они часто меняются местами - то близко, то далеко");
-            yield return narrator.Say("Спустя некоторое время боль сходит, и появляется возможность осмотреться вокруг");
+            yield return narrator.Say("Хватается за голову, опираясь о стену");
             MC.Hightlight();
-            yield return MC.Say("Ааа..Голова...");
-            yield return MC.Say("Qu'est-ce que le (Что здесь)...");
-            yield return MC.Say("Следы?");
-            yield return MC.Say("Что здесь происходит?");
+            yield return MC.Say("Ааа... Nom de Dieu... (Ради Бога...)");
+
+// Последействие
+            yield return narrator.Say("Постепенно боль отступает, оставляя после себя странную обострённость восприятия. Тени в углах кажутся чуть гуще, чем должны быть.");
+
+// Обнаружение следа
+            MC.UnHightlight();
+            yield return narrator.Say("Замечает едва различимый след на полу");
+            MC.Hightlight();
+            yield return MC.Say("Qu'est-ce que c'est? (Что это?)");
+
+// Исследование следа
+            MC.UnHightlight();
+            yield return narrator.Say("Присаживается на корточки, всматриваясь");
+            MC.Hightlight();
+            yield return MC.Say("След... Но не от полицейских сапог.");
+
+// Финальная реплика
+            MC.UnHightlight();
+            yield return narrator.Say("Выпрямляется, бросая взгляд в тёмный дверной проём");
+            MC.Hightlight();
+            yield return MC.Say("Что же здесь на самом деле произошло?");
+            MC.Hide();
             DialogueSystem.instance.CloseDialogue();
+            ToEnable.SetActive(true);
+            ToDisable.SetActive(false);
         }
     }
 }

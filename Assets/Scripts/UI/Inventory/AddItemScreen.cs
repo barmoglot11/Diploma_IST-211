@@ -1,4 +1,3 @@
-using System;
 using AYellowpaper.SerializedCollections;
 using TMPro;
 using UnityEngine;
@@ -11,7 +10,7 @@ namespace INVENTORY
         public Image itemImage;
         public TextMeshProUGUI itemNameText;
         public TextMeshProUGUI itemDescriptionText;
-        public SerializedDictionary<string, GameObject> itemToDialogue;
+        public SerializedDictionary<string, InteractiveObject> itemToDialogue;
         public void SetupScreen(string itemName)
         {
             var item = InventoryManager.Instance.GetItem(itemName);
@@ -24,7 +23,7 @@ namespace INVENTORY
         {
             if (itemToDialogue.ContainsKey(itemNameText.text))
             {
-                itemToDialogue[itemNameText.text].SetActive(true);
+                itemToDialogue[itemNameText.text].Interact();
             }
         }
     }

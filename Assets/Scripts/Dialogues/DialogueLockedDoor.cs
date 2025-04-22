@@ -4,7 +4,7 @@ using System.Collections;
 using Interfaces;
 using UnityEngine;
 
-namespace Dialogues
+namespace DIALOGUES
 {
     public class DialogueLockedDoor : MonoBehaviour, IDialogue
     {

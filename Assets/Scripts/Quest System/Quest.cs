@@ -1,5 +1,6 @@
 using AYellowpaper.SerializedCollections;
 using MessagePack;
+using UnityEngine;
 
 namespace QUEST
 {
@@ -18,9 +19,11 @@ namespace QUEST
         
         [Key(4)]
         [SerializedDictionary("Stage", "Text")]
+        
         public SerializedDictionary<int, string> StagesDescription; 
         [Key(5)]
         [SerializedDictionary("Stage", "Description")]
+        
         public SerializedDictionary<int, string> QuestDescription;
 
         public Quest Copy()

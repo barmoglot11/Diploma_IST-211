@@ -34,7 +34,7 @@ namespace DIALOGUE
         {
             foreach (var rep in replica)
             {
-                AddDialogue(nameStr, rep);
+                AddDialogue(nameStr == "narrator" ? "" : nameStr, rep);
             }
         }
     }

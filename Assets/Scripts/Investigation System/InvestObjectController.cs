@@ -1,72 +1,180 @@
-using System;
 using System.Collections;
-using System.Linq;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace INVESTIGATION
 {
+    [RequireComponent(typeof(MeshRenderer))]
     public class InvestObjectController : MonoBehaviour
     {
-        public MeshRenderer ObjMeshRenderer;
-        public float fadeDuration = 1f;
-        private Coroutine process; 
-        public bool isVisible = false;
-        public Material[] Materials;
-        public Material currentMaterial;
-        private bool Investigating => InvestigationManager.Instance.Investigating;
-
-        public GameObject QuestChanger = null;
+        [Header("Materials")]
+        [SerializeField] private Material _investigationMaterial;
+        [SerializeField] private Material _defaultMaterial;
+        [SerializeField] private List<ParticleSystem> _particleSystems;
         
-        private void Start()
+        [Header("Settings")]
+        [SerializeField] private float _fadeDuration = 1f;
+        [SerializeField] private bool _useSecondaryMaterial = true;
+        
+        [Header("Optional")]
+        [SerializeField] private GameObject _questChanger;
+        
+        [Header("Debug")]
+        [SerializeField] private bool _debugLogs = true;
+
+        private MeshRenderer _meshRenderer;
+        private Material _currentMaterial;
+        private Coroutine _fadeCoroutine;
+        private bool _isVisible;
+        private int _targetMaterialIndex;
+
+        private bool IsInvestigating => InvestigationManager.Instance != null && 
+                                     InvestigationManager.Instance.IsInvestigating;
+
+        private void Awake()
         {
-            currentMaterial = ObjMeshRenderer.materials.Length >= 2 ? ObjMeshRenderer.materials[1] : ObjMeshRenderer.material;
+            _meshRenderer = GetComponent<MeshRenderer>();
+            _targetMaterialIndex = _useSecondaryMaterial ? 1 : 0;
+            CacheCurrentMaterial();
         }
 
-        public void Update()
+        private void OnEnable()
         {
-            if (!isVisible && Investigating)
+            UpdateMaterialState(immediate: true);
+        }
+
+        private void OnDisable()
+        {
+            if (_fadeCoroutine != null)
             {
-                if(process != null)
-                    StopCoroutine(process);
-                currentMaterial = ObjMeshRenderer.materials.Length >= 2 ? ObjMeshRenderer.materials[1] : ObjMeshRenderer.material;
-                process = StartCoroutine(FadeObject(Materials[0]));
-                if(QuestChanger != null)
-                    QuestChanger.SetActive(false);
+                StopCoroutine(_fadeCoroutine);
+                _fadeCoroutine = null;
             }
-               
-            if (isVisible && !Investigating)
+        }
+
+        private void CacheCurrentMaterial()
+        {
+            _currentMaterial = new Material(
+                _meshRenderer.materials.Length > _targetMaterialIndex 
+                    ? _meshRenderer.materials[_targetMaterialIndex] 
+                    : _meshRenderer.material
+            );
+        }
+
+        private void Update()
+        {
+            if (_isVisible != IsInvestigating)
             {
-                if(process != null)
-                    StopCoroutine(process);
-                currentMaterial = ObjMeshRenderer.materials.Length >= 2 ? ObjMeshRenderer.materials[1] : ObjMeshRenderer.material;
-                process = StartCoroutine(FadeObject(Materials[1]));
-  
+                UpdateMaterialState();
+                
             }
-            
+        }
+
+        private void UpdateMaterialState(bool immediate = false)
+        {
+            if (_fadeCoroutine != null)
+            {
+                StopCoroutine(_fadeCoroutine);
+            }
+
+            _isVisible = IsInvestigating;
+            var targetMaterial = _isVisible ? _investigationMaterial : _defaultMaterial;
+
+            if (immediate || Mathf.Approximately(_fadeDuration, 0f))
+            {
+                ApplyMaterialImmediately(targetMaterial);
+            }
+            else
+            {
+                _fadeCoroutine = StartCoroutine(FadeMaterial(targetMaterial));
+            }
+            ChangeParticleStatus();
+            UpdateQuestChanger();
+        }
+
+        void ChangeParticleStatus()
+        {
+            foreach (var particle in _particleSystems)
+            {
+                if(IsInvestigating && !particle.isPlaying)
+                    particle.Play();
+                if(!IsInvestigating && particle.isPlaying)
+                    particle.Stop();
+            }
         }
         
-        private IEnumerator FadeObject(Material targetMaterial)
+        private void ApplyMaterialImmediately(Material material)
         {
-            Material material = new Material(currentMaterial);
+            if (_meshRenderer.materials.Length > _targetMaterialIndex)
+            {
+                var materials = _meshRenderer.materials;
+                materials[_targetMaterialIndex] = material;
+                _meshRenderer.materials = materials;
+            }
+            else
+            {
+                _meshRenderer.material = material;
+            }
+
+            if (_debugLogs)
+            {
+                Debug.Log($"[InvestObject] Material changed immediately to {(IsInvestigating ? "investigation" : "default")} mode", this);
+            }
+        }
+
+        private IEnumerator FadeMaterial(Material targetMaterial)
+        {
             float elapsedTime = 0f;
+            Material tempMaterial = new Material(_currentMaterial);
 
-            while (elapsedTime < fadeDuration)
+            while (elapsedTime < _fadeDuration)
             {
                 elapsedTime += Time.deltaTime;
-                material.Lerp(material, targetMaterial, elapsedTime / fadeDuration);
-                if (ObjMeshRenderer.materials.Length >= 2)
-                    ObjMeshRenderer.materials[1] = material;
-                else
-                    ObjMeshRenderer.material = material;
+                float lerpFactor = elapsedTime / _fadeDuration;
+                
+                LerpMaterial(tempMaterial, _currentMaterial, targetMaterial, lerpFactor);
+                ApplyTemporaryMaterial(tempMaterial);
+
                 yield return null;
             }
-            
-            if (ObjMeshRenderer.materials.Length >= 2)
-                ObjMeshRenderer.materials[1] = targetMaterial;
-            else
-                ObjMeshRenderer.material = targetMaterial;
 
-            isVisible = !isVisible;
+            ApplyMaterialImmediately(targetMaterial);
+            _currentMaterial = new Material(targetMaterial);
+            _fadeCoroutine = null;
+        }
+
+        private void LerpMaterial(Material result, Material start, Material end, float t)
+        {
+            result.color = Color.Lerp(start.color, end.color, t);
+            // Добавьте здесь другие свойства материала, которые нужно интерполировать
+        }
+
+        private void ApplyTemporaryMaterial(Material material)
+        {
+            if (_meshRenderer.materials.Length > _targetMaterialIndex)
+            {
+                var materials = _meshRenderer.materials;
+                materials[_targetMaterialIndex] = material;
+                _meshRenderer.materials = materials;
+            }
+            else
+            {
+                _meshRenderer.material = material;
+            }
+        }
+
+        private void UpdateQuestChanger()
+        {
+            if (_questChanger != null)
+            {
+                _questChanger.SetActive(!IsInvestigating);
+                if (_debugLogs)
+                {
+                    Debug.Log($"[InvestObject] QuestChanger {(_questChanger.activeSelf ? "activated" : "deactivated")}", this);
+                }
+
+                _questChanger = null;
+            }
         }
     }
 }

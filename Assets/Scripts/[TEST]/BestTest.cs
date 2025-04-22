@@ -10,7 +10,7 @@ namespace _TEST_
 
         private void Start()
         {
-            Manager.AddMonsterToList("ОЗЛОБЛЕННЫЙ ЛЕШИЙ");
+            Manager.AddMonsterToList("Ползучий Шёпот(«То, что не следует называть»)");
             Manager.AddMonsterToList("ОЗЛОБЛЕННЫЙ");
             
         }

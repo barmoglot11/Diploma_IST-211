@@ -9,48 +9,118 @@ namespace DIARY
 {
     public class QuestDesc : MonoBehaviour
     {
-        public Quest quest;
-        public TextMeshProUGUI title;
-        public TextMeshProUGUI description;
-        public TaskContainer[] taskContainer;
-        public GameObject trackButton;
+        [Header("References")]
+        [SerializeField] private TextMeshProUGUI title;
+        [SerializeField] private TextMeshProUGUI description;
+        [SerializeField] private TaskContainer[] taskContainers;
+        [SerializeField] private GameObject trackButton;
         
-        public void SetQuest(Quest quest) => this.quest = quest;
+        public GameObject TrackButton => trackButton;
+        
+        private ButtonImageToggle _buttonImageToggle;
+        private Quest _currentQuest;
+
+        private void Awake()
+        {
+            CacheComponents();
+            InitializeTaskContainers();
+        }
+
+        private void CacheComponents()
+        {
+            _buttonImageToggle = trackButton?.GetComponent<ButtonImageToggle>();
+            
+        }
+
+        /// <summary>
+        /// Инициализирует и деактивирует контейнеры задач
+        /// </summary>
+        private void InitializeTaskContainers()
+        {
+            foreach (var container in taskContainers)
+            {
+                container?.gameObject.SetActive(false);
+            }
+        }
+
+        public void SetQuest(Quest quest) => _currentQuest = quest;
+
         public void SetUI()
         {
-            title.text = quest.QuestName;
-            description.text = quest.QuestDescription.FirstOrDefault(stage => stage.Key == quest.QuestStage).Value;
-            SetTasks();
-            
+            if (_currentQuest == null) return;
+
+            UpdateHeader();
+            UpdateTasks();
         }
 
-        public void SetImages(List<Image> imagesToDissapear, Image imageToAppear)
+        private void UpdateHeader()
         {
-            trackButton.GetComponent<ButtonImageToggle>().disappearImages = imagesToDissapear;
-            trackButton.GetComponent<ButtonImageToggle>().appearImage = imageToAppear;
+            title.text = _currentQuest.QuestName;
+            description.text = GetQuestDescription(_currentQuest.QuestStage);
+        }
+
+        private void UpdateTasks()
+        {
+            if (taskContainers.Length < 2) return;
+            
+            UpdatePreviousTask();
+            UpdateCurrentTask();
+        }
+
+        private void UpdatePreviousTask()
+        {
+            var container = taskContainers[0];
+            bool shouldShow = _currentQuest.PreviousTaskStage != _currentQuest.QuestStage;
+
+            container.gameObject.SetActive(shouldShow);
+            if (shouldShow) container.Initialize(GetStageDescription(_currentQuest.PreviousTaskStage));
+        }
+
+        private void UpdateCurrentTask()
+        {
+            var container = taskContainers[1];
+            container.gameObject.SetActive(true);
+            container.Initialize(GetStageDescription(_currentQuest.QuestStage));
+        }
+
+        public void SetImages(List<Image> imagesToDisappear, Image imageToAppear)
+        {
+            if (_buttonImageToggle == null) return;
+            _buttonImageToggle.disappearImages = imagesToDisappear;
+            _buttonImageToggle.appearImage = imageToAppear;
+        }
+
+        private string GetStageDescription(int stage)
+        {
+            return _currentQuest.StagesDescription.GetValueOrDefault(stage, "Stage description not found");
+        }
+
+        private string GetQuestDescription(int stage)
+        {
+            return _currentQuest.QuestDescription.GetValueOrDefault(stage, "Quest description not found");
         }
         
-        public void SetTasks()
-        {
-            foreach (var task in taskContainer)
-                task.gameObject.SetActive(true);
-            
-            if (quest.PreviousTaskStage == quest.QuestStage)
-            {
-                taskContainer[0].gameObject.SetActive(false);
-            }
-            else
-            {
-                taskContainer[0].gameObject.SetActive(true);
-                taskContainer[0].taskText.text = quest.StagesDescription.FirstOrDefault(stage => stage.Key == quest.PreviousTaskStage).Value;
-            }
-            
-            taskContainer[1].taskText.text = quest.StagesDescription.FirstOrDefault(stage => stage.Key == quest.QuestStage).Value;
-        }
-
         public void TrackQuest()
         {
-            QuestManager.Instance.TrackQuest(quest);
+            if (_currentQuest == null) return;
+            QuestManager.Instance.TrackQuest(_currentQuest.QuestID);
+            UpdateTaskStates();
+        }
+
+        /// <summary>
+        /// Обновляет состояние задач на основе текущего прогресса
+        /// </summary>
+        private void UpdateTaskStates()
+        {
+            string currentStageDesc = GetStageDescription(_currentQuest.QuestStage);
+
+            foreach (var container in taskContainers)
+            {
+                if (!container.gameObject.activeSelf) continue;
+
+                bool isCompleted = container.GetCurrentDescription() == currentStageDesc;
+                if (isCompleted) container.MarkAsDone();
+            }
         }
     }
 }

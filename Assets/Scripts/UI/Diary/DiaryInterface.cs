@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using QUEST;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,146 +8,276 @@ namespace DIARY
 {
     public class DiaryInterface : MonoBehaviour
     {
-        public static DiaryInterface Instance;
-        public QuestManager questManager => QuestManager.Instance;
-        [Header("Левая панель")]
-        public GameObject QuestList;
-        public List<QuestContainer> QuestContainers;
-        [Header("Правая панель")]
-        public Quest OpenedQuest;
-        public QuestDesc Description;
-        public CanvasGroup DescriptionCanvasGroup => Description.GetComponent<CanvasGroup>();
-        public GameObject QuestPrefab;
-        public GameObject QuestListObject;
-        [Header("Настройки визуала")]
-        public float fadeSpeed = 5f;
+        private const int MIN_QUEST_INDEX = 0;
+        
+        [Header("Left Panel")]
+        [SerializeField] private GameObject questList;
+        [SerializeField] private GameObject questListObject;
+        [SerializeField] private List<QuestContainer> questContainers = new();
+        
+        [Header("Right Panel")]
+        [SerializeField] private QuestDesc description;
+        [SerializeField] private GameObject questPrefab;
+
+        [Header("Visual Settings")]
+        [SerializeField] [Range(1f, 10f)] private float fadeSpeed = 5f;
+
+        private Quest openedQuest;
+        private CanvasGroup descriptionCanvasGroup;
+        [SerializeField]private QuestManager questManager;
+        public static DiaryInterface Instance { get; private set; }
 
         private void Awake()
         {
-            if (Instance == null)
-            {
-                Instance = this;
-            }
-            else
+            if (Instance != null && Instance != this)
             {
                 Destroy(gameObject);
+                return;
             }
+            
+            Instance = this;
+            InitializeComponents();
+        }
+
+        private void InitializeComponents()
+        {
+            if (description != null)
+                descriptionCanvasGroup = description.GetComponent<CanvasGroup>();
+            
+            if (questList == null)
+                Debug.LogError("Quest List reference is missing in DiaryInterface");
+            if(questManager == null)
+                questManager = QuestManager.Instance;
         }
 
         private void Start()
         {
-            foreach (Transform container in QuestList.transform)
-            {
-                //QuestContainers.Add(container.GetComponent<QuestContainer>());
-            }
+            InitializeQuestContainers();
             SetUI();
         }
 
+        /// <summary>
+        /// Инициализирует контейнеры квестов
+        /// </summary>
+        private void InitializeQuestContainers()
+        {
+            if (questList == null) return;
+
+            foreach (Transform container in questList.transform)
+            {
+                if (container.TryGetComponent(out QuestContainer questContainer))
+                {
+                    questContainers.Add(questContainer);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Обновляет весь интерфейс дневника
+        /// </summary>
         public void SetUI()
         {
-            var questList = questManager.currentQuests;
-            for (int i = 0; i < questList.Count; i++)
+            if (questManager == null)
             {
-                if(QuestContainers[i] == null)
-                {
-                    var questCont = Instantiate(QuestPrefab, QuestListObject.transform);
-                    QuestContainers.Add(questCont.GetComponent<QuestContainer>());
-                }
-                QuestContainers[i].SetContainer(questList[i]);
+                Debug.LogError("Quest Manager reference is missing");
+                return;
             }
-            OpenedQuest = QuestContainers[0].quest;
-            OpenQuest(OpenedQuest);
-            GetTrackImage();
+
+            var currentQuests = questManager.CurrentQuests.Values;
+            UpdateQuestContainers(currentQuests);
+            OpenDefaultQuest();
+        }
+        
+        /// <summary>
+        /// Обновляет контейнеры квестов в соответствии с текущим списком
+        /// </summary>
+        private void UpdateQuestContainers(IEnumerable<Quest> currentQuests)
+        {
+            int index = 0;
+            foreach (var quest in currentQuests)
+            {
+                if (index >= questContainers.Count)
+                {
+                    CreateNewQuestContainer(quest);
+                }
+                else
+                {
+                    UpdateExistingContainer(questContainers[index], quest);
+                }
+                index++;
+            }
+
+            DeactivateExcessContainers(index);
         }
 
+        private void CreateNewQuestContainer(Quest quest)
+        {
+            if (questPrefab == null) return;
+
+            var newContainer = Instantiate(questPrefab, questListObject.transform);
+            if (newContainer.TryGetComponent(out QuestContainer container))
+            {
+                container.SetContainer(quest);
+                questContainers.Add(container);
+            }
+        }
+
+        private void UpdateExistingContainer(QuestContainer container, Quest quest)
+        {
+            if (container != null)
+            {
+                container.SetContainer(quest);
+                container.gameObject.SetActive(true);
+            }
+        }
+
+        private void DeactivateExcessContainers(int activeCount)
+        {
+            for (int i = activeCount; i < questContainers.Count; i++)
+            {
+                if (questContainers[i] != null)
+                    questContainers[i].gameObject.SetActive(false);
+            }
+        }
+
+        /// <summary>
+        /// Открывает квест по умолчанию (первый в списке)
+        /// </summary>
+        private void OpenDefaultQuest()
+        {
+            if (questContainers.Count > MIN_QUEST_INDEX && questContainers[MIN_QUEST_INDEX] != null)
+            {
+                openedQuest = questContainers[MIN_QUEST_INDEX].Quest;
+                OpenQuest(openedQuest);
+            }
+        }
+
+        /// <summary>
+        /// Обновляет изображения отслеживания для всех квестов
+        /// </summary>
         private void GetTrackImage()
         {
-            var images = new List<Image>();
-            var imageToTrack = QuestContainers.Find(q => q.quest == Description.quest).trackingIndicator;
+            if (questContainers.Count == 0 || description == null) return;
 
-            for (var i = 0; i < QuestContainers.Count; i++)
+            var imagesToDisappear = new List<Image>();
+            Image imageToAppear = null;
+            bool foundTrackedQuest = false;
+
+            foreach (var container in questContainers)
             {
-                if(QuestManager.Instance.IsQuestTracked(QuestContainers[i].quest))
-                    images.Add(QuestContainers[i].trackingIndicator);
+                if (container == null) continue;
+
+                if (QuestManager.Instance.IsQuestTracked(container.Quest))
+                {
+                    imagesToDisappear.Add(container.TrackingIndicator);
+                    foundTrackedQuest = true;
+                }
                 else
-                    imageToTrack = QuestContainers[i].trackingIndicator;
+                {
+                    imageToAppear ??= container.TrackingIndicator;
+                }
             }
-            Description.SetImages(images, imageToTrack);
+
+            if (!foundTrackedQuest && questContainers.Count > 0)
+            {
+                imageToAppear = questContainers[0].TrackingIndicator;
+            }
+
+            var buttonToggle = description.TrackButton?.GetComponent<ButtonImageToggle>();
+            if (buttonToggle != null)
+            {
+                description.SetImages(imagesToDisappear, imageToAppear);
+            }
         }
-        
+
         /// <summary>
-        /// Переключение выбранного квеста для кнопки
+        /// Обработчик клика для перезагрузки панели квеста
         /// </summary>
-        /// <param name="quest">Квест, который храниться в кнопке</param>
         public void OnClickReload(Quest quest)
         {
-            StartCoroutine(ReloadPanel(quest));
+            if (quest == null) return;
+            StartCoroutine(ReloadPanelCoroutine(quest));
         }
+
+        /// <summary>
+        /// Открывает указанный квест в детализированном view
+        /// </summary>
         private void OpenQuest(Quest quest)
         {
-            Description.SetQuest(quest);
-            Description.SetUI();
+            if (description == null || quest == null) return;
+
+            description.SetQuest(quest);
+            description.SetUI();
             GetTrackImage();
-            
+            UpdateTrackingIndicators();
         }
-        
+
         /// <summary>
-        /// Переключение выбранного квеста для кнопки с помощью корутин
+        /// Обновляет все индикаторы отслеживания
         /// </summary>
-        /// <param name="quest">Квест, который храниться в кнопке</param>
-        /// <returns></returns>
-        private IEnumerator ReloadPanel(Quest quest)
+        private void UpdateTrackingIndicators()
         {
-            yield return StartCoroutine(FadeOut(DescriptionCanvasGroup));
-            OpenQuest(quest);
-            yield return StartCoroutine(FadeIn(DescriptionCanvasGroup));
+            foreach (var container in questContainers)
+            {
+                if (container != null)
+                {
+                    bool isTracked = QuestManager.Instance.IsQuestTracked(container.Quest);
+                    container.UpdateTrackingState(isTracked);
+                }
+            }
         }
-        
+
         /// <summary>
-        /// Выход панели из прозрачности через корутину
+        /// Корутина для плавного переключения панели квеста
         /// </summary>
-        /// <param name="panel">Панель</param>
-        /// <returns></returns>
+        private IEnumerator ReloadPanelCoroutine(Quest quest)
+        {
+            if (descriptionCanvasGroup == null) yield break;
+
+            yield return StartCoroutine(FadeOut(descriptionCanvasGroup));
+            OpenQuest(quest);
+            yield return StartCoroutine(FadeIn(descriptionCanvasGroup));
+        }
+
+        /// <summary>
+        /// Плавное появление элемента интерфейса
+        /// </summary>
         private IEnumerator FadeIn(CanvasGroup panel)
         {
             if (panel == null) yield break;
 
             panel.gameObject.SetActive(true);
-            float elapsed = 0f;
-            float startAlpha = 0; // Начальная прозрачность 0
-            float endAlpha = 1; // Конечная прозрачность
+            float targetAlpha = 1f;
+            float currentAlpha = panel.alpha;
 
-            while (elapsed < 1f)
+            while (Mathf.Abs(currentAlpha - targetAlpha) > 0.01f)
             {
-                elapsed += Time.deltaTime * fadeSpeed;
-                panel.alpha = Mathf.Lerp(startAlpha, endAlpha, elapsed);
+                currentAlpha = Mathf.Lerp(currentAlpha, targetAlpha, fadeSpeed * Time.deltaTime);
+                panel.alpha = currentAlpha;
                 yield return null;
             }
 
-            panel.alpha = endAlpha;
+            panel.alpha = targetAlpha;
         }
 
         /// <summary>
-        /// Уход панели в прозрачность через корутину
+        /// Плавное исчезновение элемента интерфейса
         /// </summary>
-        /// <param name="panel">Панель</param>
-        /// <returns></returns>
         private IEnumerator FadeOut(CanvasGroup panel)
         {
             if (panel == null) yield break;
 
-            float elapsed = 0f;
-            float startAlpha = panel.alpha;
-            float endAlpha = 0; // Конечная прозрачность
+            float targetAlpha = 0f;
+            float currentAlpha = panel.alpha;
 
-            while (elapsed < 1f)
+            while (Mathf.Abs(currentAlpha - targetAlpha) > 0.01f)
             {
-                elapsed += Time.deltaTime * fadeSpeed;
-                panel.alpha = Mathf.Lerp(startAlpha, endAlpha, elapsed);
+                currentAlpha = Mathf.Lerp(currentAlpha, targetAlpha, fadeSpeed * Time.deltaTime);
+                panel.alpha = currentAlpha;
                 yield return null;
             }
 
-            panel.alpha = endAlpha;
+            panel.alpha = targetAlpha;
             panel.gameObject.SetActive(false);
         }
     }

@@ -5,11 +5,13 @@ using BATTLE;
 using Cinemachine;
 using MANAGER;
 using UnityEngine;
+
 [System.Serializable]
 public struct CameraOrbits
 {
-    [SerializeField]
+    [SerializeField] 
     public float Height;
+    
     [SerializeField]
     public float Radius;
 
@@ -22,156 +24,191 @@ public struct CameraOrbits
 
 public class MainCharacter : MonoBehaviour
 {
-    [SerializeField]
-    Rigidbody rb => GetComponent<Rigidbody>();
+    // Компоненты и зависимости
+    [SerializeField] private Rigidbody _rigidbody;
+    [SerializeField] private Transform _cameraTransform;
+    [SerializeField] private CinemachineFreeLook _freeLookCamera;
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private ParticleSystem walkParticles;
     
-    AnimationManager animManager => AnimationManager.Instance;
-    InputReader input;
-    AudioSource Source => GetComponent<AudioSource>();
+    // Настройки движения
+    [Header("Настройки движения")]
+    [SerializeField] private float _baseSpeed = 5f;
+    [SerializeField] private int _speedMultiplier = 3;
+    [SerializeField] private float _turnSmoothTime = 0.1f;
+    
+    // Настройки камеры
+    [Header("Натсройки камеры")]
+    [SerializeField] private List<CameraOrbits> _orbitsOutdoors;
+    [SerializeField] private List<CameraOrbits> _orbitsIndoors;
+    
+    // Звуки окружения
+    [Header("Настройки аудио")]
+    [SerializeField] private SerializedDictionary<string, AudioClip> _environmentSounds;
+
+    // Состояние персонажа
     private Vector2 _moveDirection;
-
-    public CinemachineFreeLook cameraFreeLook;
+    private float _turnSmoothVelocity;
+    private bool _isHurry = false;
+    [SerializeField]private InputReader _input;
     
-    [SerializeField]
-    private Transform cam;
-    
-    public float speed = 5f;
-    public int speedMult = 3;
+    // Свойства для быстрого доступа
+    private Rigidbody Rb => _rigidbody ? _rigidbody : GetComponent<Rigidbody>();
+    private AnimationManager AnimManager => AnimationManager.Instance;
+    private InputReader Input => _input ? _input : InputManager.Instance.IR;
 
-    public float turnSmoothTime = 0.1f;
-    float turnSmoothVelocity;
-    public bool Hurry = false;
-
-    public List<CameraOrbits> OrbitsOutdoors;
-    public List<CameraOrbits> OrbitsIndoors;
-    
-    public SerializedDictionary<string, AudioClip> environmentSounds;
     private void Start()
     {
-        input = InputManager.Instance.IR;
+        InitializeComponents();
         SetupInput();
     }
 
-    public void SetupInput()
+    private void InitializeComponents()
     {
-        input.MoveEvent += HandleMove;
-        input.HurryEvent += HandleHurry;
+        if (!_rigidbody) _rigidbody = GetComponent<Rigidbody>();
+        if (!_audioSource) _audioSource = GetComponent<AudioSource>();
     }
 
-    public void UnlinkMove()
+    #region Input Handling
+    private void SetupInput()
     {
-        input.MoveEvent -= HandleMove;
-        input.HurryEvent -= HandleHurry;
+        Input.MoveEvent += HandleMove;
+        Input.HurryEvent += HandleHurry;
+    }
+
+    private void UnlinkInput()
+    {
+        Input.MoveEvent -= HandleMove;
+        Input.HurryEvent -= HandleHurry;
+    }
+
+    public void SetupSnipeControls(Gun gun)
+    {
+        Input.SnipeEvent += Snipe;
+        Input.ShotEvent += gun.Shoot;
     }
     
-    public void SetupSnipe(Gun gun)
+    public void UnlinkSnipeControls(Gun gun)
     {
-        input.SnipeEvent += Snipe;
-        input.ShotEvent += gun.Shot;
+        Input.SnipeEvent -= Snipe;
+        Input.ShotEvent -= gun.Shoot;
     }
-    
-    public void UnlinkSnipe(Gun gun)
-    {
-        input.SnipeEvent -= Snipe;
-        input.ShotEvent -= gun.Shot;
-    }
-    private void OnEnable()
-    {
-        SetupInput();
-    }
+    #endregion
 
-    private void OnDisable()
-    {
-        UnlinkMove();
-    }
-
+    #region Movement System
     private void Update()
     {
-        Move();
+        HandleMovement();
+        HandleSnipe();
     }
 
-    public void Snipe(bool state) => animManager.IsSniping = state;
-    
-    private void HandleMove(Vector2 direction)
-    {
-        if(animManager.IsSniping)
-            return;
-        _moveDirection = direction;
-    }
-    private void HandleHurry(bool state)
-    {
-        if(animManager.IsSniping)
-            return;
-        Hurry = state;
-        animManager.IsRunning = state;
-    }
-    private void Move()
+    private void HandleMovement()
     {
         Vector3 direction = new Vector3(_moveDirection.x, 0f, _moveDirection.y).normalized;
 
         if (direction.magnitude > 0.1f)
         {
-            var SpeedFinal = speed;
-            if (Hurry)
-                SpeedFinal *= speedMult;
-            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity,
-                turnSmoothTime);
-
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
-
-            Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            rb.velocity = moveDir.normalized * SpeedFinal;
-            animManager.IsWalking = true;
-            PlaySound();
+            float speed = _isHurry ? _baseSpeed * _speedMultiplier : _baseSpeed;
+            RotateCharacter(direction, speed);
+            MoveCharacter(direction, speed);
+            AnimManager.IsWalking = true;
+            PlayMovementSound();
+            if(walkParticles != null)
+                if(!walkParticles.isPlaying)
+                    walkParticles?.Play();
         }
         else
         {
-            animManager.IsWalking = false;
+            AnimManager.IsWalking = false;
+            Rb.velocity = Vector3.zero;
+            if(walkParticles != null)
+                if(walkParticles.isPlaying)
+                    walkParticles?.Stop();
         }
     }
 
-    private void OnCollisionStay(Collision other)
+    private void RotateCharacter(Vector3 direction, float speed)
     {
-        ChangeSound(other.gameObject.tag);
-    }
-    private void OnCollisionEnter(Collision other)
-    {
-        ChangeSound(other.gameObject.tag);
+        float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + _cameraTransform.eulerAngles.y;
+        float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref _turnSmoothVelocity, _turnSmoothTime);
+        transform.rotation = Quaternion.Euler(0f, angle, 0f);
     }
 
-    void ChangeSound(string material)
+    private void MoveCharacter(Vector3 direction, float speed)
     {
-        switch (material)
+        Vector3 moveDir = Quaternion.Euler(0f, Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + _cameraTransform.eulerAngles.y, 0f) * Vector3.forward;
+        Rb.velocity = moveDir.normalized * speed;
+    }
+    #endregion
+
+    #region Audio System
+    private void OnCollisionStay(Collision other) => UpdateFootstepSound(other);
+    private void OnCollisionEnter(Collision other) => UpdateFootstepSound(other);
+
+    private void UpdateFootstepSound(Collision collision)
+    {
+        if (_environmentSounds.TryGetValue(collision.gameObject.tag, out AudioClip clip))
         {
-            case "Wood":
-                Source.clip = environmentSounds["Wood"];
-                break;
-            case "Stone":
-                Source.clip = environmentSounds["Stone"];
-                break;
-            case "Dirt":
-                Source.clip = environmentSounds["Dirt"];
-                break;
-            default:
-                Debug.Log("Unknown material");
-                Source.clip = null;
-                break;
+            _audioSource.clip = clip;
         }
-    }
-
-    void PlaySound()
-    {
-        if(!Source.isPlaying)
-            Source.Play();
-    }
-
-    public void ChangeCameraSettings(string settings)
-    {
-        for (var i = 0; i < cameraFreeLook.m_Orbits.Length; i++)
+        else
         {
-            cameraFreeLook.m_Orbits[i].m_Height = settings == "Out" ? OrbitsOutdoors[i].Height : OrbitsIndoors[i].Height;
-            cameraFreeLook.m_Orbits[i].m_Radius = settings == "Out" ? OrbitsOutdoors[i].Radius : OrbitsIndoors[i].Radius;
+            Debug.LogWarning($"No sound defined for material: {collision.gameObject.tag}");
+            Debug.LogWarning(collision.gameObject.name);
+            _audioSource.clip = null;
         }
     }
+
+    private void PlayMovementSound()
+    {
+        if (!_audioSource.isPlaying && _audioSource.clip != null)
+        {
+            _audioSource.Play();
+        }
+    }
+    #endregion
+
+    #region Camera Control
+    public void SwitchCameraProfile(string profileType)
+    {
+        if (_freeLookCamera == null || _orbitsOutdoors == null || _orbitsIndoors == null) return;
+
+        var targetOrbits = profileType == "Out" ? _orbitsOutdoors : _orbitsIndoors;
+        
+        for (int i = 0; i < _freeLookCamera.m_Orbits.Length && i < targetOrbits.Count; i++)
+        {
+            _freeLookCamera.m_Orbits[i].m_Height = targetOrbits[i].Height;
+            _freeLookCamera.m_Orbits[i].m_Radius = targetOrbits[i].Radius;
+        }
+    }
+    #endregion
+
+    #region Event Handlers
+    private void HandleMove(Vector2 direction)
+    {
+        if (AnimManager.IsSniping) return;
+        _moveDirection = direction;
+    }
+
+    private void HandleHurry(bool state)
+    {
+        if (AnimManager.IsSniping) return;
+        _isHurry = state;
+        AnimManager.IsRunning = state;
+    }
+
+    public void Snipe(bool isSniping) => AnimManager.IsSniping = isSniping;
+
+    public void HandleSnipe()
+    {
+        if(!AnimManager.IsSniping) return;
+        float speed = _isHurry ? _baseSpeed * _speedMultiplier : _baseSpeed;
+        RotateCharacter(Vector3.zero, speed);
+    }
+    #endregion
+
+    #region Unity Callbacks
+    private void OnEnable() => SetupInput();
+    private void OnDisable() => UnlinkInput();
+    #endregion
 }

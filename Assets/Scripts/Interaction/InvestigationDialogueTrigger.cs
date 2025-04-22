@@ -11,7 +11,7 @@ namespace Interaction
     public class InvestigationDialogueTrigger : MonoBehaviour
     {
         public UnityEvent OnTrigger;
-        private bool Investigating => InvestigationManager.Instance.Investigating;
+        private bool Investigating => InvestigationManager.Instance.IsInvestigating;
 
         private void OnTriggerStay(Collider other)
         {

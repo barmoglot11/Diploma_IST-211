@@ -15,7 +15,7 @@ public class MenuManager : MonoBehaviour
             case "Inventory":
                 DisablePages();
                 menuPages[1].SetActive(true);
-                InventoryManager.Instance.SetInventory();
+                InventoryManager.Instance.SetupInventory();
                 break;
             case "Map":
                 DisablePages();

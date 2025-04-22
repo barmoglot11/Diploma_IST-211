@@ -1,102 +1,128 @@
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using SAVELOAD;
 using UnityEngine;
+using AYellowpaper.SerializedCollections;
+using MessagePack;
 
 namespace QUEST
 {
-	public class QuestManager : MonoBehaviour
-	{
-		public static QuestManager Instance;
-		public QuestsConfigData questsConfig;
-		public List<Quest> currentQuests;
-		public Quest trackedQuest;
-		public List<Quest> completedQuests;
-		private SaveLoadJsonService slService = new SaveLoadJsonService();
+    public class QuestManager : MonoBehaviour
+    {
+        private static QuestManager _instance;
+        [SerializeField] private QuestsConfigData questsConfig;
+        
+        [SerializedDictionary("Quest ID", "Quest Data")]
+        [SerializeField] private SerializedDictionary<string, Quest> currentQuests = new SerializedDictionary<string, Quest>();
+        
+        [SerializeField] private Quest trackedQuest;
+        
+        [SerializedDictionary("Quest ID", "Completed Quest")]
+        [SerializeField] private SerializedDictionary<string, Quest> completedQuests = new SerializedDictionary<string, Quest>();
 
+        public static QuestManager Instance => _instance;
+        public IReadOnlyDictionary<string, Quest> CurrentQuests => currentQuests;
+        public Quest TrackedQuest => trackedQuest;
+        public IReadOnlyDictionary<string, Quest> CompletedQuests => completedQuests;
 
-		private void Awake()
-		{
-			if (Instance == null)
-			{
-				Instance = this;
-			}
-			else
-			{
-				Destroy(gameObject);
-			}
-		}
+        private void Awake()
+        {
+            if (_instance == null)
+            {
+                _instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
 
-		public void SetQuestStage(string questID, int stage)
-		{
-			var quest = GetQuestInfo(questID);
-			
-			if (quest == null)
-			{
-				Debug.LogError($"Квест с ID {questID} не найден.");
-				return;
-			}
-			
-			if(quest.QuestStage == stage)
-				return;
-			
-			quest.PreviousTaskStage = quest.QuestStage;
-			quest.QuestStage = stage;
-			
-			if(trackedQuest == quest)
-				trackedQuest.QuestStage = stage;
-			
-			var maxStage = quest.StagesDescription.Max(stage => stage.Key);
+        public void SetQuestStage(string questID, int stage)
+        {
+            if (!currentQuests.TryGetValue(questID, out Quest quest))
+            {
+                Debug.LogError($"Quest with ID {questID} not found.");
+                return;
+            }
 
-			if (maxStage != stage) return;
-			
-			CompleteQuest(quest);
-			trackedQuest = currentQuests.FirstOrDefault(q => q.QuestID != quest.QuestID);
+            if (quest.QuestStage == stage) return;
 
-		}
+            quest.PreviousTaskStage = quest.QuestStage;
+            quest.QuestStage = stage;
 
-		public Quest GetQuestInfo(string questID)
-		{
-			return currentQuests.Find(x => x.QuestID == questID);
-		}
+            int maxStage = quest.StagesDescription.Keys.Max();
+            if (maxStage == stage)
+            {
+                CompleteQuest(quest);
+            }
+            else
+            {
+                OnQuestStageUpdated?.Invoke(quest);
+            }
+        }
 
-		public void CompleteQuest(Quest quest)
-		{
-			completedQuests.Add(quest);
-			currentQuests.Remove(quest);
-		}
+        public Quest GetQuestInfo(string questID)
+        {
+            return currentQuests.TryGetValue(questID, out Quest quest) ? quest : null;
+        }
 
-		public Quest GetCompletedQuestInfo(string questID)
-		{
-			return completedQuests.Find(x => x.QuestID == questID);
-		}
+        public void CompleteQuest(Quest quest)
+        {
+            if (!currentQuests.ContainsKey(quest.QuestID)) return;
 
-		public void TrackQuest(Quest quest) => trackedQuest = quest;
-		
-		public bool IsQuestTracked(Quest quest) => trackedQuest.QuestID?.Equals(quest.QuestID) == true;
-		
-		public void StartQuest(string questID)
-		{
-			if (currentQuests.Contains(GetQuestInfo(questID)))
-				return;
-			
-			var quest = questsConfig.GetConfig(questID);
-			
-			if (quest != null)
-			{
-				currentQuests.Add(quest);
-				SetQuestStage(quest.QuestID, 0);
-			}
-			else
-			{
-				Debug.LogError($"Квест с ID {questID} не найден.");
-			}
+            currentQuests.Remove(quest.QuestID);
+            completedQuests.Add(quest.QuestID, quest);
 
-			if (currentQuests.Count == 1)
-			{
-				trackedQuest = currentQuests[0];
-			}
-		}
-	}
+            // Update tracked quest
+            trackedQuest = currentQuests.Values.FirstOrDefault();
+            OnQuestCompleted?.Invoke(quest);
+        }
+
+        public Quest GetCompletedQuestInfo(string questID)
+        {
+            return completedQuests.TryGetValue(questID, out Quest quest) ? quest : null;
+        }
+
+        public void TrackQuest(string questID)
+        {
+            if (currentQuests.TryGetValue(questID, out Quest quest))
+            {
+                trackedQuest = quest;
+                OnQuestTracked?.Invoke(quest);
+            }
+        }
+
+        public bool IsQuestTracked(Quest quest)
+        {
+            return trackedQuest != null && trackedQuest.QuestID == quest.QuestID;
+        }
+
+        public void StartQuest(string questID)
+        {
+            if (currentQuests.ContainsKey(questID)) return;
+
+            Quest template = questsConfig.GetConfig(questID);
+            if (template == null)
+            {
+                Debug.LogError($"Quest with ID {questID} not found in config.");
+                return;
+            }
+
+            Quest newQuest = template.Copy();
+            currentQuests.Add(questID, newQuest);
+            SetQuestStage(questID, 0);
+
+            if (currentQuests.Count == 1)
+            {
+                TrackQuest(questID);
+            }
+        }
+
+        // Event system
+        public delegate void QuestEventHandler(Quest quest);
+        public event QuestEventHandler OnQuestCompleted;
+        public event QuestEventHandler OnQuestTracked;
+        public event QuestEventHandler OnQuestStageUpdated;
+    }
 }

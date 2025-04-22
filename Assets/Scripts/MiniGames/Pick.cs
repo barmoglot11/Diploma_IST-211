@@ -2,62 +2,96 @@ using UnityEngine;
 
 namespace LOCKPICKING
 {
+    [RequireComponent(typeof(AudioSource))]
     public class Pick : MonoBehaviour
     {
-        [Header("Настройка отмычки")]
-        private Camera _camera;
-        private Lock _lock;
-        private float _eulerAngle = 0f;
-        [SerializeField]
-        private Vector3 _position;
+        [Header("Pick Settings")]
+        [SerializeField] private Vector3 _restPosition;
+        
+        private Camera _mainCamera;
+        private Lock _currentLock;
+        private float _currentAngle;
         private bool _isMoving = true;
-        public bool IsMoving => _isMoving;
-        public float Angle => _eulerAngle;
-        AudioSource Source => GetComponent<AudioSource>();
+        private AudioSource _audioSource;
 
-        public void Init(Camera camera, Lock lockImpl)
+        public bool IsMoving => _isMoving;
+        public float Angle => _currentAngle;
+
+        public bool IsInitialized = false;
+        
+        private void Awake()
         {
-            _camera = camera;
-            _lock = lockImpl;
-            transform.position = _position;
-            _lock.Unlocked.AddListener(ResetMovement);
+            _audioSource = GetComponent<AudioSource>();
         }
 
-        public void OnDestroy()
+        public void Initialize(Camera camera, Lock lockTarget)
         {
-            if (_lock)
-                _lock.Unlocked.RemoveListener(ResetMovement);
+            _mainCamera = camera;
+            _currentLock = lockTarget;
+            transform.position = _restPosition;
+            
+            if (_currentLock != null)
+            {
+            }
+            
+            IsInitialized = true;
         }
 
         private void Update()
         {
-            transform.localPosition = _lock.PickAnchorPosition;
-
+            if (!IsInitialized) return;
+            UpdatePosition();
+            
             if (_isMoving)
             {
-                var maxAngle = _lock.MaxRotationAngle;
-
-                _eulerAngle += (-Input.GetAxis("Mouse X")*20 -Input.GetAxis("Mouse Y")*15) * Time.deltaTime;
-
-                _eulerAngle = Mathf.Clamp(_eulerAngle, -maxAngle, maxAngle);
-
-                var targetRotation = Quaternion.AngleAxis(_eulerAngle, Vector3.forward);
-                transform.localRotation = targetRotation;
-                if(!Source.isPlaying)
-                    Source.Play();
+                HandlePickMovement();
+                PlayPickSound();
             }
 
+            HandleMovementToggle();
+        }
+
+        private void UpdatePosition()
+        {
+            if (_currentLock != null)
+            {
+                transform.position = _currentLock.PickAnchorWorldPosition;
+            }
+        }
+
+        private void HandlePickMovement()
+        {
+            float mouseX = Input.GetAxis("Mouse X");
+            float mouseY = Input.GetAxis("Mouse Y");
+            
+            _currentAngle += (-mouseX * 20f - mouseY * 15f) * Time.deltaTime;
+            _currentAngle = Mathf.Clamp(_currentAngle, -_currentLock.CurrentMaxRotationAngle, _currentLock.CurrentMaxRotationAngle);
+
+            Quaternion targetRotation = Quaternion.AngleAxis(_currentAngle, Vector3.forward);
+            transform.localRotation = targetRotation;
+        }
+
+        private void PlayPickSound()
+        {
+            if (!_audioSource.isPlaying)
+            {
+                _audioSource.Play();
+            }
+        }
+
+        private void HandleMovementToggle()
+        {
             if (Input.GetKeyDown(KeyCode.D))
             {
                 _isMoving = false;
             }
-            if (Input.GetKeyUp(KeyCode.D))
+            else if (Input.GetKeyUp(KeyCode.D))
             {
                 _isMoving = true;
             }
         }
 
-        private void ResetMovement()
+        private void ResetPickMovement()
         {
             _isMoving = true;
         }

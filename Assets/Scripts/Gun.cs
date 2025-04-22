@@ -1,90 +1,123 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
 namespace BATTLE
 {
+    [RequireComponent(typeof(AudioSource))]
     public class Gun : MonoBehaviour
     {
-        [Header("Настройки пистолета")]
-        [SerializeField]
-        MainCharacter MC;
-        AudioSource Source => GetComponent<AudioSource>();
-        public AudioClip shotSound;
-        public AudioClip getSound;
-        
-        public Transform shotTransform;
-        public float cooldown = 1f;
-        public int currentAmmo = 2;
-        private bool isCoolingDown = false;
-        private Vector3 forvatdDir = -Vector3.forward;
-        private RaycastHit hit;
-        //TODO: Пускать raycast из пистолета на расстояние N и проверять попадание - вызвать стаггер
+        [Header("Gun Settings")]
+        [SerializeField] private MainCharacter _mainCharacter;
+        [SerializeField] private AudioClip _shotSound;
+        [SerializeField] private AudioClip _equipSound;
+        [SerializeField] private Transform _shotOrigin;
+        [SerializeField] private float _cooldown = 1f;
+        [SerializeField] private int _maxAmmo = 2;
+        [SerializeField] private float _shotRange = 10f;
+        [SerializeField] private LayerMask _shotLayerMask;
+        //[SerializeField] private DrawLine _drawLine;
 
-        public void OnEnable()
+        private AudioSource _audioSource;
+        private int _currentAmmo;
+        private bool _isCoolingDown;
+        private bool _isEquipped;
+
+        private void Awake()
         {
-            Source.PlayOneShot(getSound);
+            _audioSource = GetComponent<AudioSource>();
+            _currentAmmo = _maxAmmo;
         }
-        public void OnDisable()
+
+        private void OnEnable()
         {
-            Source.PlayOneShot(getSound);
+            Equip();
         }
-        private void FixedUpdate()
+
+        private void OnDisable()
         {
+            Unequip();
+        }
+
+        private void Update()
+        {
+            Debug.DrawRay(_shotOrigin.position, -_shotOrigin.forward * _shotRange, 
+                         _currentAmmo > 0 ? Color.green : Color.red);
+            //_drawLine.ApplyDrawLine(_shotOrigin.position, -_shotOrigin.forward * _shotRange);
+        }
+
+        public void Equip()
+        {
+            if (!_isEquipped)
+            {
+                _audioSource.PlayOneShot(_equipSound);
+                _isEquipped = true;
+            }
+        }
+
+        public void Unequip()
+        {
+            if (_isEquipped)
+            {
+                _audioSource.PlayOneShot(_equipSound);
+                _isEquipped = false;
+            }
+        }
+
+        public void Shoot()
+        {
+            if (CanShoot())
+            {
+                ProcessShot();
+                _currentAmmo--;
                 
-            if (Physics.Raycast(shotTransform.position, transform.TransformDirection(forvatdDir), out hit, 10))
-            { 
-                Debug.DrawRay(shotTransform.position, transform.TransformDirection(forvatdDir) * hit.distance, Color.green); 
-            }
-            else
-            { 
-                Debug.DrawRay(shotTransform.position, transform.TransformDirection(forvatdDir) * 10, Color.red); 
+                if (_currentAmmo <= 0)
+                {
+                    StartCoroutine(ReloadRoutine());
+                }
             }
         }
 
-        public void Shot()
+        private bool CanShoot()
         {
-            if (currentAmmo > 0)
+            if (_isCoolingDown)
             {
-                if (!isCoolingDown)
-                {
-                    if (Physics.Raycast(transform.position, transform.TransformDirection(forvatdDir), out hit, 10))
-                    {
-                        Source.PlayOneShot(shotSound);
-                        if (hit.collider.gameObject.TryGetComponent<Enemy>(out var enemy))
-                        {
-                            enemy.Stagger();
-                        }
-                    }
-                    
-                    if (currentAmmo == 0)
-                    {
-                        StartCoroutine(Reload());
-                    }
-                }
-                else
-                {
-                    Debug.Log("Перезарядка в процессе. Подождите.");
-                }
+                Debug.Log("Cooldown in progress. Please wait.");
+                return false;
             }
-            else
+
+            if (_currentAmmo <= 0)
             {
-                Debug.Log("Патроны закончились. Перезарядка необходима.");
+                Debug.Log("Out of ammo. Reload required.");
+                return false;
+            }
+
+            return true;
+        }
+
+        private void ProcessShot()
+        {
+            _audioSource.PlayOneShot(_shotSound);
+
+            if (Physics.Raycast(_shotOrigin.position, -_shotOrigin.forward, 
+                               out RaycastHit hit, _shotRange, _shotLayerMask))
+            {
+                if (hit.collider.TryGetComponent<Enemy>(out var enemy))
+                {
+                    enemy.Stagger();
+                }
             }
         }
 
-        private IEnumerator Reload()
+        private IEnumerator ReloadRoutine()
         {
-            isCoolingDown = true;
-            Debug.Log("Перезарядка...");
-    
-            // Ждем время перезарядки
-            yield return new WaitForSeconds(cooldown);
-    
-            // Восстанавливаем патроны
-            currentAmmo = 2;
-            isCoolingDown = false;
-            Debug.Log("Перезарядка завершена. Патроны восстановлены.");
+            _isCoolingDown = true;
+            Debug.Log("Reloading...");
+
+            yield return new WaitForSeconds(_cooldown);
+
+            _currentAmmo = _maxAmmo;
+            _isCoolingDown = false;
+            Debug.Log("Reload complete. Ammo restored.");
         }
     }
 }

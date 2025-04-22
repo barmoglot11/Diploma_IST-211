@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using BATTLE;
@@ -43,6 +44,11 @@ namespace UI
 
         void Awake()
         {
+            Initialize();
+        }
+
+        private void Initialize()
+        {
             if (Instance == null)
             {
                 Instance = this;
@@ -53,14 +59,15 @@ namespace UI
                 // Настройка эффекта наведения на кнопки
                 SetupButtonHoverEffect(nextButton);
                 SetupButtonHoverEffect(prevButton);
+                
+                AddMonsterToList("");
             }
             else
             {
                 Destroy(gameObject);
             }
-            
         }
-        
+
         void OnNextButtonClicked()
         {
             if (isAnimating) return;
