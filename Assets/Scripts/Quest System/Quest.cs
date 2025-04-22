@@ -1,5 +1,6 @@
-using System.Collections.Generic;
+using AYellowpaper.SerializedCollections;
 using MessagePack;
+using UnityEngine;
 
 namespace QUEST
 {
@@ -13,10 +14,30 @@ namespace QUEST
         public string QuestID;
         [Key(2)]
         public int QuestStage;
-        
         [Key(3)]
-        public Dictionary<int, string> StagesDescription; 
+        public int PreviousTaskStage;
+        
         [Key(4)]
-        public Dictionary<int, string> QuestDescription; 
+        [SerializedDictionary("Stage", "Text")]
+        
+        public SerializedDictionary<int, string> StagesDescription; 
+        [Key(5)]
+        [SerializedDictionary("Stage", "Description")]
+        
+        public SerializedDictionary<int, string> QuestDescription;
+
+        public Quest Copy()
+        {
+            var result = new Quest
+            {
+                QuestName = QuestName,
+                QuestID = QuestID,
+                QuestStage = QuestStage,
+                PreviousTaskStage = PreviousTaskStage,
+                StagesDescription = StagesDescription,
+                QuestDescription = QuestDescription
+            };
+            return result;
+        }
     }
 }

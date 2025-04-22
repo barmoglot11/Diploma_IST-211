@@ -84,6 +84,7 @@ namespace CHARACTER
         {
             dialogueSystem.ShowSpeakerName(displayName);
             UpdateTextCustomizationOnScreen();
+            DialogueHistory.Instance.AddDialogue(displayName, dialogue);
             return dialogueSystem.Say(dialogue);
             
         }

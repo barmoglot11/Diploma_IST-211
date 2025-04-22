@@ -6,26 +6,13 @@ public class GameplayController: MonoBehaviour
 {
     public static GameplayController Instance;
     [SerializeField] private InputReader input;
+
+    public GameObject HealthBar;
+    public GameObject Arsenal;
+    
     [SerializeField] private bool isBattle = false;
+    
     public Gun gun => FindObjectOfType<Gun>();
-    public bool IsBattle
-    {
-        get => isBattle;
-        set
-        {
-            switch (value)
-            {
-                case false:
-                    isBattle = false;
-                    UnlinkInput();
-                    break;
-                case true:
-                    isBattle = true;
-                    LinkInput();
-                    break;
-            }
-        }
-    }
 
     private void Awake()
     {
@@ -37,17 +24,5 @@ public class GameplayController: MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    private void LinkInput()
-    {
-        input.ShotEvent += gun.Shot;
-        input.SnipeEvent += gun.Snipe;
-    }
-
-    private void UnlinkInput()
-    {
-        input.ShotEvent -= gun.Shot;
-        input.SnipeEvent -= gun.Snipe;
     }
 }

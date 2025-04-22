@@ -1,17 +1,48 @@
 using UnityEngine;
 using DIALOGUE;
 
-public class DialogueController: MonoBehaviour
+[RequireComponent(typeof(DialogueSystem))]
+public class DialogueController : MonoBehaviour
 {
-    [SerializeField] private InputReader input;
-    [SerializeField] private ConversationManager conversationManager;
-    private void Start()
+    private DialogueSystem _dialogueSystem;
+    private InputReader _inputReader;
+
+    private void Awake()
     {
-        input.Prompt += HandleHurry;
+        // Получаем ссылки на компоненты
+        _dialogueSystem = GetComponent<DialogueSystem>();
+        _inputReader = InputManager.Instance?.IR;
+    }
+
+    private void OnEnable()
+    {
+        if (_inputReader != null)
+        {
+            _inputReader.PromptEvent += HandleHurry;
+        }
+        else
+        {
+            Debug.LogWarning("InputReader not available", this);
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (_inputReader != null)
+        {
+            _inputReader.PromptEvent -= HandleHurry;
+        }
     }
 
     private void HandleHurry()
     {
-        DialogueSystem.instance.OnUserPrompt_Next();
+        if (_dialogueSystem != null)
+        {
+            _dialogueSystem.OnUserPrompt_Next();
+        }
+        else
+        {
+            Debug.LogError("DialogueSystem reference is missing!", this);
+        }
     }
 }

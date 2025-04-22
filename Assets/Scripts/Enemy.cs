@@ -1,4 +1,4 @@
-using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,32 +8,86 @@ namespace BATTLE
     [RequireComponent(typeof(Collider))]
     public class Enemy : MonoBehaviour
     {
-        public NavMeshAgent Agent => GetComponent<NavMeshAgent>();
-        public GameObject Target => GameObject.FindGameObjectWithTag("Player");
-        public bool IsStaggered = false;
-        public float speed;
-
-        public void OnEnable()
+        [Header("Movement Settings")]
+        [SerializeField] private float _moveSpeed = 3.5f;
+        [SerializeField] private float _staggerTime = 1.5f;
+        
+        private NavMeshAgent _agent;
+        private Transform _playerTarget;
+        private bool _isStaggered;
+        
+        private void Awake()
         {
-            Agent.SetDestination(Target.transform.position);
+            _agent = GetComponent<NavMeshAgent>();
+            _agent.speed = _moveSpeed;
+            
+            FindPlayerTarget();
         }
 
-        void Update()
+        private void FindPlayerTarget()
         {
-            Agent.SetDestination(Target.transform.position);
+            var playerObj = GameObject.FindGameObjectWithTag("Player");
+            if (playerObj != null)
+            {
+                _playerTarget = playerObj.transform;
+            }
+            else
+            {
+                Debug.LogError("Player target not found in scene!", this);
+                enabled = false;
+            }
         }
 
-        public void OnCollisionEnter(Collision collision)
+        private void Update()
         {
-            if (collision.gameObject.CompareTag("Bullet"))
-                Stagger();
+            if (!_isStaggered && _playerTarget != null)
+            {
+                _agent.SetDestination(_playerTarget.position);
+            }
         }
 
-        void Stagger()
+        public void Stagger()
         {
-            IsStaggered = true;
+            if (!_isStaggered)
+            {
+                StartCoroutine(StaggerRoutine());
+            }
+        }
+
+        private IEnumerator StaggerRoutine()
+        {
+            _isStaggered = true;
+            _agent.isStopped = true;
             Debug.Log("Staggered");
-            // Проиграть анимацию и в ней убрать стаггер
+            yield return new WaitForSeconds(_staggerTime);
+            
+            _agent.isStopped = false;
+            _isStaggered = false;
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                HandlePlayerCollision();
+            }
+        }
+
+        private void HandlePlayerCollision()
+        {
+            Debug.Log("Player Hit!");
+            // Consider using events instead of direct scene management
+            // GameManager.Instance.PlayerDied();
+        }
+
+        // For debugging purposes
+        private void OnDrawGizmos()
+        {
+            if (_agent != null && _agent.hasPath)
+            {
+                Gizmos.color = Color.red;
+                Gizmos.DrawLine(transform.position, _agent.destination);
+            }
         }
     }
 }

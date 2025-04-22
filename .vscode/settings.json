@@ -2,14 +2,11 @@
     "files.exclude": {
         "**/.DS_Store": true,
         "**/.git": true,
-<<<<<<< Updated upstream
-        "**/.gitmodules": true,
-=======
-        "**/.vs": true,
+        "<<<<<<<Updatedupstream**/.gitmodules": true,
+        "=======**/.vs": true,
         "**/.gitmodules": true,
         "**/.vsconfig": true,
->>>>>>> Stashed changes
-        "**/*.booproj": true,
+        ">>>>>>>Stashedchanges**/*.booproj": true,
         "**/*.pidb": true,
         "**/*.suo": true,
         "**/*.user": true,
@@ -53,16 +50,13 @@
         "library/": true,
         "obj/": true,
         "Obj/": true,
-<<<<<<< Updated upstream
-        "ProjectSettings/": true,
-=======
-        "Logs/": true,
+        "<<<<<<<UpdatedupstreamProjectSettings/": true,
+        "=======Logs/": true,
         "logs/": true,
         "ProjectSettings/": true,
         "UserSettings/": true,
->>>>>>> Stashed changes
-        "temp/": true,
+        ">>>>>>>Stashedchangestemp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Diploma_IST-211.sln"
+    "dotnet.defaultSolution": "GitProject.sln"
 }

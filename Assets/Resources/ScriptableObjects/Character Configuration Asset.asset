@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84c7a432d856b9c4b9cb01470232eed6, type: 3}
+  m_Name: Character Configuration Asset
+  m_EditorClassIdentifier: 
+  characters:
+  - name: "\u0413\u043B\u0430\u0432\u043D\u044B\u0439 \u0433\u0435\u0440\u043E\u0439"
+    alias: mc
+    characterType: 2
+    nameColor: {r: 1, g: 1, b: 1, a: 1}
+    dialogueColor: {r: 1, g: 1, b: 1, a: 1}
+    nameFont: {fileID: 11400000, guid: 93bef6304f6bd924fbae6b86727f6ed8, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 93bef6304f6bd924fbae6b86727f6ed8, type: 2}
+  - name: "\u041A\u0443\u0447\u0435\u0440"
+    alias: coachman
+    characterType: 2
+    nameColor: {r: 1, g: 1, b: 1, a: 1}
+    dialogueColor: {r: 1, g: 1, b: 1, a: 1}
+    nameFont: {fileID: 11400000, guid: 93bef6304f6bd924fbae6b86727f6ed8, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 93bef6304f6bd924fbae6b86727f6ed8, type: 2}
+  - name: "\u0414\u0435\u0440\u0435\u0432\u0435\u0441\u043A\u0438\u0439 \u0436\u0438\u0442\u0435\u043B\u044C"
+    alias: redneck
+    characterType: 0
+    nameColor: {r: 1, g: 1, b: 1, a: 1}
+    dialogueColor: {r: 1, g: 1, b: 1, a: 1}
+    nameFont: {fileID: 11400000, guid: 93bef6304f6bd924fbae6b86727f6ed8, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 93bef6304f6bd924fbae6b86727f6ed8, type: 2}
+  - name: narrator
+    alias: n
+    characterType: 0
+    nameColor: {r: 1, g: 1, b: 1, a: 1}
+    dialogueColor: {r: 1, g: 1, b: 1, a: 1}
+    nameFont: {fileID: 11400000, guid: 93bef6304f6bd924fbae6b86727f6ed8, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 93bef6304f6bd924fbae6b86727f6ed8, type: 2}

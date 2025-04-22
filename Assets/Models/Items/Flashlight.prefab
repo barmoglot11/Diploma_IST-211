@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5531313698943481030}
   - component: {fileID: 7299826348674405799}
   - component: {fileID: 519273314173759863}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 33179129533989222}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Flashlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 3680496766068570362}
   - component: {fileID: 3851685108324886915}
   - component: {fileID: 4711150035779491649}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

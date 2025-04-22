@@ -8,6 +8,10 @@ TagManager:
   - Bullet
   - asteroid
   - ship
+  - Dirt
+  - Wood
+  - Stone
+  - InvestigationArea
   layers:
   - Default
   - TransparentFX
@@ -17,8 +21,8 @@ TagManager:
   - UI
   - PostProcessing
   - Map
-  - 
-  - 
+  - Floor
+  - Walls
   - 
   - 
   - 

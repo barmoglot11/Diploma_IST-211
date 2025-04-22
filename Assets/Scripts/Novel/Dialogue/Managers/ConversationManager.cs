@@ -15,6 +15,8 @@ namespace DIALOGUE
         private TextArchitect architect = null;
         private bool userPrompt = false;
 
+        public bool IsRunningText => architect.isBuilding;
+        
         public ConversationManager(TextArchitect architect) 
         {
             this.architect = architect;
@@ -29,7 +31,6 @@ namespace DIALOGUE
         public Coroutine StartConversation(List<string> conversation)
         {
             StopConversation();
-
             process = dialogueSystem.StartCoroutine(RunningConversation(conversation));
             return process;
         }

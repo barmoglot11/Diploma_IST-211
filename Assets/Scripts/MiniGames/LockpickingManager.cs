@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -6,36 +5,87 @@ namespace LOCKPICKING
 {
     public class LockpickingManager : MonoBehaviour
     {
-        [SerializeField]
-        private Camera _camera;
-        [SerializeField]
-        private Lock _lock;
-        [SerializeField]
-        private Pick _pick;
+        [Header("Dependencies")]
+        [SerializeField] private Camera _lockpickingCamera;
+        [SerializeField] private Lock _lock;
+        [SerializeField] private Pick _pick;
 
-        public static LockpickingManager Instance;
+        public Lock Lock => _lock;
+        public static LockpickingManager Instance { get; private set; }
 
         private void Awake()
         {
-            if (Instance == null)
-            {
-                Instance = this;
-            }
-            else
+            InitializeSingleton();
+        }
+
+        private void InitializeSingleton()
+        {
+            if (Instance != null && Instance != this)
             {
                 Destroy(gameObject);
+                return;
             }
+
+            Instance = this;
         }
 
         public void SetUnlockEvent(UnityAction action)
         {
-            _lock.Unlocked.AddListener(action);
+            if (_lock != null)
+            {
+                _lock.OnUnlocked.AddListener(action);
+            }
+            else
+            {
+                Debug.LogError("Lock reference is not set in LockpickingManager", this);
+            }
         }
         
-        public void Picking()
+        public void StartLockpicking()
         {
-            _pick.Init(_camera, _lock);
-            _lock.Init(_pick);
+            if (!ValidateDependencies())
+            {
+                Debug.LogError("Cannot start lockpicking - dependencies are not properly set", this);
+                return;
+            }
+
+            if(!InventoryManager.Instance.HasItem("Отмычка")) return;
+            
+            _pick.Initialize(_lockpickingCamera, _lock);
+            _lock.Initialize(_pick);
+        }
+
+        private bool ValidateDependencies()
+        {
+            bool isValid = true;
+
+            if (_lockpickingCamera == null)
+            {
+                Debug.LogError("Lockpicking camera is not assigned", this);
+                isValid = false;
+            }
+
+            if (_lock == null)
+            {
+                Debug.LogError("Lock is not assigned", this);
+                isValid = false;
+            }
+
+            if (_pick == null)
+            {
+                Debug.LogError("Pick is not assigned", this);
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        private void OnDestroy()
+        {
+            if (Instance == this)
+            {
+                Instance = null;
+            }
         }
     }
 }
