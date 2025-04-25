@@ -101,7 +101,6 @@ public class MainCharacter : MonoBehaviour
         HandleMovement();
         HandleSnipe();
     }
-
     private void HandleMovement()
     {
         Vector3 direction = new Vector3(_moveDirection.x, 0f, _moveDirection.y).normalized;
@@ -120,7 +119,7 @@ public class MainCharacter : MonoBehaviour
         else
         {
             AnimManager.IsWalking = false;
-            Rb.velocity = Vector3.zero;
+            Rb.velocity = new Vector3(0f, Rb.velocity.y, 0f);
             if(walkParticles != null)
                 if(walkParticles.isPlaying)
                     walkParticles?.Stop();
@@ -137,7 +136,7 @@ public class MainCharacter : MonoBehaviour
     private void MoveCharacter(Vector3 direction, float speed)
     {
         Vector3 moveDir = Quaternion.Euler(0f, Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + _cameraTransform.eulerAngles.y, 0f) * Vector3.forward;
-        Rb.velocity = moveDir.normalized * speed;
+        Rb.velocity = moveDir.normalized * speed; 
     }
     #endregion
 

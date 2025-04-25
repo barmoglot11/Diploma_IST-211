@@ -1,4 +1,3 @@
-
 using DIALOGUE;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +8,11 @@ namespace CHARACTER
 {
     public class CharacterManager: MonoBehaviour
     {
+        #region Singleton
         public static CharacterManager Instance { get; private set; }
+        #endregion
+        
+        #region Поля и Атрибуты
         private Dictionary<string, Character> characters = new Dictionary<string, Character>();
 
         private CharacterConfigSO config => DialogueSystem.instance.config.characterConfigAsset;
@@ -26,11 +29,9 @@ namespace CHARACTER
         public RectTransform characterPanel => _characterPanel;
         public RectTransform characterPanelLive2D => _characterPanel_live2D;
         public RectTransform characterPanelModel3D => _characterPanel_model3D;
+        #endregion
 
-        private void Awake()
-        {
-            Instance = this;
-        }
+        #region Публичные методы
 
         public Character GetCharacter(string characterName, bool createIfDoesNotExist = false)
         {
@@ -68,54 +69,8 @@ namespace CHARACTER
             return character;
         }
 
-        private CHARACTER_INFO GetCharacterInfo(string characterName)
-        {
-            CHARACTER_INFO result = new CHARACTER_INFO();
-
-            string[] nameData = characterName.Split(CHARACTER_CASTING_ID, System.StringSplitOptions.RemoveEmptyEntries);
-
-            result.name = nameData[0];
-
-            result.castingName = nameData.Length > 1 ? nameData[1] : result.name;
-
-            result.config= config.GetConfig(result.castingName);
-
-            result.prefab = GetPrefabForCharacter(result.castingName);
-
-            result.rootCharacterFolder = FormatCharacterPath(characterRootPathFormat, result.castingName);
-
-            return result;
-        }
-
-        private GameObject GetPrefabForCharacter(string characterName)
-        {
-            string prefabPath = FormatCharacterPath(charaterPrefabPathFormat, characterName);
-            return Resources.Load<GameObject>(prefabPath);
-        }
-
         public string FormatCharacterPath(string path, string characterName) => path.Replace(CHARACTER_NAME_ID, characterName);
-
-        private Character CreateCharacterFromInfo(CHARACTER_INFO info)
-        {
-            CharacterConfigData config = info.config;
-
-            switch (info.config.characterType)
-            {
-                case Character.CharacterType.Text:
-                    return new Character_Text(info.name, config);
-
-                case Character.CharacterType.Sprite:
-                case Character.CharacterType.SpriteSheet:
-                    return new Character_Sprite(info.name, config, info.prefab, info.rootCharacterFolder);
-
-                case Character.CharacterType.Model3D:
-                    return new Character_Model3D(info.name, config, info.prefab, info.rootCharacterFolder);
-
-                default:
-                    return null;
-            }
-        }
-
+        
         public void SortCharcters()
         {
             List<Character> activeCharacters = characters.Values
@@ -159,6 +114,14 @@ namespace CHARACTER
             SortCharacters(allCharacters);
         }
 
+        #endregion
+
+        #region Приватные методы
+        private void Awake()
+        {
+            Instance = this;
+        }
+        
         private void SortCharacters(List<Character> characterSortingOrder)
         {
             int i = 0;
@@ -168,17 +131,66 @@ namespace CHARACTER
                 character.OnSort(i);
             }
         }
+        
+        private Character CreateCharacterFromInfo(CHARACTER_INFO info)
+        {
+            CharacterConfigData config = info.config;
+
+            switch (info.config.characterType)
+            {
+                case Character.CharacterType.Text:
+                    return new Character_Text(info.name, config);
+
+                case Character.CharacterType.Sprite:
+                case Character.CharacterType.SpriteSheet:
+                    return new Character_Sprite(info.name, config, info.prefab, info.rootCharacterFolder);
+
+                case Character.CharacterType.Model3D:
+                    return new Character_Model3D(info.name, config, info.prefab, info.rootCharacterFolder);
+
+                default:
+                    return null;
+            }
+        }
+        
+        private CHARACTER_INFO GetCharacterInfo(string characterName)
+        {
+            CHARACTER_INFO result = new CHARACTER_INFO();
+
+            string[] nameData = characterName.Split(CHARACTER_CASTING_ID, System.StringSplitOptions.RemoveEmptyEntries);
+
+            result.name = nameData[0];
+
+            result.castingName = nameData.Length > 1 ? nameData[1] : result.name;
+
+            result.config= config.GetConfig(result.castingName);
+
+            result.prefab = GetPrefabForCharacter(result.castingName);
+
+            result.rootCharacterFolder = FormatCharacterPath(characterRootPathFormat, result.castingName);
+
+            return result;
+        }
+
+        private GameObject GetPrefabForCharacter(string characterName)
+        {
+            string prefabPath = FormatCharacterPath(charaterPrefabPathFormat, characterName);
+            return Resources.Load<GameObject>(prefabPath);
+        }
+        
+        #endregion
+        
+        #region Вспомогательный класс
 
         private class CHARACTER_INFO
         {
             public string name = "";
             public string castingName = "";
-
             public string rootCharacterFolder = "";
-
             public CharacterConfigData config = null;
-
             public GameObject prefab = null;
         }
+
+        #endregion
     }
 }

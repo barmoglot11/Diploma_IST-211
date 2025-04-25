@@ -7,6 +7,7 @@ namespace LOCKPICKING
     {
         [Header("Lock Events")]
         [SerializeField] private UnityEvent _onUnlock;
+        public LockDifficulty difficulty = LockDifficulty.Easy;
         
         public void StartMinigame()
         {
@@ -19,6 +20,7 @@ namespace LOCKPICKING
             InputManager.Instance.ChangeInputStatus(InputStatus.Lock);
             
             var lockpickingManager = LockpickingManager.Instance;
+            lockpickingManager.SetDifficulty(difficulty);
             lockpickingManager.StartLockpicking();
             lockpickingManager.Lock.OnUnlocked = _onUnlock;
         }

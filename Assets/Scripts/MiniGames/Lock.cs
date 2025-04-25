@@ -1,6 +1,15 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+public enum LockDifficulty
+{
+    Easy = 25,
+    Normal = 20,
+    Hard = 15,
+    Expert = 10
+    
+}
+
 namespace LOCKPICKING
 {
     [RequireComponent(typeof(Transform))]
@@ -11,8 +20,8 @@ namespace LOCKPICKING
         [SerializeField] private Transform _pickAnchor;
         [SerializeField, Min(0.1f)] private float _rotationSpeed = 10f;
         [SerializeField, Range(1f, 180f)] private float _maxRotationAngle = 90f;
-        [SerializeField, Range(1f, 25f)] private float _lockRange = 10f;
-
+        [SerializeField, Range(1f, 25f)] private float _lockRange;
+        public LockDifficulty Difficulty { get; private set; }
         private float _unlockAngle;
         private Vector2 _unlockRange;
         private Pick _currentPick;
@@ -24,9 +33,12 @@ namespace LOCKPICKING
 
         public UnityEvent OnUnlocked;
 
+        public void SetLockDiff(LockDifficulty diff) => Difficulty = diff;
+        
         public void Initialize(Pick pick)
         {
             _currentPick = pick;
+            _lockRange = (int)Difficulty;
             GenerateUnlockParameters();
         }
 

@@ -10,6 +10,8 @@ namespace LOCKPICKING
         [SerializeField] private Lock _lock;
         [SerializeField] private Pick _pick;
 
+        public LockDifficulty Difficulty { get; set; }
+        
         public Lock Lock => _lock;
         public static LockpickingManager Instance { get; private set; }
 
@@ -29,6 +31,8 @@ namespace LOCKPICKING
             Instance = this;
         }
 
+        public void SetDifficulty(LockDifficulty diff) => Difficulty = diff;
+        
         public void SetUnlockEvent(UnityAction action)
         {
             if (_lock != null)
@@ -50,6 +54,8 @@ namespace LOCKPICKING
             }
 
             if(!InventoryManager.Instance.HasItem("Отмычка")) return;
+            
+            _lock.SetLockDiff(Difficulty);
             
             _pick.Initialize(_lockpickingCamera, _lock);
             _lock.Initialize(_pick);
