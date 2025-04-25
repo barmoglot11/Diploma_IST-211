@@ -71,7 +71,7 @@ namespace Managers
         /// </summary>
         private void UpdateMarkerPosition(Vector3 newPosition)
         {
-            markerObject.GetComponent<RectTransform>().anchoredPosition3D = newPosition;
+            markerObject.transform.position = newPosition;
         }
 
         /// <summary>

@@ -149,6 +149,9 @@ public class InputManager : MonoBehaviour
 
         Debug.Log($"Character controls {(enable ? "enabled" : "disabled")}");
     }
+    
+    public void ChangeCursorState(bool enable) => Cursor.visible = enable;
+    public void ChangeCursorLock(bool enable) => Cursor.lockState = enable ? CursorLockMode.Locked : CursorLockMode.None;
     #endregion
 
     #region Utility Methods

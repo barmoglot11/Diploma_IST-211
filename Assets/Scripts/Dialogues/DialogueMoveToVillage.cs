@@ -97,8 +97,10 @@ namespace DIALOGUES
 
 // Завершение сцены
             QuestManager.Instance.SetQuestStage("mq001", 20);
-
+            DialogueSystem.instance.CloseDialogue();
             Interface.SetActive(false);
+            InputManager.Instance.ChangeCursorState(true);
+            InputManager.Instance.ChangeCursorLock(false);
             loadScreen.Loading();
         }
     }

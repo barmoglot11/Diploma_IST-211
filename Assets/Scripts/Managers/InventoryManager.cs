@@ -19,7 +19,7 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private Image _itemImage;
     [SerializeField] private TextMeshProUGUI _itemNameText;
     [SerializeField] private TextMeshProUGUI _itemDescText;
-    [SerializeField] private Button _previewButton;
+    [SerializeField] private GameObject _previewButton;
     [SerializeField] private PreviewScreen _previewScreen;
 
     [Header("Debug")]
