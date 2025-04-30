@@ -1,14 +1,14 @@
 using QUEST;
 using UnityEngine;
 
-namespace _TEST_
+namespace Interaction
 {
     public class QuestHandleMonoBeh : MonoBehaviour
     {
         public string questID;
         public int questStage = 0;
 
-        public void OnDisable()
+        public void QuestHandle()
         {
             if (questStage == 0)
             {

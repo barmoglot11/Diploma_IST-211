@@ -10,6 +10,7 @@ namespace DIALOGUES
     {
         public void StartDialogue()
         {
+            DialogueSystem.instance.SetupCloseEvent(CloseDialogueEvent);
             StartCoroutine(Dialogue());
         }
 
@@ -37,6 +38,11 @@ namespace DIALOGUES
             MC.Hightlight();
             yield return MC.Say("Но тень всегда длиннее, чем предмет, который её отбрасывает...");
             MC.Hide();
+            CloseDialogueEvent();
+        }
+
+        public void CloseDialogueEvent()
+        {
             DialogueSystem.instance.CloseDialogue();
             gameObject.SetActive(false);
         }

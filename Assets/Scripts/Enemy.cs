@@ -9,16 +9,22 @@ namespace BATTLE
     [RequireComponent(typeof(Collider))]
     public class Enemy : MonoBehaviour
     {
+        private static readonly int Stagger1 = Animator.StringToHash("Stagger");
+        private static readonly int IsWalking = Animator.StringToHash("IsWalking");
+
         [Header("Dependencies")] 
         [SerializeField] private Collider TriggerCollider;
         [SerializeField] private MainCharacter MainCharacter;
+        [SerializeField] private AudioSource ScreamSound;
+        [SerializeField] private AudioSource WalkSound;
+        
         
         [Header("Movement Settings")]
         [SerializeField] private float _moveSpeed = 3.5f;
-        [SerializeField] private float _staggerTime = 1.5f;
+        [SerializeField] private float _staggerTime = 4f;
         
         [Header("Debug")]
-        private bool IsDebug = false;
+        [SerializeField] private bool IsDebug = false;
         private Coroutine _debugCoroutine;
         
         private NavMeshAgent _agent;
@@ -37,9 +43,15 @@ namespace BATTLE
         {
             OnValidate();
             _agent.speed = _moveSpeed;
+            TriggerCollider.isTrigger = true;
             FindPlayerTarget();
         }
-        
+
+        private void OnEnable()
+        {
+            ScreamSound.Play();
+        }
+
         private void FindPlayerTarget()
         {
             var playerObj = GameObject.FindGameObjectWithTag("Player");
@@ -57,9 +69,10 @@ namespace BATTLE
         private void Update()
         {
             HandleMovement();
+            HandleAudio(_isMoving);
             if (_animator != null)
             {
-                _animator.SetBool("IsMoving", _isMoving);
+                _animator.SetBool(IsWalking, _isMoving);
             }
 
             if (_debugCoroutine == null && IsDebug)
@@ -82,15 +95,8 @@ namespace BATTLE
             _agent.SetDestination(_playerTarget.position);
 
             // Проверяем, движется ли агент
-            if (distanceToTarget > _agent.stoppingDistance)
-            {
-                _isMoving = true; // Монстр движется к цели
-            }
-            else
-            {
-                _isMoving = false; // Монстр достиг цели
-            }
-
+            _isMoving = distanceToTarget > _agent.stoppingDistance;
+            
             // Проверка на столкновение с препятствием
             if (_agent.pathPending || _agent.hasPath)
             {
@@ -99,8 +105,24 @@ namespace BATTLE
                     _isMoving = false; // Установим _isMoving в false, если он уперся в стену
                 }
             }
+
+            
         }
 
+
+        private void HandleAudio(bool isPlaying)
+        {
+            if (isPlaying)
+            {
+                if(!WalkSound.isPlaying)
+                    WalkSound.Play();
+            }
+            else
+            {
+                if(WalkSound.isPlaying)
+                    WalkSound.Stop();
+            }
+        }
         
         public void Stagger()
         {
@@ -113,12 +135,35 @@ namespace BATTLE
         private IEnumerator StaggerRoutine()
         {
             _isStaggered = true;
-            _agent.isStopped = true;
-            Debug.Log("Staggered");
-            yield return new WaitForSeconds(_staggerTime);
+    
+            try
+            {
+                if (_animator != null && _animator.isActiveAndEnabled)
+                    _animator.SetTrigger(Stagger1);
+        
+                if (_agent != null && _agent.isActiveAndEnabled)
+                    _agent.isStopped = true;
+        
+                Debug.Log("Staggered");
+        
+                float timer = 0;
+                while (timer < _staggerTime)
+                {
+                    timer += Time.deltaTime;
+                    yield return null;
             
-            _agent.isStopped = false;
-            _isStaggered = false;
+                    // Проверка на уничтожение объекта
+                    if (this == null || !gameObject.activeInHierarchy)
+                        yield break;
+                }
+            }
+            finally
+            {
+                if (_agent != null && _agent.isActiveAndEnabled)
+                    _agent.isStopped = false;
+            
+                _isStaggered = false;
+            }
         }
 
         private void OnCollisionEnter(Collision collision)
@@ -148,8 +193,7 @@ namespace BATTLE
         private void HandlePlayerCollision()
         {
             Debug.Log("Player Hit!");
-            // Consider using events instead of direct scene management
-            // GameManager.Instance.PlayerDied();
+            GameplayController.Instance.Death();
         }
 
         // For debugging purposes
@@ -163,6 +207,7 @@ namespace BATTLE
         }
         
         #region Utility Methods
+
         private void OnValidate()
         {
             // Автоматическое заполнение ссылок если они пустые
@@ -170,10 +215,6 @@ namespace BATTLE
             if (MainCharacter == null) MainCharacter = FindObjectOfType<MainCharacter>();
             if (_agent == null) _agent = GetComponent<NavMeshAgent>();
             if (_animator == null) _animator = GetComponent<Animator>();
-        }
-
-        private void StaggerDebug()
-        {
             
         }
 

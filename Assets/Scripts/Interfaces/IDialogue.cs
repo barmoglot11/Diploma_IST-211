@@ -7,5 +7,7 @@ namespace Interfaces
         public void StartDialogue();
         
         public IEnumerator Dialogue();
+
+        public void CloseDialogueEvent();
     }
 }

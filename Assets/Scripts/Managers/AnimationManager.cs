@@ -8,6 +8,9 @@ namespace MANAGER
     /// </summary>
     public class AnimationManager : MonoBehaviour
     {
+        private static readonly int Walking = Animator.StringToHash("IsWalking");
+        private static readonly int Running = Animator.StringToHash("IsRunning");
+        private static readonly int Sniping = Animator.StringToHash("IsSniping");
         public static AnimationManager Instance { get; private set; }
 
         [Header("Основные компоненты")]
@@ -116,9 +119,9 @@ namespace MANAGER
         {
             if (_animator == null) return;
 
-            _animator.SetBool("IsWalking", _isWalking);
-            _animator.SetBool("IsRunning", _isRunning);
-            _animator.SetBool("IsSniping", _isSniping);
+            _animator.SetBool(Walking, _isWalking);
+            _animator.SetBool(Running, _isRunning);
+            _animator.SetBool(Sniping, _isSniping);
         }
         #endregion
 

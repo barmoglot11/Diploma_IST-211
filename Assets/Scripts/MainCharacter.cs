@@ -1,4 +1,4 @@
-using System;
+using System.Collections;
 using System.Collections.Generic;
 using AYellowpaper.SerializedCollections;
 using BATTLE;
@@ -41,6 +41,11 @@ public class MainCharacter : MonoBehaviour
     [Header("Натсройки камеры")]
     [SerializeField] private List<CameraOrbits> _orbitsOutdoors;
     [SerializeField] private List<CameraOrbits> _orbitsIndoors;
+    [SerializeField] private List<CameraOrbits> _orbitsSniping;
+    private string lastCameraSetting = "Out";
+    private string currentCameraSetting = "Out";
+    public float transitionDuration = 1f;
+    private Coroutine _transitionCoroutine;
     
     // Звуки окружения
     [Header("Настройки аудио")]
@@ -171,14 +176,76 @@ public class MainCharacter : MonoBehaviour
     public void SwitchCameraProfile(string profileType)
     {
         if (_freeLookCamera == null || _orbitsOutdoors == null || _orbitsIndoors == null) return;
-
-        var targetOrbits = profileType == "Out" ? _orbitsOutdoors : _orbitsIndoors;
+        var targetOrbits = new List<CameraOrbits>();
+        switch (profileType)
+        {
+            case "Out":
+                targetOrbits = _orbitsOutdoors;
+                break;
+            case "In":
+                targetOrbits = _orbitsIndoors;
+                break;
+            case "Snipe":
+                targetOrbits = _orbitsSniping;
+                break;
+            default:
+                break;
+        }
         
+        if (_transitionCoroutine != null)
+        {
+            StopCoroutine(_transitionCoroutine);
+        }
+        
+        // Запускаем новую корутину
+        _transitionCoroutine = StartCoroutine(TransitionOrbitsCoroutine(targetOrbits));
+    }
+
+    private IEnumerator TransitionOrbitsCoroutine(List<CameraOrbits> targetOrbits)
+    {
+        // Сохраняем начальные значения орбит
+        var startOrbits = new CameraOrbits[_freeLookCamera.m_Orbits.Length];
+        for (int i = 0; i < startOrbits.Length; i++)
+        {
+            startOrbits[i] = new CameraOrbits 
+            { 
+                Height = _freeLookCamera.m_Orbits[i].m_Height, 
+                Radius = _freeLookCamera.m_Orbits[i].m_Radius 
+            };
+        }
+
+        float elapsedTime = 0f;
+
+        while (elapsedTime < transitionDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            float progress = Mathf.Clamp01(elapsedTime / transitionDuration);
+
+            // Применяем интерполяцию для каждой орбиты
+            for (int i = 0; i < _freeLookCamera.m_Orbits.Length && i < targetOrbits.Count; i++)
+            {
+                _freeLookCamera.m_Orbits[i].m_Height = Mathf.Lerp(
+                    startOrbits[i].Height, 
+                    targetOrbits[i].Height, 
+                    progress);
+                    
+                _freeLookCamera.m_Orbits[i].m_Radius = Mathf.Lerp(
+                    startOrbits[i].Radius, 
+                    targetOrbits[i].Radius, 
+                    progress);
+            }
+
+            yield return null;
+        }
+
+        // Убедимся, что конечные значения точно установлены
         for (int i = 0; i < _freeLookCamera.m_Orbits.Length && i < targetOrbits.Count; i++)
         {
             _freeLookCamera.m_Orbits[i].m_Height = targetOrbits[i].Height;
             _freeLookCamera.m_Orbits[i].m_Radius = targetOrbits[i].Radius;
         }
+
+        _transitionCoroutine = null;
     }
     #endregion
 
@@ -200,9 +267,14 @@ public class MainCharacter : MonoBehaviour
 
     public void HandleSnipe()
     {
-        if(!AnimManager.IsSniping) return;
+        if(!AnimManager.IsSniping)
+        {
+            SwitchCameraProfile("Out");
+            return;
+        }
+        SwitchCameraProfile("Snipe");
         float speed = _isHurry ? _baseSpeed * _speedMultiplier : _baseSpeed;
-        RotateCharacter(Vector3.zero, speed);
+        RotateCharacter(Vector3.forward, speed);
     }
     #endregion
 

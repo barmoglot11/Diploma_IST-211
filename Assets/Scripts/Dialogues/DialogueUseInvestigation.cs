@@ -2,6 +2,7 @@ using CHARACTER;
 using DIALOGUE;
 using System.Collections;
 using Interfaces;
+using INVESTIGATION;
 using UnityEngine;
 
 namespace DIALOGUES
@@ -10,10 +11,11 @@ namespace DIALOGUES
     {
         public AudioSource source;
         public GameObject ToDisable;
-        public GameObject ToEnable;
+        public TeleportPoint teleport;
         public void StartDialogue()
         {
             source.Play();
+            DialogueSystem.instance.SetupCloseEvent(CloseDialogueEvent);
             StartCoroutine(Dialogue());
         }
 
@@ -21,45 +23,54 @@ namespace DIALOGUES
         {
             InputManager.Instance.ChangeInputStatus(InputStatus.Dialogue);
             var narrator = CharacterManager.Instance.GetCharacter("Narrator", createIfDoesNotExist:true) as Character_Text;
-            var MC = CharacterManager.Instance.GetCharacter("Главный герой", createIfDoesNotExist:true) as Character_Sprite;
-            if (MC.isFacingLeft)
-                MC.Flip(immediate:true);
-            MC.SetPosition(Vector2.zero);
-            MC.Show();
+            var mc = CharacterManager.Instance.GetCharacter("Главный герой", createIfDoesNotExist:true) as Character_Sprite;
+            if (mc.isFacingLeft)
+                mc.Flip(immediate:true);
+            mc.SetPosition(Vector2.zero);
+            mc.SetSprite(mc.GetSprite("Angry"));
+            mc.Show();
+            
             // Активация режима расследования
-            yield return narrator.Say("ВКЛ режим расследования");
             yield return narrator.Say("Внезапная волна боли сжимает виски, в ушах звучит далёкий колокольный звон. Воздух становится густым, затрудняя дыхание.");
 
 // Реакция Михаила на боль
-            MC.UnHightlight();
+            mc.UnHightlight();
             yield return narrator.Say("Хватается за голову, опираясь о стену");
-            MC.Hightlight();
-            yield return MC.Say("Ааа... Nom de Dieu... (Ради Бога...)");
-
+            mc.Hightlight();
+            yield return mc.Say("Ааа... Nom de Dieu... (Ради Бога...)");
+            mc.UnHightlight();
 // Последействие
             yield return narrator.Say("Постепенно боль отступает, оставляя после себя странную обострённость восприятия. Тени в углах кажутся чуть гуще, чем должны быть.");
 
 // Обнаружение следа
-            MC.UnHightlight();
+            
+            mc.SetSprite(mc.GetSprite("Shocked"));
             yield return narrator.Say("Замечает едва различимый след на полу");
-            MC.Hightlight();
-            yield return MC.Say("Qu'est-ce que c'est? (Что это?)");
+            mc.Hightlight();
+            yield return mc.Say("Qu'est-ce que c'est? (Что это?)");
 
 // Исследование следа
-            MC.UnHightlight();
+            mc.UnHightlight();
+            mc.SetSprite(mc.GetSprite("Default"));
             yield return narrator.Say("Присаживается на корточки, всматриваясь");
-            MC.Hightlight();
-            yield return MC.Say("След... Но не от полицейских сапог.");
+            mc.Hightlight();
+            yield return mc.Say("След... Но не от полицейских сапог.");
 
 // Финальная реплика
-            MC.UnHightlight();
+            mc.UnHightlight();
             yield return narrator.Say("Выпрямляется, бросая взгляд в тёмный дверной проём");
-            MC.Hightlight();
-            yield return MC.Say("Что же здесь на самом деле произошло?");
-            MC.Hide();
+            mc.Hightlight();
+            yield return mc.Say("Что же здесь на самом деле произошло?");
+            mc.Hide();
+            
+            CloseDialogueEvent();
+        }
+
+        public void CloseDialogueEvent()
+        {
             DialogueSystem.instance.CloseDialogue();
-            ToEnable.SetActive(true);
-            ToDisable.SetActive(false);
+            teleport.ClearTeleportEvents();
+            ToDisable?.SetActive(false);
         }
     }
 }

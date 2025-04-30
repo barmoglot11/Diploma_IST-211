@@ -10,6 +10,7 @@ namespace DIALOGUES
     {
         public void StartDialogue()
         {
+            DialogueSystem.instance.SetupCloseEvent(CloseDialogueEvent);
             StartCoroutine(Dialogue());
         }
 
@@ -95,6 +96,11 @@ namespace DIALOGUES
             MC.Hightlight();
             yield return MC.Say("...Или всё же стоит сжечь эту дрянь на обратном пути.");
             MC.Hide();
+            CloseDialogueEvent();
+        }
+
+        public void CloseDialogueEvent()
+        {
             DialogueSystem.instance.CloseDialogue();
         }
     }

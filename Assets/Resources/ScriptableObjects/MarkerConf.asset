@@ -17,7 +17,7 @@ MonoBehaviour:
     points:
       _serializedList:
       - Key: 0
-        Value: {x: -1.6, y: 2, z: 7.5}
+        Value: {x: -1, y: 2, z: 8}
       - Key: 5
         Value: {x: -94, y: 8, z: 11}
       - Key: 10

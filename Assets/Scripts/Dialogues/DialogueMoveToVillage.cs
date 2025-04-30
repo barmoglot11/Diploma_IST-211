@@ -14,6 +14,7 @@ namespace DIALOGUES
 
         public void StartDialogue()
         {
+            DialogueSystem.instance.SetupCloseEvent(CloseDialogueEvent);
             StartCoroutine(Dialogue());
         }
 
@@ -96,6 +97,11 @@ namespace DIALOGUES
                 "Колёса скрипят, карета трогается, оставляя за собой дом с запертой дверью. Где-то впереди, за поворотом, уже сгущаются вечерние тени.");
 
 // Завершение сцены
+            CloseDialogueEvent();
+        }
+
+        public void CloseDialogueEvent()
+        {
             QuestManager.Instance.SetQuestStage("mq001", 20);
             DialogueSystem.instance.CloseDialogue();
             Interface.SetActive(false);

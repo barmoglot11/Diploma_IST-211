@@ -5,23 +5,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ff6fca5-cd55-4c3e-a7c6-1201f01550b6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueTableCycle.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueTableCycle.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MusicController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MusicController.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Diploma_IST-211/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Diploma_IST-211/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Interface/Background (2).renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Interface/Background (2).renderTexture" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Map Transfer Texture.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Map Transfer Texture.renderTexture" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Andrew/Animation/Viy/monster.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Andrew/Animation/Viy/monster.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Andrew/SSMS-master/SSMS.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObjects/MarkerConf.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObjects/MarkerConf.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/lock.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/lock.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SaintPetersburg 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SaintPetersburg 1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Village.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Village.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueCoachCycle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueCoachCycle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueEnterHouse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueEnterHouse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueHouseDeadBody.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueHouseDeadBody.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueHousePapers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueHousePapers.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueInfoVillage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueInfoVillage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueLockedDoor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueLockedDoor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueMoveToVillage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueMoveToVillage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueNoInfoVillage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueNoInfoVillage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueOpenTreasure.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueOpenTreasure.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueStart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueStart.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueStartVillage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueStartVillage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueTakenLockpick.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueTakenLockpick.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueUseInvestigation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueUseInvestigation.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IO/GameplayController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/IO/GameplayController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IDialogue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IDialogue.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Investigation System/InvestigationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Investigation System/InvestigationManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainCharacter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainCharacter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/InputManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/InventoryManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/InventoryManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/AnimationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/AnimationManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/MarkerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/MarkerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MiniGames/Lock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MiniGames/Lock.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MiniGames/LockStart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MiniGames/LockStart.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MiniGames/LockpickingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MiniGames/LockpickingManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Novel/Character/CharacterManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Novel/Character/CharacterManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/PostProcessingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/PostProcessingManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Novel/Dialogue/DialogueSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Novel/Dialogue/DialogueSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Novel/DialogueHistory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Novel/DialogueHistory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scripts/Interface/ChangeSpriteOnLAlt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scripts/Interface/ChangeSpriteOnLAlt.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scripts/Interface/FadeOutCanvasWithDelay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scripts/Interface/FadeOutCanvasWithDelay.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scripts/Interface/[TEST] PanelSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scripts/Interface/[TEST] PanelSwitcher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TeleportPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TeleportPoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[TEST]/QuestHandleMonoBeh.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/QuestHandleMonoBeh.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[TEST]/QuestHandleMonoBeh.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/QuestHandleMonoBeh.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +65,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="temp" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -81,11 +105,17 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/52f66f0a2edb4e51b70e238ffa2df44e10fc00/bd/f0b6543d/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/5c/92b8ec18/Action.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6f7018b8b8c149e68c4a65a05ac289be175400/18/6f36339c/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6f7018b8b8c149e68c4a65a05ac289be175400/50/22a76259/UnityEvent.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6f7018b8b8c149e68c4a65a05ac289be175400/60/910a2acd/LightProbes.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6f7018b8b8c149e68c4a65a05ac289be175400/74/f70c14cb/UnityAction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6f7018b8b8c149e68c4a65a05ac289be175400/75/213bd391/ReflectionProbe.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6f7018b8b8c149e68c4a65a05ac289be175400/81/781fa987/Renderer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6f7018b8b8c149e68c4a65a05ac289be175400/85/91c65ed0/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6f7018b8b8c149e68c4a65a05ac289be175400/e8/e56f725d/UnitySynchronizationContext.cs" root0="FORCE_HIGHLIGHTING" />
@@ -94,19 +124,21 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e244b8df75b241bdbc0bc148644e6bbd3c00/a8/f669bd6b/NativeInputSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4eae6449caa21e90c2ff2d63846343457a0e4192fb25892da80d78feb4774f/JsonSerializer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../-CHRONOS-/Assets/_MAIN/Scriptes/Novel/Core/ScriptableObjects/CharacterConfigSO.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/UnityProject/Diploma_IST-211/Assets/Scenes/SaintPetersburg 1.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/UnityProject/Diploma_IST-211/Assets/Scenes/SaintPetersburg 1.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/UnityProject/Diploma_IST-211/Assets/Scenes/Village.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/UnityProject/Diploma_IST-211/Assets/Scenes/Village.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.9.7/Runtime/Behaviours/CinemachineBrain.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/Actions/InputActionState.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/InputManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/InputManagerStateMonitors.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/InputSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/NativeInputRuntime.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@14.0.10/Runtime/Debugging/DebugManager.UIState.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/UI/CanvasScalerEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/ExecuteEvents.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/CanvasRenderer/ParentCanvasIsSane.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/RectTransformValidAfterEnable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/ScrollRect/ScrollRectStableLayout.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -126,8 +158,8 @@
     &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.32897863&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;5b4cffa9&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.32902297&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -310,6 +342,25 @@
       <workItem from="1745477585348" duration="1280000" />
       <workItem from="1745580416644" duration="1267000" />
       <workItem from="1745587070923" duration="2878000" />
+      <workItem from="1745603579701" duration="3874000" />
+      <workItem from="1745633778504" duration="1408000" />
+      <workItem from="1745654937173" duration="1942000" />
+      <workItem from="1745680030968" duration="2654000" />
+      <workItem from="1745727987327" duration="802000" />
+      <workItem from="1745755092359" duration="4297000" />
+      <workItem from="1745816187070" duration="5528000" />
+      <workItem from="1745827241978" duration="3438000" />
+      <workItem from="1745842856411" duration="6000" />
+      <workItem from="1745844879798" duration="974000" />
+      <workItem from="1745849281244" duration="689000" />
+      <workItem from="1745862745803" duration="1537000" />
+      <workItem from="1745893849139" duration="967000" />
+      <workItem from="1745907658575" duration="113000" />
+      <workItem from="1745913117369" duration="1237000" />
+      <workItem from="1745915066047" duration="917000" />
+      <workItem from="1745979170972" duration="1256000" />
+      <workItem from="1745982774647" duration="1326000" />
+      <workItem from="1746015112594" duration="7150000" />
     </task>
     <task id="LOCAL-00001" summary="Developing game&#10;Created dialogue system, inventory, diary and input&#10;Reorganized script folder">
       <option name="closed" value="true" />
@@ -383,7 +434,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744979337715</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Fixing interface">
+      <option name="closed" value="true" />
+      <created>1745604843327</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1745604843327</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -436,7 +495,8 @@
     <MESSAGE value="Start finalizing of development" />
     <MESSAGE value="Fixed bug with struct" />
     <MESSAGE value="Fixing bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixing bugs" />
+    <MESSAGE value="Fixing interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing interface" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
 </project>

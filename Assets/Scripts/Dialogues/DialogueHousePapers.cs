@@ -12,13 +12,17 @@ namespace DIALOGUES
     {
         public void StartDialogue()
         {
+            DialogueSystem.instance.SetupCloseEvent(CloseDialogueEvent);
             StartCoroutine(Dialogue());
         }
 
         public IEnumerator Dialogue()
         {
-            Character_Text narrator = CharacterManager.Instance.GetCharacter("Narrator", createIfDoesNotExist:true) as Character_Text;
-            Character_Sprite MC = CharacterManager.Instance.GetCharacter("Главный герой", createIfDoesNotExist:true) as Character_Sprite;
+            var narrator = CharacterManager.Instance.GetCharacter("Narrator", createIfDoesNotExist:true) as Character_Text;
+            var mc = CharacterManager.Instance.GetCharacter("Главный герой", createIfDoesNotExist:true) as Character_Sprite;
+            if (mc is { isVisible: true })
+                mc.Hide();
+            
             // Описание конторки
             yield return narrator.Say("Конторка, заваленная бумагами. Чернильница с пером. На стене — портрет Гоголя (гравюра, подпись: \"Н.В., 1841\").");
 
@@ -30,24 +34,27 @@ namespace DIALOGUES
             yield return narrator.Say("Страница была испачкана бурыми пятнами, а в местах описания способов защиты бумага истончилась от частого касания пальцев.");
 
 // Реакция Михаила
-            MC.Show();
-            MC.UnHightlight();
+            mc.Show();
+            mc.UnHightlight();
             yield return narrator.Say("Лихорадочно листает страницы, глаза расширяются");
-            MC.Hightlight();
-            yield return MC.Say("Ils ont décrit l'indescriptible... (Они описали неописуемое...)");
-            MC.UnHightlight();
+            mc.Hightlight();
+            yield return mc.Say("Ils ont décrit l'indescriptible... (Они описали неописуемое...)");
+            mc.UnHightlight();
             yield return narrator.Say("Указывает пальцем в рисунок Вия");
-            MC.Hightlight();
-            yield return MC.Say("Это же то самое чудовище из леса!");
-            MC.Hide();
+            mc.Hightlight();
+            yield return mc.Say("Это же то самое чудовище из леса!");
+            mc.Hide();
 // Атмосферные детали
             yield return narrator.Say("Страницы дневника шелестят, будто подтверждая его догадку. На полях — пометки чернилами: «Слышит шаги», «Боится зеркал?», «Не смотри!».");
             yield return narrator.Say("За окном раздаётся скрежет — будто что-то огромное провело когтями по стене дома.");
 
             
+            CloseDialogueEvent();
+        }
+
+        public void CloseDialogueEvent()
+        {
             DialogueSystem.instance.CloseDialogue();
         }
-        
-        
     }
 }

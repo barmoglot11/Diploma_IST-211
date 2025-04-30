@@ -17,12 +17,12 @@ namespace Managers
         public GameObject markerCanvasObject; // UI элемент маркера на канвасе
 
         private Quest CurrentQuest;          // Текущий отслеживаемый квест
-
+        [SerializeField] private bool _hasActiveQuest;
         private void Update()
         {
             UpdateCurrentQuest();
-            
-            if (HasActiveQuest())
+            HasActiveQuest();
+            if (_hasActiveQuest)
             {
                 ChangeMarkerPosition();
             }
@@ -43,9 +43,9 @@ namespace Managers
         /// <summary>
         /// Проверяет есть ли активный квест для отображения
         /// </summary>
-        private bool HasActiveQuest()
+        private void HasActiveQuest()
         {
-            return CurrentQuest != null && !string.IsNullOrEmpty(CurrentQuest.QuestID);
+            _hasActiveQuest = CurrentQuest != null && !string.IsNullOrEmpty(CurrentQuest.QuestID);
         }
 
         /// <summary>
@@ -71,7 +71,15 @@ namespace Managers
         /// </summary>
         private void UpdateMarkerPosition(Vector3 newPosition)
         {
-            markerObject.transform.position = newPosition;
+            var rectTransform = markerObject.GetComponent<RectTransform>();
+            if (rectTransform == null) return;
+            // Изменяем только X и Y через anchoredPosition
+            rectTransform.anchoredPosition = new Vector2(newPosition.x, newPosition.y);
+        
+            // Изменяем Z-координату через position
+            var currentPosition = rectTransform.position;
+            rectTransform.position = new Vector3(currentPosition.x, currentPosition.y, newPosition.z/16);
+            rectTransform.localRotation = Quaternion.Euler(0, -180, 0);
         }
 
         /// <summary>

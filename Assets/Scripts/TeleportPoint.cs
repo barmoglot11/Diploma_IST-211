@@ -42,6 +42,12 @@ public class TeleportPoint : MonoBehaviour
             }
         }
     }
+
+    public void ClearTeleportEvents()
+    {
+        _onTeleportStart.RemoveAllListeners();
+        _onTeleportEnd.RemoveAllListeners();
+    }
     
     // Процесс телепортации
     private IEnumerator TeleportRoutine()

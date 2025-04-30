@@ -10,6 +10,7 @@ namespace Dialogues
     {
         public void StartDialogue()
         {
+            DialogueSystem.instance.SetupCloseEvent(CloseDialogueEvent);
             StartCoroutine(Dialogue());
         }
 
@@ -51,6 +52,11 @@ namespace Dialogues
 // Завершение сцены
             
             
+            CloseDialogueEvent();
+        }
+
+        public void CloseDialogueEvent()
+        {
             DialogueSystem.instance.CloseDialogue();
         }
     }

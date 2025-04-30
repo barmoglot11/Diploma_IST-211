@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -70,6 +71,17 @@ namespace INVESTIGATION
             }
         }
 
+        private void Update()
+        {
+            switch (IsInvestigating)
+            {
+                case true when EyeController.isDefaultSprite && EyeController.IsEndedChanging:
+                case false when !EyeController.isDefaultSprite && EyeController.IsEndedChanging:
+                    EyeController.ChangeSprite(IsInvestigating);
+                    break;
+            }
+        }
+
         private void OnDestroy()
         {
             UnregisterInputEvents();
@@ -88,7 +100,7 @@ namespace INVESTIGATION
             }
         }
 
-        private void ToggleInvestigation()
+        public void ToggleInvestigation()
         {
             if(!isInvestigationAvailable) return;
             IsInvestigating = !IsInvestigating;
@@ -153,8 +165,9 @@ namespace INVESTIGATION
             }
 
             _audioSource.volume = _maxVolume;
-            if(Dialogue.gameObject.activeSelf)
-                Dialogue?.Interact();
+            if(Dialogue != null)
+                if(Dialogue.gameObject.activeSelf)
+                    Dialogue?.Interact();
             _fadeCoroutine = null;
         }
         

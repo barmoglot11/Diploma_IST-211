@@ -7,6 +7,7 @@ public class PostProcessingManager : MonoBehaviour
     [SerializeField] private PostProcessProfile _profile1;
     [SerializeField] private PostProcessProfile _profile2;
     [SerializeField] private PostProcessProfile _profile3;
+    [SerializeField] private PostProcessProfile _profile4;
 
     [SerializeField] private PostProcessVolume _postProcessVolume;
     private Coroutine _blendCoroutine;
@@ -66,6 +67,7 @@ public class PostProcessingManager : MonoBehaviour
             0 => _profile1,
             1 => _profile2,
             2 => _profile3,
+            3 => _profile4,
             _ => null
         };
     }
