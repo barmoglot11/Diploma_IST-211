@@ -5,47 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ff6fca5-cd55-4c3e-a7c6-1201f01550b6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueTableCycle.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueTableCycle.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MusicController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MusicController.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Diploma_IST-211/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Diploma_IST-211/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Andrew/Animation/Viy/monster.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Andrew/Animation/Viy/monster.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Andrew/SSMS-master/SSMS.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Interface/Background (1).renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Interface/Background (1).renderTexture" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Animation/Hero.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animation/Hero.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Animation/Hero/coachman2@Walking@Walking.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animation/Hero/coachman2@Walking@Walking.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Audio.mixer" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Audio.mixer" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObjects/BestiaryConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObjects/BestiaryConfig.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObjects/MarkerConf.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObjects/MarkerConf.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/lock.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/lock.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObjects/QuestsConfigData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObjects/QuestsConfigData.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SaintPetersburg 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SaintPetersburg 1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Village.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Village.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueCoachCycle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueCoachCycle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueEnterHouse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueEnterHouse.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueHouseDeadBody.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueHouseDeadBody.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueHousePapers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueHousePapers.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueInfoVillage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueInfoVillage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueLockedDoor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueLockedDoor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueMoveToVillage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueMoveToVillage.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueNoInfoVillage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueNoInfoVillage.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueOpenTreasure.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueOpenTreasure.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueStart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueStart.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueStartVillage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueStartVillage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueTableCycle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueTableCycle.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueTakenLockpick.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueTakenLockpick.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueUseInvestigation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueUseInvestigation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IO/GameplayController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/IO/GameplayController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IDialogue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IDialogue.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Investigation System/InvestigationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Investigation System/InvestigationManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainCharacter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainCharacter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/AnimationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/AnimationManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/InputManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/MarkerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/MarkerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/PostProcessingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/PostProcessingManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Novel/Dialogue/DialogueSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Novel/Dialogue/DialogueSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Novel/DialogueHistory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Novel/DialogueHistory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scripts/Interface/ChangeSpriteOnLAlt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scripts/Interface/ChangeSpriteOnLAlt.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scripts/Interface/FadeOutCanvasWithDelay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scripts/Interface/FadeOutCanvasWithDelay.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scripts/Interface/[TEST] PanelSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scripts/Interface/[TEST] PanelSwitcher.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TeleportPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TeleportPoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[TEST]/QuestHandleMonoBeh.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/QuestHandleMonoBeh.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[TEST]/QuestHandleMonoBeh.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/QuestHandleMonoBeh.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MusicController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MusicController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Novel/Dialogue/DialogueParser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Novel/Dialogue/DialogueParser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Bestiary/BestiaryManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Bestiary/BestiaryManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,6 +80,20 @@
         &quot;number&quot;: 6
       },
       &quot;lastSeen&quot;: 1742218722162
+    },
+    {
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOMH0QNc6T8yYG&quot;,
+        &quot;number&quot;: 8
+      },
+      &quot;lastSeen&quot;: 1746031751583
+    },
+    {
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOMH0QNc6TcSjA&quot;,
+        &quot;number&quot;: 7
+      },
+      &quot;lastSeen&quot;: 1746031757433
     }
   ]
 }</component>
@@ -119,6 +118,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6f7018b8b8c149e68c4a65a05ac289be175400/81/781fa987/Renderer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6f7018b8b8c149e68c4a65a05ac289be175400/85/91c65ed0/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6f7018b8b8c149e68c4a65a05ac289be175400/e8/e56f725d/UnitySynchronizationContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/dc753a1061284f8e971ee88ee4826eee46ac00/8a/a56e6ea8/IntPtr.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/dc753a1061284f8e971ee88ee4826eee46ac00/b8/2c0ca601/String.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/dc753a1061284f8e971ee88ee4826eee46ac00/cd/079e7053/List`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e244b8df75b241bdbc0bc148644e6bbd3c00/a8/f669bd6b/NativeInputSystem.cs" root0="SKIP_HIGHLIGHTING" />
@@ -158,7 +158,7 @@
     &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.32902297&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.18527316&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -361,6 +361,18 @@
       <workItem from="1745979170972" duration="1256000" />
       <workItem from="1745982774647" duration="1326000" />
       <workItem from="1746015112594" duration="7150000" />
+      <workItem from="1746031084173" duration="1146000" />
+      <workItem from="1746067601229" duration="2226000" />
+      <workItem from="1746079775245" duration="1396000" />
+      <workItem from="1746162559721" duration="1067000" />
+      <workItem from="1746203010849" duration="1911000" />
+      <workItem from="1746274313046" duration="592000" />
+      <workItem from="1746333312172" duration="586000" />
+      <workItem from="1746360949551" duration="1331000" />
+      <workItem from="1746432613812" duration="392000" />
+      <workItem from="1746464265109" duration="1037000" />
+      <workItem from="1746515791467" duration="6690000" />
+      <workItem from="1746538231780" duration="1278000" />
     </task>
     <task id="LOCAL-00001" summary="Developing game&#10;Created dialogue system, inventory, diary and input&#10;Reorganized script folder">
       <option name="closed" value="true" />
@@ -442,7 +454,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745604843327</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Finalizing game">
+      <option name="closed" value="true" />
+      <created>1746031803864</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1746031803864</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -496,7 +516,8 @@
     <MESSAGE value="Fixed bug with struct" />
     <MESSAGE value="Fixing bugs" />
     <MESSAGE value="Fixing interface" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixing interface" />
+    <MESSAGE value="Finalizing game" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finalizing game" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
 </project>

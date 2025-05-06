@@ -60,6 +60,7 @@ public class InputManager : MonoBehaviour
     #endregion
 
     #region Public Methods
+    
     /// <summary>
     /// Изменить состояние ввода с автоматическим управлением компонентами
     /// </summary>

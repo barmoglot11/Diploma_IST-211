@@ -27,14 +27,12 @@ namespace DIALOGUES
             if (mc.isFacingLeft)
                 mc.Flip(immediate:true);
             mc.SetPosition(Vector2.zero);
-            mc.SetSprite(mc.GetSprite("Angry"));
+            mc.SetSprite(mc.GetSprite($"{mc.name}-Angry"));
             mc.Show();
-            
+            mc.UnHightlight();
             // Активация режима расследования
             yield return narrator.Say("Внезапная волна боли сжимает виски, в ушах звучит далёкий колокольный звон. Воздух становится густым, затрудняя дыхание.");
-
 // Реакция Михаила на боль
-            mc.UnHightlight();
             yield return narrator.Say("Хватается за голову, опираясь о стену");
             mc.Hightlight();
             yield return mc.Say("Ааа... Nom de Dieu... (Ради Бога...)");
@@ -44,14 +42,14 @@ namespace DIALOGUES
 
 // Обнаружение следа
             
-            mc.SetSprite(mc.GetSprite("Shocked"));
+            mc.SetSprite(mc.GetSprite($"{mc.name}-Shocked"));
             yield return narrator.Say("Замечает едва различимый след на полу");
             mc.Hightlight();
             yield return mc.Say("Qu'est-ce que c'est? (Что это?)");
 
 // Исследование следа
             mc.UnHightlight();
-            mc.SetSprite(mc.GetSprite("Default"));
+            mc.SetSprite(mc.GetSprite($"{mc.name}-Default"));
             yield return narrator.Say("Присаживается на корточки, всматриваясь");
             mc.Hightlight();
             yield return mc.Say("След... Но не от полицейских сапог.");

@@ -30,6 +30,8 @@ public class MainCharacter : MonoBehaviour
     [SerializeField] private CinemachineFreeLook _freeLookCamera;
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private ParticleSystem walkParticles;
+    [SerializeField] private Transform _leftFootBone;
+    [SerializeField] private Transform _rightFootBone;
     
     // Настройки движения
     [Header("Настройки движения")]
@@ -106,10 +108,32 @@ public class MainCharacter : MonoBehaviour
         HandleMovement();
         HandleSnipe();
     }
+
+    public void PlayLeftFootEffect()
+    {
+        PlayParticleOnPlace(_leftFootBone);
+    }
+
+    public void PlayRightFootEffect()
+    {
+        PlayParticleOnPlace(_rightFootBone);
+    }
+
+    private void PlayParticleOnPlace(Transform target)
+    {
+        if (walkParticles == null || target == null) return;
+        
+        walkParticles.transform.position = target.position;
+        
+        walkParticles.Play();
+    }
+    
     private void HandleMovement()
     {
         Vector3 direction = new Vector3(_moveDirection.x, 0f, _moveDirection.y).normalized;
 
+        _audioSource.pitch = Random.Range(1.2f, 1.7f);
+        
         if (direction.magnitude > 0.1f)
         {
             float speed = _isHurry ? _baseSpeed * _speedMultiplier : _baseSpeed;
@@ -117,17 +141,11 @@ public class MainCharacter : MonoBehaviour
             MoveCharacter(direction, speed);
             AnimManager.IsWalking = true;
             PlayMovementSound();
-            if(walkParticles != null)
-                if(!walkParticles.isPlaying)
-                    walkParticles?.Play();
         }
         else
         {
             AnimManager.IsWalking = false;
             Rb.velocity = new Vector3(0f, Rb.velocity.y, 0f);
-            if(walkParticles != null)
-                if(walkParticles.isPlaying)
-                    walkParticles?.Stop();
         }
     }
 
@@ -140,8 +158,17 @@ public class MainCharacter : MonoBehaviour
 
     private void MoveCharacter(Vector3 direction, float speed)
     {
-        Vector3 moveDir = Quaternion.Euler(0f, Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + _cameraTransform.eulerAngles.y, 0f) * Vector3.forward;
-        Rb.velocity = moveDir.normalized * speed; 
+        
+        var moveDir = Quaternion.Euler(0f, Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + _cameraTransform.eulerAngles.y, 0f) * Vector3.forward;
+
+        
+        var horizontalVelocity = moveDir.normalized * speed;
+
+        
+        var yVelocity = Rb.velocity.y;
+
+        
+        Rb.velocity = new Vector3(horizontalVelocity.x, yVelocity, horizontalVelocity.z);
     }
     #endregion
 

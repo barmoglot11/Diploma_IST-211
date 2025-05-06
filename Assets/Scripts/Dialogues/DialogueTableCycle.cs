@@ -20,6 +20,7 @@ namespace Dialogues
             var mc = CharacterManager.Instance.GetCharacter("Главный герой", createIfDoesNotExist:true) as Character_Sprite;
             if (mc is { isVisible: true })
                 mc.Hide();
+            mc.SetSprite(mc.GetSprite($"{mc.name}-Default"));
             mc.Show();
             mc.UnHightlight();
             yield return narrator.Say("Пыльный стол с выщербленной столешницей. На поверхности — лишь круги от стаканов да царапины, оставленные временем.");
@@ -29,6 +30,7 @@ namespace Dialogues
             yield return narrator.Say("В углу стола застревает заноза. Капля крови падает на дерево, но след мгновенно исчезает — будто дом впитал его.");
             mc.Hightlight();
             mc.Say("Чёрт...");
+            mc.SetSprite(mc.GetSprite($"{mc.name}-Default"));
             mc.Hide();
             CloseDialogueEvent();
         }

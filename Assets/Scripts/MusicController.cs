@@ -26,6 +26,8 @@ namespace BATTLE
             
             audioSource1.loop = true;
             audioSource2.loop = true;
+            
+            audioSource1.Play();
         }
 
         public void CrossFadeTo(AudioClip newClip)

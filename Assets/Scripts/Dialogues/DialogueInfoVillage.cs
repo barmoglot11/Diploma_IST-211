@@ -57,7 +57,7 @@ namespace Dialogues
 
         public void CloseDialogueEvent()
         {
-            QuestManager.Instance.SetQuestStage("mq002", 0);
+            QuestManager.Instance.SetQuestStage("mq002", 5);
             DialogueSystem.instance.CloseDialogue();
             gameObject.SetActive(false);
         }

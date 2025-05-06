@@ -22,76 +22,79 @@ namespace DIALOGUES
         {
             Character_Text narrator =
                 CharacterManager.Instance.GetCharacter("Narrator", createIfDoesNotExist: true) as Character_Text;
-            Character_Sprite MC =
+            Character_Sprite mc =
                 CharacterManager.Instance.GetCharacter("Главный герой", createIfDoesNotExist: true) as Character_Sprite;
-            Character_Sprite Coach =
+            Character_Sprite coach =
                 CharacterManager.Instance.GetCharacter("Кучер", createIfDoesNotExist: true) as Character_Sprite;
             /*MC.Show();
             if (MC.isFacingLeft)
                 MC.Flip(immediate:true);
             MC.SetPosition(Vector2.zero);*/
-            if (Coach.isFacingLeft)
-                Coach.Flip(immediate: true);
-            Coach.SetPosition(Vector2.zero);
-            if (MC.isFacingLeft)
-                MC.Flip(immediate: true);
-            MC.SetPosition(Vector2.zero);
+            if (coach.isFacingLeft)
+                coach.Flip(immediate: true);
+            coach.SetPosition(Vector2.zero);
+            if (mc.isFacingLeft)
+                mc.Flip(immediate: true);
+            mc.SetPosition(Vector2.zero);
 // Сцена у кареты
             yield return narrator.Say(
                 "Михаил выходит из дома, плотнее запахнув сюртук. Карета всё ещё ждёт у тротуара, но кучер теперь сидит ссутулившись, будто задремал. Лошадь беспокойно бьёт копытом по булыжнику.");
 
 // Михаил будит кучера
-            MC.Show();
-            MC.UnHightlight();
+            mc.Show();
+            mc.UnHightlight();
             yield return narrator.Say("Стучит костяшками пальцев по дверце кареты");
-            MC.Hightlight();
-            yield return MC.Say("Просыпайся. Меняем маршрут — хутор за Чёрной речкой.");
-            Coach.Hide();
+            mc.Hightlight();
+            yield return mc.Say("Просыпайся. Меняем маршрут — хутор за Чёрной речкой.");
+            coach.Hide();
 // Кучер отвечает
-            Coach.Show();
-            Coach.UnHightlight();
+            coach.Show();
+            coach.SetSprite(mc.GetSprite($"{coach.name}-Scared"));
+            coach.UnHightlight();
             yield return narrator.Say("Вздрагивает, поправляет помятую шляпу. Глаза красные, будто не спал всю ночь");
-            Coach.Hightlight();
-            yield return Coach.Say(
+            coach.Hightlight();
+            yield return coach.Say(
                 "Э-э-э... Ваше благородие, да там же — понижает голос — нечистое место. После заката и местные-то не ездят...");
-            Coach.Hide();
+            coach.Hide();
 // Реакция Михаила
-            MC.Show();
-            MC.UnHightlight();
-            yield return narrator.Say("Холодно");
-            MC.Hightlight();
-            yield return MC.Say("Тем лучше. Значит, свидетель никуда не денется.");
-            MC.Hide();
+            mc.Show();
+            mc.Hightlight();
+            yield return mc.Say("Тем лучше. Значит, свидетель никуда не денется.");
+            mc.UnHightlight();
+            yield return narrator.Say("Холодно раздается его ответ");
+            mc.Hide();
 // Кучер продолжает
-            Coach.Show();
-            Coach.UnHightlight();
+            coach.Show();
+            coach.SetSprite(mc.GetSprite($"{coach.name}-Shocked"));
+            coach.UnHightlight();
             yield return narrator.Say("Ёрзает на облучке, бросая взгляд на тёмное окно дома");
-            Coach.Hightlight();
-            yield return Coach.Say(
+            coach.Hightlight();
+            yield return coach.Say(
                 "Да я ж не про людей... В прошлом месяце троих возил — двое назад пешком вернулись. Бормочет. А третий так и не нашёлся.");
-            Coach.Hide();
+            coach.Hide();
 // Михаил подкупает кучера
-            MC.Show();
-            MC.UnHightlight();
+            mc.Show();
+            mc.UnHightlight();
             yield return narrator.Say("Достаёт из кармана серебряный рубль, подбрасывает и ловит его");
-            MC.Hightlight();
-            yield return MC.Say("Тебе везти, не философствовать. Или рубль слишком лёгкий?");
+            mc.Hightlight();
+            yield return mc.Say("Тебе везти, не философствовать. Или рубль слишком лёгкий?");
             yield return narrator.Say("Монета сверкает в тусклом свете, и кучер, кряхтя, берётся за вожжи.");
-            MC.Hide();
+            mc.Hide();
 // Кучер соглашается
-            Coach.Show();
-            Coach.UnHightlight();
+            coach.Show();
+            coach.SetSprite(coach.GetSprite($"{coach.name}-Default"));
+            coach.UnHightlight();
             yield return narrator.Say("Плюёт через левое плечо");
-            Coach.Hightlight();
-            yield return Coach.Say("Ладно... Только к реке подъедем — и шагом. А там как знаете.");
-            Coach.Hide();
+            coach.Hightlight();
+            yield return coach.Say("Ладно... Только к реке подъедем — и шагом. А там как знаете.");
+            coach.Hide();
 // Михаил садится в карету
-            MC.Show();
-            MC.UnHightlight();
+            mc.Show();
+            mc.UnHightlight();
             yield return narrator.Say("Забирается в карету, хлопая дверцей");
-            MC.Hightlight();
-            yield return MC.Say("Гони. И если услышишь крики — не останавливайся.");
-            MC.Hide();
+            mc.Hightlight();
+            yield return mc.Say("Гони. И если услышишь крики — не останавливайся.");
+            mc.Hide();
 // Карета уезжает
             yield return narrator.Say(
                 "Колёса скрипят, карета трогается, оставляя за собой дом с запертой дверью. Где-то впереди, за поворотом, уже сгущаются вечерние тени.");

@@ -52,24 +52,28 @@ namespace DIALOGUES
             if (mc.isFacingLeft)
                 mc.Flip(immediate:true);
             mc.SetPosition(Vector2.zero);
+            mc.SetSprite(mc.GetSprite($"{mc.name}-Default"));
             mc.Show();
             mc.UnHightlight();
             // Первая изба
             yield return narrator.Say("Михаил стучит в дверь с облупившейся краской. Молчание. Затем из-за ставни женский голос:");
             yield return villager.Say("Уходите! Ничем не поможем...");
             yield return narrator.Say("Стучит сильнее");
+            mc.SetSprite(mc.GetSprite($"{mc.name}-Shocked"));
             mc.Hightlight();
             yield return mc.Say("Я не нищий. Ищу Фёдора.");
             mc.UnHightlight();
             yield return narrator.Say("Щелчок засова. Голос теперь чётче:");
             yield return villager.Say("В церквушке спросите... Только там теперь один дьячок.");
             iteration++;
+            mc.SetSprite(mc.GetSprite($"{mc.name}-Default"));
             mc.Hide();
             CloseDialogueEvent();
         }
 
         public void CloseDialogueEvent()
         {
+            CharacterManager.Instance.GetCharacter("Главный герой", createIfDoesNotExist: true).Hide();
             DialogueSystem.instance.CloseDialogue();
         }
 

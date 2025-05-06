@@ -12,7 +12,8 @@ namespace DIALOGUE
             //Debug.Log($"Parsing line - '{rawLine}'");
 
             (string speaker, string dialogue, string command) = RipContent(rawLine);
-
+            dialogue = dialogue.Replace("\\\"", "\"");
+            
             //Debug.Log($"Speaker = '{speaker}'\n Dialogue = '{dialogue}'\n Commands = '{command}'");
 
             return new DialogueLine(speaker, dialogue, command);

@@ -17,13 +17,15 @@ MonoBehaviour:
     points:
       _serializedList:
       - Key: 0
-        Value: {x: -1, y: 2, z: 8}
+        Value: {x: 10, y: 2, z: 0}
       - Key: 5
-        Value: {x: -94, y: 8, z: 11}
+        Value: {x: 0, y: 0, z: 0}
+      - Key: 6
+        Value: {x: -83, y: 9, z: 5.5}
       - Key: 10
-        Value: {x: -90, y: 9, z: 10}
+        Value: {x: -79.5, y: 9, z: 2}
       - Key: 15
-        Value: {x: 0, y: 3, z: 0}
+        Value: {x: 10, y: 2, z: -8}
       - Key: 20
         Value: {x: 0, y: 0, z: 0}
     isActiveAtStage:
@@ -32,6 +34,8 @@ MonoBehaviour:
         Value: 1
       - Key: 5
         Value: 0
+      - Key: 6
+        Value: 1
       - Key: 10
         Value: 1
       - Key: 15
@@ -42,20 +46,22 @@ MonoBehaviour:
     points:
       _serializedList:
       - Key: 0
-        Value: {x: -4, y: 4, z: 62}
+        Value: {x: 6.5, y: 1.5, z: 55}
       - Key: 1
-        Value: {x: 8, y: 4, z: 61}
+        Value: {x: 22, y: 1.5, z: 55}
       - Key: 2
-        Value: {x: 7, y: 4, z: 53}
+        Value: {x: 22, y: 1.5, z: 42}
       - Key: 3
-        Value: {x: 46, y: 4, z: 53}
+        Value: {x: 58, y: 1.5, z: 43}
       - Key: 5
-        Value: {x: 36.5, y: 4, z: 16}
+        Value: {x: 47.5, y: 3, z: 5.75}
       - Key: 10
         Value: {x: 0, y: 0, z: 0}
       - Key: 15
-        Value: {x: 94, y: 5, z: -51}
+        Value: {x: 113, y: 1.5, z: 55}
       - Key: 16
+        Value: {x: 112, y: 2, z: 61}
+      - Key: 20
         Value: {x: 0, y: 0, z: 0}
     isActiveAtStage:
       _serializedList:
@@ -74,4 +80,6 @@ MonoBehaviour:
       - Key: 15
         Value: 1
       - Key: 16
+        Value: 1
+      - Key: 20
         Value: 0

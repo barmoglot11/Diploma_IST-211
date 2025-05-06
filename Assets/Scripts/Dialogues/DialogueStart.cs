@@ -40,13 +40,13 @@ namespace DIALOGUES
             yield return narrator.Say(
                 "Узкие переулки Петербурга окутаны густым туманом. Фонари мерцают, словно насмехаясь над попытками света пробиться сквозь тьму. Воздух пропитан сыростью и тревогой.");
             coach.Show();
-            coach.TransitionSprite(coach.GetSprite("Кучер-Question"));
+            coach.TransitionSprite(coach.GetSprite($"{coach.name}-Question"));
             coach.UnHightlight();
             yield return narrator.Say("Кучер снимает потрёпанную шляпу, уголки губ дрогнули в едва заметной насмешке.");
             coach.Hightlight();
             yield return coach.Say("Ваше благородие, прибыли. Ждать прикажете или сразу бежать за гробовщиком?");
             coach.Hide();
-            coach.SetSprite(coach.GetSprite("Кучер-Default"));
+            coach.SetSprite(coach.GetSprite($"{coach.name}-Default"));
             mc.Show();
             mc.UnHightlight();
             yield return narrator.Say(
@@ -72,6 +72,8 @@ namespace DIALOGUES
 
         public void CloseDialogueEvent()
         {
+            CharacterManager.Instance.GetCharacter("Главный герой", createIfDoesNotExist: true).Hide();
+            CharacterManager.Instance.GetCharacter("Кучер", createIfDoesNotExist: true).Hide();
             DialogueSystem.instance.CloseDialogue();
             coachNpc.SetActive(false);
         }

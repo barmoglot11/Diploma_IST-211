@@ -39,7 +39,9 @@ namespace UI
 
         public void AddMonsterToList(string monsterName)
         {
-            availableMonsters.Add(config.GetConfig(monsterName));
+            if (!availableMonsters.Contains(config.GetConfig(monsterName)))
+                availableMonsters.Add(config.GetConfig(monsterName));
+            
         }
 
         void Awake()
@@ -60,7 +62,8 @@ namespace UI
                 SetupButtonHoverEffect(nextButton);
                 SetupButtonHoverEffect(prevButton);
                 
-                AddMonsterToList("");
+                AddMonsterToList("Молох Пепельный(«Сжигатель»)");
+                AddMonsterToList("Костяной Охотник(«Тот, что ходит среди трупов»)");
             }
             else
             {

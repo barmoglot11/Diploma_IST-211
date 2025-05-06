@@ -19,6 +19,9 @@ namespace DIALOGUES
         {
             var narrator = CharacterManager.Instance.GetCharacter("Narrator", createIfDoesNotExist:true) as Character_Text;
             var mc = CharacterManager.Instance.GetCharacter("Главный герой", createIfDoesNotExist:true) as Character_Sprite;
+            if (mc is { isFacingLeft: true })
+                mc.Flip(immediate:true);
+            mc.SetPosition(Vector2.zero);
             if (mc is { isVisible: true })
                 mc.Hide();
             
