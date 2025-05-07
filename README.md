@@ -54,15 +54,15 @@ git clone https://github.com/barmoglot11/Diploma_IST-211.git
 
 ## Лицензия
 
-Данный проект распространяется по лицензии [PLACEHOLDER](LICENCE)
+Данный проект распространяется по лицензии [Apache 2.0](LICENCE)
 
 ### Лицензионные зависимости
 
 Для полноценного использования и сборки проекта требуются ассеты, которые распространяются по частным лицензиям в AssetStore:
 
-1. [ASSET]
-2. [ASSET]
-3. [ASSET]
+1. [Serialized Dictionary](https://assetstore.unity.com/packages/tools/utilities/serialized-dictionary-243052)
+2. [Simple Toon](https://assetstore.unity.com/packages/vfx/shaders/simple-toon-185038)
+3. [Volumetric Light Beam](https://assetstore.unity.com/packages/vfx/shaders/volumetric-light-beam-99888)
    
 Необходимо их купить и импортировать в проект.
 
