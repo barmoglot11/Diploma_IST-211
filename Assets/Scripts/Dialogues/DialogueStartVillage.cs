@@ -57,6 +57,8 @@ namespace Dialogues
 
         public void CloseDialogueEvent()
         {
+            CharacterManager.Instance.GetCharacter("Главный герой", createIfDoesNotExist: true).Hide();
+            CharacterManager.Instance.GetCharacter("Кучер", createIfDoesNotExist: true).Hide();
             DialogueSystem.instance.CloseDialogue();
         }
     }

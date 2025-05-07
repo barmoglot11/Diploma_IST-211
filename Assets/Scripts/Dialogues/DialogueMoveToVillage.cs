@@ -46,10 +46,10 @@ namespace DIALOGUES
             yield return narrator.Say("Стучит костяшками пальцев по дверце кареты");
             mc.Hightlight();
             yield return mc.Say("Просыпайся. Меняем маршрут — хутор за Чёрной речкой.");
-            coach.Hide();
+            mc.Hide();
 // Кучер отвечает
             coach.Show();
-            coach.SetSprite(mc.GetSprite($"{coach.name}-Scared"));
+            coach.SetSprite(coach.GetSprite($"{coach.name}-Scared"));
             coach.UnHightlight();
             yield return narrator.Say("Вздрагивает, поправляет помятую шляпу. Глаза красные, будто не спал всю ночь");
             coach.Hightlight();
@@ -65,7 +65,7 @@ namespace DIALOGUES
             mc.Hide();
 // Кучер продолжает
             coach.Show();
-            coach.SetSprite(mc.GetSprite($"{coach.name}-Shocked"));
+            coach.SetSprite(coach.GetSprite($"{coach.name}-Shocked"));
             coach.UnHightlight();
             yield return narrator.Say("Ёрзает на облучке, бросая взгляд на тёмное окно дома");
             coach.Hightlight();
@@ -105,11 +105,12 @@ namespace DIALOGUES
 
         public void CloseDialogueEvent()
         {
+            CharacterManager.Instance.GetCharacter("Главный герой", createIfDoesNotExist: true).Hide();
+            CharacterManager.Instance.GetCharacter("Кучер", createIfDoesNotExist: true).Hide();
+            
             QuestManager.Instance.SetQuestStage("mq001", 20);
             DialogueSystem.instance.CloseDialogue();
             Interface.SetActive(false);
-            InputManager.Instance.ChangeCursorState(true);
-            InputManager.Instance.ChangeCursorLock(false);
             loadScreen.Loading();
         }
     }

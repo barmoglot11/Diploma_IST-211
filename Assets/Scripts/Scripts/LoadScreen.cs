@@ -38,5 +38,7 @@ public class LoadScreen : MonoBehaviour
             }
             yield return null;
         }
+        
+        
     }
 }

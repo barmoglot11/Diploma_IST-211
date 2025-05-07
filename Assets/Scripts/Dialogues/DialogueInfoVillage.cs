@@ -57,6 +57,7 @@ namespace Dialogues
 
         public void CloseDialogueEvent()
         {
+            CharacterManager.Instance.GetCharacter("Главный герой", createIfDoesNotExist: true).Hide();
             QuestManager.Instance.SetQuestStage("mq002", 5);
             DialogueSystem.instance.CloseDialogue();
             gameObject.SetActive(false);

@@ -67,6 +67,7 @@ namespace DIALOGUES
         public void CloseDialogueEvent()
         {
             DialogueSystem.instance.CloseDialogue();
+            CharacterManager.Instance.GetCharacter("Главный герой", createIfDoesNotExist: true).Hide();
             teleport.ClearTeleportEvents();
             ToDisable?.SetActive(false);
         }
