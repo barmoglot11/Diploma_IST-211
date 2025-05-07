@@ -54,7 +54,7 @@ git clone https://github.com/barmoglot11/Diploma_IST-211.git
 
 ## Лицензия
 
-Данный проект распространяется по лицензии [PLACEHOLDER](LICENCE)
+Данный проект распространяется по лицензии [Apache 2.0](LICENCE)
 
 ### Лицензионные зависимости
 
