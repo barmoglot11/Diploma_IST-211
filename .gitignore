@@ -545,3 +545,16 @@ FodyWeavers.xsd
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/unity,rider,visualstudio
+
+/Assets/Andrew/Scenes/
+
+/Assets/Happy Little Trees - Free nature pack by Nebula/
+/Assets/LeanTween/
+/Assets/ModularFirstPersonController/
+/Assets/Plugins/SerializedCollections/
+/Assets/QuickOutline/
+/Assets/VolumetricLightBeam/
+/Assets/VolumetricLightBeamPackage/
+/Assets/Unity-UI-Rounded-Corners/
+/Assets/Simple Toon/
+/Assets/Distant Lands/Lumen/
