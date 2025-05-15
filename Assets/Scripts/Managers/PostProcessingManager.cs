@@ -35,14 +35,17 @@ public class PostProcessingManager : MonoBehaviour
 
     public void SetProfileByIndex(int index)
     {
-        PostProcessProfile source = GetProfileByIndex(index);
-        if (source == null)
+        PostProcessProfile targetProfile = GetProfileByIndex(index);
+        if (targetProfile == null)
         {
             Debug.LogWarning("Invalid profile index or null profile.");
             return;
         }
 
-        _postProcessVolume.profile = source;
+        if (_blendCoroutine != null)
+            StopCoroutine(_blendCoroutine);
+
+        _blendCoroutine = StartCoroutine(BlendToProfile(targetProfile, 0));
     }
 
     public void SetProfileByIndexSmooth(int index)
@@ -163,7 +166,25 @@ public class PostProcessingManager : MonoBehaviour
             time += Time.deltaTime;
             yield return null;
         }
+        
+        if (currentBloom != null) currentBloom.intensity.value = endBloom;
+        if (currentDoF != null) currentDoF.focusDistance.value = endFocus;
+        if (currentAO != null) currentAO.intensity.value = endAO;
+        if (currentCA != null) currentCA.intensity.value = endCA;
+        if (currentMB != null) currentMB.shutterAngle.value = endMB;
 
+        if (currentCG != null)
+        {
+            currentCG.saturation.value = endSat;
+            currentCG.contrast.value = endContrast;
+            currentCG.colorFilter.value = endColorFilter;
+            currentCG.temperature.value = endTemp;
+            currentCG.mixerRedOutRedIn.value = endRedRed;
+            currentCG.mixerRedOutBlueIn.value = endRedBlue;
+            currentCG.mixerRedOutGreenIn.value = endRedGreen;
+            currentCG.hueShift.value = endHueShift;
+        }
+        
         _blendCoroutine = null;
     }
 }

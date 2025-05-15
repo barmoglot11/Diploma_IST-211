@@ -105,6 +105,12 @@ public class InventoryManager : MonoBehaviour
             return;
         }
 
+        if (HasItem(itemName))
+        {
+            Debug.LogWarning($"Item '{itemName}' already exists in inventory", this);
+            return;
+        }
+        
         var emptyCell = _cells.FirstOrDefault(c => string.IsNullOrWhiteSpace(c.invItem.itemName));
         if (emptyCell == null)
         {

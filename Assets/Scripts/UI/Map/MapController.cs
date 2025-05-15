@@ -67,10 +67,10 @@ namespace MAP
         // Optional: Add mouse wheel zoom support
         private void Update()
         {
-            float scrollInput = Input.GetAxis("Mouse ScrollWheel");
+            var scrollInput = Input.GetAxis("Mouse ScrollWheel");
             if (scrollInput != 0f)
             {
-                float zoomDelta = scrollInput * _zoomSensitivity;
+                var zoomDelta = scrollInput * _zoomSensitivity;
                 _zoomSlider.value = Mathf.Clamp01(_zoomSlider.value + zoomDelta);
             }
         }

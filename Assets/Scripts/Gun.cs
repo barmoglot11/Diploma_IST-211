@@ -21,6 +21,7 @@ namespace BATTLE
         private int _currentAmmo;
         private bool _isCoolingDown;
         private bool _isEquipped;
+        private ParticleSystem _shotParticle;
 
         private void Awake()
         {
@@ -42,9 +43,19 @@ namespace BATTLE
         {
             Debug.DrawRay(_shotOrigin.position, -_shotOrigin.forward * _shotRange, 
                          _currentAmmo > 0 ? Color.green : Color.red);
-            //_drawLine.ApplyDrawLine(_shotOrigin.position, -_shotOrigin.forward * _shotRange);
+            
         }
 
+        public void LinkInput()
+        {
+            _mainCharacter.SetupSnipeControls(this);
+        }
+        
+        public void UnlinkInput()
+        {
+            _mainCharacter.UnlinkSnipeControls(this);
+        }
+        
         public void Equip()
         {
             if (!_isEquipped)
@@ -98,6 +109,8 @@ namespace BATTLE
         {
             _audioSource.PlayOneShot(_shotSound);
 
+            _shotParticle.Play();
+            
             if (Physics.Raycast(_shotOrigin.position, -_shotOrigin.forward, 
                                out RaycastHit hit, _shotRange, _shotLayerMask))
             {

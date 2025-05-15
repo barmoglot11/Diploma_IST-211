@@ -13,6 +13,7 @@ public class GameplayController: MonoBehaviour
     [SerializeField] private Enemy Enemy;
     [SerializeField] private FadeOutCanvasWithDelay BlackScreen;
     [SerializeField] private Transform DestinationPoint;
+    [SerializeField] private Transform MonsterDestPoint;
     
     [SerializeField] private GameObject EnterLabyrinthCollider;
     [SerializeField] private GameObject ExitLabyrinthCollider;
@@ -66,6 +67,7 @@ public class GameplayController: MonoBehaviour
     public void StartBattle()
     {
         if (IsBattleStarted) return;
+        Enemy.transform.position = MonsterDestPoint.position;
         Enemy.gameObject.SetActive(true);
         EnterLabyrinthCollider.gameObject.SetActive(true);
         ExitLabyrinthCollider.gameObject.SetActive(false);

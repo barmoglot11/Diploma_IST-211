@@ -5,7 +5,7 @@ namespace QUEST
 {
     [CreateAssetMenu(fileName = "QuestsConfigData", menuName = "Quests", order = 0)]
     [System.Serializable]
-    public class QuestsConfigData : ScriptableObject
+    public class QuestsConfigData
     {
         public Quest[] Quests;
 
@@ -15,7 +15,7 @@ namespace QUEST
 
             foreach (var data in Quests)
             {
-                if(string.Equals(questID, data.QuestID.ToLower()))
+                if (string.Equals(questID, data.QuestID.ToLower()))
                     return data.Copy();
             }
 
