@@ -56,15 +56,13 @@ namespace DIALOGUES
             mc.Show();
             mc.UnHightlight();
             // Первая изба
-            yield return narrator.Say("Михаил стучит в дверь с облупившейся краской. Молчание. Затем из-за ставни женский голос:");
-            yield return villager.Say("Уходите! Ничем не поможем...");
-            yield return narrator.Say("Стучит сильнее");
-            mc.SetSprite(mc.GetSprite($"{mc.name}-Shocked"));
+            yield return narrator.Say("Михаил подходит к окну с плотно задёрнутыми занавесками. Ткань вздрагивает — щель между досками вспыхивает глазом, тут же исчезающим.");
             mc.Hightlight();
-            yield return mc.Say("Я не нищий. Ищу Фёдора.");
+            yield return mc.Say("Скажите, видели ли вы тут женщину приезжую?");
             mc.UnHightlight();
-            yield return narrator.Say("Щелчок засова. Голос теперь чётче:");
-            yield return villager.Say("В церквушке спросите... Только там теперь один дьячок.");
+            yield return narrator.Say("Из-за занавески доносится хрипящий шепот");
+            yield return villager.Say("Убирайся!");
+            yield return narrator.Say("Щель в двери внезапно распахивается — не рукой, а порывом ветра. На пороге появляется тряпичная кукла, висящая на верёвке. Её голова крутится вслед герою, пока он отходит.");
             iteration++;
             mc.SetSprite(mc.GetSprite($"{mc.name}-Default"));
             mc.Hide();
@@ -87,12 +85,13 @@ namespace DIALOGUES
             mc.SetPosition(Vector2.zero);
             mc.Show();
             mc.UnHightlight();
-            yield return narrator.Say("Старик за дверью кашляет, но не открывает:");
-            yield return villager.Say("Федька? Давно не видели... В лесу, сказывают, следы его теряются.");
+            yield return narrator.Say("Михаил стучит в дверь с облупленной краской. Изнутри слышны шаги, но дверь не открывается.");
             mc.Hightlight();
-            yield return mc.Say("Чей лес?");
+            yield return mc.Say("Я ищу девушку. Бледная, в белом. Была здесь?");
             mc.UnHightlight();
-            yield return narrator.Say("Долгая пауза. Потом скрип кровати — старик отошёл от двери.");
+            yield return narrator.Say("Щель в двери расширяется на ладонь. Через неё вылетает горсть пепла, оседая на плечах Михаила.");
+            yield return villager.Say("Пепел не лжёт.{a} Все, кто спрашивал... там.");
+            yield return narrator.Say("Щель захлопывается. За дверью — звук скребущих ногтей по дереву, будто кто-то ползёт вглубь дома.");
             iteration++;
             mc.Hide();
             CloseDialogueEvent();
@@ -102,15 +101,17 @@ namespace DIALOGUES
         {
             Character_Text narrator = CharacterManager.Instance.GetCharacter("Narrator", createIfDoesNotExist:true) as Character_Text;
             Character_Sprite mc = CharacterManager.Instance.GetCharacter("Главный герой", createIfDoesNotExist:true) as Character_Sprite;
-            Character_Text villager = CharacterManager.Instance.GetCharacter("Деревенский житель", createIfDoesNotExist:true) as Character_Text;
             if (mc.isFacingLeft)
                 mc.Flip(immediate:true);
             mc.SetPosition(Vector2.zero);
             mc.Show();
             mc.UnHightlight();
-            yield return narrator.Say("Молодая мать шипит через щель:");
-            yield return villager.Say("Не мучайте людей! Ступайте к отцу Никифору... если осмелитесь.");
-            yield return narrator.Say("Ребёнок за стеной начинает плакать. Дверь глухо стучит косяком — её придержали рукой.");
+            yield return narrator.Say("Михаил замечает окно на втором этаже, где трясётся грязное стекло. В темноте мелькает силуэт старика, сидящего за столом.");
+            mc.Hightlight();
+            yield return mc.Say("Где она? Куда ушла?");
+            mc.UnHightlight();
+            yield return narrator.Say("Старик не отвечает. {a}Вместо этого он поднимает руку с зажатым в пальцах листом бумаги. На нём каракули: «Под землёй». Внезапно лист рвётся, и обрывки падают на голову Михаилу.");
+            yield return narrator.Say("Окно захлопывается. Стекло трескается, образуя узор, похожий на корни дерева.");
             mc.Hide();
             iteration++;
             gameObject.SetActive(false);

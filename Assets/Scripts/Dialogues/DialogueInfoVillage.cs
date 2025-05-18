@@ -28,29 +28,28 @@ namespace Dialogues
                 mc.Flip(immediate:true);
             mc.SetPosition(Vector2.zero);
             // Подход к церкви
-            yield return narrator.Say("Полуразрушенная кладка, кривой крест на крыше. Дверь в трапезную приоткрыта на палец, пахнет ладаном и сыростью.");
+            yield return narrator.Say("Дверь церкви скрипит, приоткрываясь на несколько ладоней. Сквозь щель пахнет сыростью и ладаном.");
 
 // Михаил стучит
             mc.Show();
-            mc.UnHightlight();
-            yield return narrator.Say("Стучит костяшками пальцев в косяк");
             mc.Hightlight();
-            yield return mc.Say("Отец Никифор?");
+            yield return mc.Say("Ищу девушку. Бледная, в белом. Была здесь?");
             mc.UnHightlight();
 // Ответ из темноты
-            yield return narrator.Say("Из темноты глухой голос");
-            yield return villager.Say("Фёдора ищите? Опоздали... В лес ушёл три дня назад. Следы обрываются у старой сосны.");
+            yield return narrator.Say("Пауза. Колеблющееся пламя свечи мелькает за дверью.");
+            yield return villager.Say("Была. Но не задержалась. Ушла в лес.");
 // Вопрос Михаила
             
             yield return narrator.Say("Прищуривается, пытаясь разглядеть говорящего");
             mc.Hightlight();
-            yield return mc.Say("А почему не ищете?");
+            yield return mc.Say("Куда именно?");
 // Ответ дьячка
             mc.UnHightlight();
-            yield return narrator.Say("Пауза. Потом скрип половиц — дьячок отступает вглубь");
-            yield return villager.Say("Кто ищет... тот не возвращается.");
+            yield return narrator.Say("Голос старосты становится чуть ближе, будто он наклонился");
+            yield return villager.Say("Есть поляна. Где дерево с глазами. Ты её узнаешь.");
+            yield return villager.Say("Уходи, пока можешь.");
 // Завершение сцены
-            yield return narrator.Say("Дверь захлопывается. На пороге остаётся лишь смятая тряпица — будто кто-то вытирал о неё окровавленные руки.");
+            yield return narrator.Say("Дверь захлопывается. На земле — пепел. Он двигается, собираясь в силуэт птицы. Каркающий смех доносится из пустоты.");
             mc.Hide();
             CloseDialogueEvent();
         }

@@ -1,8 +1,5 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
 
 namespace INVESTIGATION
 {
@@ -13,6 +10,7 @@ namespace INVESTIGATION
         [SerializeField] private AudioClip _investigationSound;
         [SerializeField] private ChangeSpriteOnLAlt EyeController;
         [SerializeField] private InteractiveObject Dialogue;
+        [SerializeField]private MirrorController Mirror;
         [Header("Audio Settings")]
         [SerializeField] [Range(0f, 1f)] private float _maxVolume = 1f;
         [SerializeField] private float _fadeDuration = 0.5f;
@@ -106,6 +104,8 @@ namespace INVESTIGATION
             IsInvestigating = !IsInvestigating;
             UpdateInvestigationState();
             EyeController.StartChangeSprite();
+            if(Mirror != null)
+                Mirror.SetMaterial();
             if (_debugLogs)
             {
                 Debug.Log($"[Investigation] Mode {(IsInvestigating ? "activated" : "deactivated")}");

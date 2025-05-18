@@ -22,7 +22,9 @@ public struct CameraOrbits
     }
 }
 
-public class MainCharacter : MonoBehaviour
+namespace BATTLE
+{
+    public class MainCharacter : MonoBehaviour
 {
     // Компоненты и зависимости
     [SerializeField] private Rigidbody _rigidbody;
@@ -48,6 +50,7 @@ public class MainCharacter : MonoBehaviour
     private string currentCameraSetting = "Out";
     public float transitionDuration = 1f;
     private Coroutine _transitionCoroutine;
+    [SerializeField]private bool isSnipeAvailable= false;
     
     // Звуки окружения
     [Header("Настройки аудио")]
@@ -75,6 +78,8 @@ public class MainCharacter : MonoBehaviour
         if (!_rigidbody) _rigidbody = GetComponent<Rigidbody>();
         if (!_audioSource) _audioSource = GetComponent<AudioSource>();
     }
+    
+    
 
     #region Input Handling
     private void SetupInput()
@@ -145,7 +150,7 @@ public class MainCharacter : MonoBehaviour
         else
         {
             AnimManager.IsWalking = false;
-            Rb.velocity = new Vector3(0f, Rb.velocity.y, 0f);
+            UseStandardVelocity();
         }
     }
 
@@ -170,6 +175,8 @@ public class MainCharacter : MonoBehaviour
         
         Rb.velocity = new Vector3(horizontalVelocity.x, yVelocity, horizontalVelocity.z);
     }
+    
+    private void UseStandardVelocity() => Rb.velocity = new Vector3(0f, Rb.velocity.y, 0f);
     #endregion
 
     #region Audio System
@@ -294,19 +301,29 @@ public class MainCharacter : MonoBehaviour
 
     public void HandleSnipe()
     {
-        if(!AnimManager.IsSniping)
+        if(isSnipeAvailable)
         {
-            SwitchCameraProfile("Out");
-            return;
+            if(!AnimManager.IsSniping)
+            {
+                SwitchCameraProfile("Out");
+                return;
+            }
+            SwitchCameraProfile("Snipe");
+            float speed = _isHurry ? _baseSpeed * _speedMultiplier : _baseSpeed;
+            RotateCharacter(Vector3.forward, speed);
         }
-        SwitchCameraProfile("Snipe");
-        float speed = _isHurry ? _baseSpeed * _speedMultiplier : _baseSpeed;
-        RotateCharacter(Vector3.forward, speed);
     }
     #endregion
 
     #region Unity Callbacks
     private void OnEnable() => SetupInput();
-    private void OnDisable() => UnlinkInput();
+    private void OnDisable()
+    {
+        UnlinkInput();
+        UseStandardVelocity();
+        AnimManager.ResetAllStates();
+    }
     #endregion
+}
+
 }

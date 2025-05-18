@@ -11,7 +11,7 @@ namespace DIALOGUES
     {
         public AudioSource source;
         public GameObject ToDisable;
-        public TeleportPoint teleport;
+        public GameObject footsteps;
         public void StartDialogue()
         {
             source.Play();
@@ -21,7 +21,6 @@ namespace DIALOGUES
 
         public IEnumerator Dialogue()
         {
-            InputManager.Instance.ChangeInputStatus(InputStatus.Dialogue);
             var narrator = CharacterManager.Instance.GetCharacter("Narrator", createIfDoesNotExist:true) as Character_Text;
             var mc = CharacterManager.Instance.GetCharacter("Главный герой", createIfDoesNotExist:true) as Character_Sprite;
             if (mc.isFacingLeft)
@@ -31,34 +30,22 @@ namespace DIALOGUES
             mc.Show();
             mc.UnHightlight();
             // Активация режима расследования
-            yield return narrator.Say("Внезапная волна боли сжимает виски, в ушах звучит далёкий колокольный звон. Воздух становится густым, затрудняя дыхание.");
+            yield return narrator.Say("Михаил приближается к зеркалу, шаги замедляются. {a}Воздух сгущается, как кисель.");
 // Реакция Михаила на боль
             yield return narrator.Say("Хватается за голову, опираясь о стену");
             mc.Hightlight();
             yield return mc.Say("Ааа... Nom de Dieu... (Ради Бога...)");
             mc.UnHightlight();
 // Последействие
-            yield return narrator.Say("Постепенно боль отступает, оставляя после себя странную обострённость восприятия. Тени в углах кажутся чуть гуще, чем должны быть.");
-
-// Обнаружение следа
+            yield return narrator.Say("Зеркало дрожит, будто вода в проруби. Голоса нарастают — шипение, рыдания, крики, будто кто-то давится в темноте.");
             
-            mc.SetSprite(mc.GetSprite($"{mc.name}-Shocked"));
-            yield return narrator.Say("Замечает едва различимый след на полу");
-            mc.Hightlight();
-            yield return mc.Say("Qu'est-ce que c'est? (Что это?)");
 
-// Исследование следа
-            mc.UnHightlight();
+            yield return narrator.Say("Он сжимает виски, суставы побелели. В глазах темнеет, но не отпускает взгляд от отражения");
+            yield return narrator.Say("Боль в голове разливалась, как тёмная вода из проруби, но вдруг схлынула, оставив лишь холодную пустоту под черепом. " +
+                                      "{a}Михаил сделал глубокий вдох — воздух пах плесенью и воском, но уже не резал глаза шипами.");
+            
             mc.SetSprite(mc.GetSprite($"{mc.name}-Default"));
-            yield return narrator.Say("Присаживается на корточки, всматриваясь");
-            mc.Hightlight();
-            yield return mc.Say("След... Но не от полицейских сапог.");
-
-// Финальная реплика
-            mc.UnHightlight();
-            yield return narrator.Say("Выпрямляется, бросая взгляд в тёмный дверной проём");
-            mc.Hightlight();
-            yield return mc.Say("Что же здесь на самом деле произошло?");
+            
             mc.Hide();
             
             CloseDialogueEvent();
@@ -68,8 +55,8 @@ namespace DIALOGUES
         {
             DialogueSystem.instance.CloseDialogue();
             CharacterManager.Instance.GetCharacter("Главный герой", createIfDoesNotExist: true).Hide();
-            teleport.ClearTeleportEvents();
             ToDisable?.SetActive(false);
+            footsteps?.SetActive(true);
         }
     }
 }

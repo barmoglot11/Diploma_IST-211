@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-namespace BATTLE
+namespace AUDIO
 {
     public class MusicController : MonoBehaviour
     {

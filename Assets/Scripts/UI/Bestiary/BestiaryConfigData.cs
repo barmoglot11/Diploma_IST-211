@@ -1,39 +1,42 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-[System.Serializable]
-public class BestiaryConfigData
+namespace UI
 {
-    public string MonsterName;
-    public Material MonsterMaterial;
-    [TextArea(minLines: 5, maxLines: 20)]
-    public string MonsterDesc;
-        
-    public BestiaryConfigData Copy()
-    {
-        var result = new BestiaryConfigData
-        {
-            MonsterName = MonsterName,
-            MonsterMaterial = MonsterMaterial,
-            MonsterDesc = MonsterDesc,
-        };
-        return result;
-    }
+    [System.Serializable]
 
-    public static BestiaryConfigData Default
+    public class BestiaryConfigData
     {
-        get
+        public string MonsterName;
+        public Material MonsterMaterial;
+        [TextArea(minLines: 5, maxLines: 20)] public string MonsterDesc;
+
+        public BestiaryConfigData Copy()
         {
-            BestiaryConfigData result = new BestiaryConfigData();
-            
-            result.MonsterName = "Неизвестно";
-            result.MonsterDesc = "Слабости: неизвестно" +
-                                 "\n\nнеизвестно" +
-                                 "\n\nнеизвестно" +
-                                 "\n\nТекст... Текст... "
-                                 ;
-            result.MonsterMaterial = Resources.Load<Material>("Monster None");
+            var result = new BestiaryConfigData
+            {
+                MonsterName = MonsterName,
+                MonsterMaterial = MonsterMaterial,
+                MonsterDesc = MonsterDesc,
+            };
             return result;
+        }
+
+        public static BestiaryConfigData Default
+        {
+            get
+            {
+                BestiaryConfigData result = new BestiaryConfigData();
+
+                result.MonsterName = "Неизвестно";
+                result.MonsterDesc = "Слабости: неизвестно" +
+                                     "\n\nнеизвестно" +
+                                     "\n\nнеизвестно" +
+                                     "\n\nТекст... Текст... "
+                    ;
+                result.MonsterMaterial = Resources.Load<Material>("Monster None");
+                return result;
+            }
         }
     }
 }

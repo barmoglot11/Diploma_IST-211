@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace BATTLE
+namespace UI
 {
     [CreateAssetMenu(fileName = "BestiaryConfig", menuName = "Bestiary", order = 0)]
     public class BestiaryConfigSO : ScriptableObject

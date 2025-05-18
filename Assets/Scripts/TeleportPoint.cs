@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
+using BATTLE;
 
 [RequireComponent(typeof(Collider))] // Требует компонент Collider
 public class TeleportPoint : MonoBehaviour

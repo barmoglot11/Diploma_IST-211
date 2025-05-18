@@ -35,38 +35,34 @@ namespace DIALOGUES
             if (mc is { isFacingLeft: true })
                 mc.Flip(immediate: true);
             mc.SetPosition(Vector2.zero);
-            yield return narrator.Say(
-                "Карета останавливается. Лошадь фыркает, разгоняя пар в холодном воздухе. Где-то вдали воет ветер.");
-            yield return narrator.Say(
-                "Узкие переулки Петербурга окутаны густым туманом. Фонари мерцают, словно насмехаясь над попытками света пробиться сквозь тьму. Воздух пропитан сыростью и тревогой.");
-            coach.Show();
-            coach.TransitionSprite(coach.GetSprite($"{coach.name}-Question"));
-            coach.UnHightlight();
-            yield return narrator.Say("Кучер снимает потрёпанную шляпу, уголки губ дрогнули в едва заметной насмешке.");
-            coach.Hightlight();
-            yield return coach.Say("Ваше благородие, прибыли. Ждать прикажете или сразу бежать за гробовщиком?");
-            coach.Hide();
-            coach.SetSprite(coach.GetSprite($"{coach.name}-Default"));
-            mc.Show();
-            mc.UnHightlight();
-            yield return narrator.Say(
-                "Ступни сапог глухо стучат по булыжнику, взгляд скользит по слепым окнам и покосившимся карнизам.");
-            mc.Hightlight();
-            yield return mc.Say("Жди. Если через полчаса не вернусь — скачи в участок. И ни слова лишнего.");
-            mc.Hide();
+            yield return narrator.Say("Город дышал холодом. Каменные фасады домов, выстроенные в шахматном порядке, будто сжимались от сырости, просачивающейся сквозь туман." +
+                                      "{a}Фонари на улицах мерцали, как будто боялись разогнать тень, которая цеплялась за каждую булыжную плиту мостовой."
+                                      );
+            yield return narrator.Say("Особняк стоял тихо, будто выдохнул последние остатки жизни наружу ещё до прибытия Михаила.");
+            
             coach.Show();
             coach.UnHightlight();
-            yield return narrator.Say("Сухой кашель вырывается из груди, пальцы нервно теребят вожжи.");
+            yield return narrator.Say("Кучер останавливает экипаж, не оборачиваясь. Лошадь фыркает, будто чувствуя неладное.");
             coach.Hightlight();
-            yield return coach.Say("Как скажете... Только смотрите — здесь тени не любят чужих.");
+            yield return coach.Say("Дальше не поеду. Тут... {a}не место для живых.");
             coach.Hide();
+
             mc.Show();
             mc.UnHightlight();
-            yield return narrator.Say(
-                "Резкий поворот головы, тени переулка на мгновение замерли, будто втянутые внезапной напряжённостью его движений.");
+            yield return narrator.Say("Михаил выходит, с силой захлопнув дверцу. Его сапоги глухо стучат по камням двора.");
             mc.Hightlight();
-            yield return mc.Say("Тени? Спасибо за совет.");
+            yield return mc.Say("Я заплатил за дорогу. Не за советы.");
             mc.Hide();
+            
+            coach.Show();
+            coach.UnHightlight();
+            yield return narrator.Say("Кучер сжимает вожжи, костяшки пальцев белеют. {a}Он шепчет, не глядя на героя.");
+            coach.Hightlight();
+            yield return coach.Say("Забирай свою монету. Только... не оставайся надолго. Дом этот... он не спит.");
+            coach.Hide();
+
+            yield return narrator.Say("Кучер заходит в карету, чтобы уснуть и забыть об этом месте надолго.");
+            
             CloseDialogueEvent();
         }
 
