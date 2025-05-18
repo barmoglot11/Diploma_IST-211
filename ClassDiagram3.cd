@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BATTLE.Enemy">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AMREIEEAAAgggQBAAAMAAAAEBCAAAICIYQAAACABCOA=</HashCode>
+      <FileName>Assets\Scripts\Enemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BATTLE.Gun">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAABAIBDAgAAAAAGEAwiAAQAAAoBAAAAISACEA=</HashCode>
+      <FileName>Assets\Scripts\Gun.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BATTLE.MusicController">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEQAAAAEAAAgAAAAAEAAAAAAAAAAIAEQ=</HashCode>
+      <FileName>Assets\Scripts\MusicController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BATTLE.BestiaryConfigSO">
+    <Position X="8.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\Bestiary\BestiaryConfigSO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DIALOGUE.ChoiceManager">
+    <Position X="15.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAgAAAAAJAAAAAAAAAAAABAAAAAAAAAQAQAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Novel\ChoiceManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DIALOGUE.DialogueLine">
+    <Position X="14" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACFIAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Assets\Scripts\Novel\Dialogue\Data Container\DialogueLine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DIALOGUE.DL_Command_Data">
+    <Position X="15.75" Y="3.5" Width="1.5" />
+    <NestedTypes>
+      <Struct Name="DIALOGUE.DL_Command_Data.Command" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Novel\Dialogue\Data Container\DL_Command_Data.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAgAQIAAAAIAAAAAAAAAAAAAAAAAAAACAAAAAAAEAAA=</HashCode>
+      <FileName>Assets\Scripts\Novel\Dialogue\Data Container\DL_Command_Data.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DIALOGUE.DL_DialogueData">
+    <Position X="12.25" Y="2.5" Width="1.5" />
+    <NestedTypes>
+      <Struct Name="DIALOGUE.DL_DialogueData.DialogueSegment" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Novel\Dialogue\Data Container\DL_DialogueData.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAABAAAE=</HashCode>
+      <FileName>Assets\Scripts\Novel\Dialogue\Data Container\DL_DialogueData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DIALOGUE.DL_SpeakerData">
+    <Position X="19.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAgIAQBAAAQAAAoAAQAAAAJAEEAAwAAAEAAAEAAA=</HashCode>
+      <FileName>Assets\Scripts\Novel\Dialogue\Data Container\DL_SpeakerData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DIALOGUE.DialogueContainer">
+    <Position X="19.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAgAAAAAAAAABCAIAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Novel\Dialogue\DialogueContainer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DIALOGUE.DialogueParser">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAABAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Novel\Dialogue\DialogueParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DIALOGUE.DialogueSystem">
+    <Position X="10.5" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="DIALOGUE.DialogueSystem.DialogueSystemEvent" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Novel\Dialogue\DialogueSystem.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AEEKIACEAiDABQAAQQ4AAAAAAABAAAQAAAAAAAAgAEA=</HashCode>
+      <FileName>Assets\Scripts\Novel\Dialogue\DialogueSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DIALOGUE.ConversationManager">
+    <Position X="17.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIABAAAABgAAABBAUAhAAAIAABAAAACAAgACAEAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Novel\Dialogue\Managers\ConversationManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DIALOGUE.DialogueHistory">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAgAAAIAAAAQAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Novel\DialogueHistory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DIALOGUE.DialogueHistoryCont">
+    <Position X="12.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAgAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Novel\DialogueHistoryCont.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DIALOGUE.DialogueSystemConfigurationSO">
+    <Position X="14" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Assets\Scripts\Novel\ScriptableObjects\DialogueSystemConfigurationSO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="INVENTORY.AddItemScreen">
+    <Position X="0.5" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAQAAAAAAAAAAAAAAAAAAAAIAgAIAAAABAA=</HashCode>
+      <FileName>Assets\Scripts\UI\Inventory\AddItemScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="INVENTORY.Inv_Cell">
+    <Position X="2.25" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABEAAAAAAAAAAAQAAAAABEAAgAAAAAoAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\Inventory\Inv_Cell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="INVENTORY.Inv_Item">
+    <Position X="4" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAABAAAAAAAAAAAAAAAQAAAAgAAAgAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\Inventory\Inv_Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="INVENTORY.ItemsConfigData">
+    <Position X="7.5" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\Inventory\ItemsConfigData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="INVENTORY.PreviewScreen">
+    <Position X="5.75" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABFQAAQAAAAAUAACAAAQAAAAACAAQAAgAAAAgAAREA=</HashCode>
+      <FileName>Assets\Scripts\UI\Inventory\PreviewScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QUEST.QuestManager">
+    <Position X="15.75" Y="9" Width="2" />
+    <NestedTypes>
+      <Delegate Name="QUEST.QuestManager.QuestEventHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Managers\QuestManager.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>ABIEAAAAAQAAQIAAAgCAAAAAAAgAAIEAYYQQAAAGAEA=</HashCode>
+      <FileName>Assets\Scripts\Managers\QuestManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QUEST.Quest">
+    <Position X="13.75" Y="11" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAgAAAAEAAAAAgAAAgAAAIAAAEAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Quest System\Quest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QUEST.QuestsConfigData">
+    <Position X="13.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Quest System\QuestsConfigData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainCharacter">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>g0wAgQYAKCIBEFgSIQICFCAYUAIEAlAIAgAAAyAQCAA=</HashCode>
+      <FileName>Assets\Scripts\MainCharacter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
