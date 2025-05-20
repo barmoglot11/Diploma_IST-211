@@ -1,9 +1,0 @@
-Begin Object Class=/Script/Engine.Skeleton Name="SM_Fisherman03_Animated_Skeleton" ExportPath="/Script/Engine.Skeleton'/Game/Village/Meshes/SM_Fisherman03_Animated_Skeleton.SM_Fisherman03_Animated_Skeleton'"
-   Begin Object Class=/Script/Engine.AnimCurveMetaData Name="AnimCurveMetaData_0" ExportPath="/Script/Engine.AnimCurveMetaData'/Game/Village/Meshes/SM_Fisherman03_Animated_Skeleton.SM_Fisherman03_Animated_Skeleton:AnimCurveMetaData_0'"
-   End Object
-   Begin Object Name="AnimCurveMetaData_0" ExportPath="/Script/Engine.AnimCurveMetaData'/Game/Village/Meshes/SM_Fisherman03_Animated_Skeleton.SM_Fisherman03_Animated_Skeleton:AnimCurveMetaData_0'"
-   End Object
-   BoneTree(56)=()
-   PreviewSkeletalMesh="/Game/Village/Meshes/SM_Fisherman03_Animated.SM_Fisherman03_Animated"
-   AssetUserData(0)="/Script/Engine.AnimCurveMetaData'AnimCurveMetaData_0'"
-End Object
