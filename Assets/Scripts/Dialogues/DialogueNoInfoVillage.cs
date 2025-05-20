@@ -53,6 +53,7 @@ namespace DIALOGUES
                 mc.Flip(immediate:true);
             mc.SetPosition(Vector2.zero);
             mc.SetSprite(mc.GetSprite($"{mc.name}-Default"));
+            mc.displayName = "Михаил";
             mc.Show();
             mc.UnHightlight();
             // Первая изба
@@ -83,6 +84,7 @@ namespace DIALOGUES
             if (mc.isFacingLeft)
                 mc.Flip(immediate:true);
             mc.SetPosition(Vector2.zero);
+            mc.displayName = "Михаил";
             mc.Show();
             mc.UnHightlight();
             yield return narrator.Say("Михаил стучит в дверь с облупленной краской. Изнутри слышны шаги, но дверь не открывается.");
@@ -104,6 +106,7 @@ namespace DIALOGUES
             if (mc.isFacingLeft)
                 mc.Flip(immediate:true);
             mc.SetPosition(Vector2.zero);
+            mc.displayName = "Михаил";
             mc.Show();
             mc.UnHightlight();
             yield return narrator.Say("Михаил замечает окно на втором этаже, где трясётся грязное стекло. В темноте мелькает силуэт старика, сидящего за столом.");

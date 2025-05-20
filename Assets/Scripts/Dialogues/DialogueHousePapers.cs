@@ -26,7 +26,7 @@ namespace DIALOGUES
             mc.SetPosition(Vector2.zero);
             if (mc is { isVisible: true })
                 mc.Hide();
-
+            mc.displayName = "Михаил";
             yield return narrator.Say("Стол в соседней комнате был завален письмами, исписанными мелким, нервным почерком. Они лежали в беспорядке, будто кто-то пытался спрятать правду под слоем лжи.");
             
             mc.Show();

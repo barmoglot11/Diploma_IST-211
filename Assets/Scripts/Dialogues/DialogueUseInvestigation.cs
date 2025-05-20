@@ -27,6 +27,7 @@ namespace DIALOGUES
                 mc.Flip(immediate:true);
             mc.SetPosition(Vector2.zero);
             mc.SetSprite(mc.GetSprite($"{mc.name}-Angry"));
+            mc.displayName = "Михаил";
             mc.Show();
             mc.UnHightlight();
             // Активация режима расследования

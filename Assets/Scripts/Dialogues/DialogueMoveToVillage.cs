@@ -36,6 +36,7 @@ namespace DIALOGUES
             if (mc.isFacingLeft)
                 mc.Flip(immediate: true);
             mc.SetPosition(Vector2.zero);
+            mc.displayName = "Михаил";
 // Сцена у кареты
             yield return narrator.Say(
                 "Михаил выходит из дома, плотнее запахнув сюртук. Карета всё ещё ждёт у тротуара, но кучер теперь сидит ссутулившись, будто задремал. Лошадь беспокойно бьёт копытом по булыжнику.");

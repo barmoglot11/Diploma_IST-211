@@ -21,6 +21,7 @@ namespace DIALOGUES
             if (mc.isFacingLeft)
                 mc.Flip(immediate:true);
             mc.SetPosition(Vector2.zero);
+            mc.displayName = "Михаил";
             mc.Show();
             mc.SetSprite(mc.GetSprite($"{mc.name}-Shocked"));
             mc.Hightlight();

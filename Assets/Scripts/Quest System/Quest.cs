@@ -20,11 +20,11 @@ namespace QUEST
         [Key(4)]
         [SerializedDictionary("Stage", "Text")]
 
-        public SerializedDictionary<int, string> StagesDescription;
+        public SerializedDictionary<int, string> StagesDescription = new();
         [Key(5)]
         [SerializedDictionary("Stage", "Description")]
 
-        public SerializedDictionary<int, string> QuestDescription;
+        public SerializedDictionary<int, string> QuestDescription = new();
 
         public Quest Copy()
         {
@@ -34,8 +34,8 @@ namespace QUEST
                 QuestID = QuestID,
                 QuestStage = QuestStage,
                 PreviousTaskStage = PreviousTaskStage,
-                StagesDescription = StagesDescription,
-                QuestDescription = QuestDescription
+                StagesDescription = new SerializedDictionary<int, string>(StagesDescription),
+                QuestDescription = new SerializedDictionary<int, string>(QuestDescription)
             };
             return result;
         }
