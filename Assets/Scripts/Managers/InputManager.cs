@@ -62,9 +62,6 @@ public class InputManager : MonoBehaviour
 
     #region Public Methods
     
-    /// <summary>
-    /// Изменить состояние ввода с автоматическим управлением компонентами
-    /// </summary>
     public void ChangeInputStatus(InputStatus newStatus)
     {
         if (CurrentInputStatus == newStatus) return;
@@ -83,6 +80,7 @@ public class InputManager : MonoBehaviour
             case InputStatus.Lock:
                 SetLockState();
                 break;
+            case InputStatus.None:
             default:
                 Debug.LogWarning($"Unhandled input status: {newStatus}");
                 break;
@@ -90,10 +88,7 @@ public class InputManager : MonoBehaviour
 
         LogStatusChange(newStatus);
     }
-
-    /// <summary>
-    /// Вернуться к предыдущему состоянию ввода
-    /// </summary>
+    
     public void ReturnToPreviousStatus()
     {
         if (_previousInputStatus != InputStatus.None)

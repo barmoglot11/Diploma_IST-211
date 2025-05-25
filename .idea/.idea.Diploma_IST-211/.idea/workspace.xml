@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9ff6fca5-cd55-4c3e-a7c6-1201f01550b6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Diploma_IST-211/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Diploma_IST-211/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Andrew/Animation/newViy/newViy.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Andrew/Animation/newViy/newViy.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Andrew/Prefabs/Characters/Hero.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Andrew/Prefabs/Characters/Hero.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/81POzd9y--L.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/81POzd9y--L.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/BillingMode.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/BillingMode.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Camera (1) Blends.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Camera (1) Blends.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Hutor GTX.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Hutor GTX.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SPB GTX.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SPB GTX.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SSMS-master/SSMS.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SaintPetersburg 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SaintPetersburg 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SaintPetersburg 2.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SaintPetersburg 2.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IO/InputReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/IO/InputReader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Investigation System/MirrorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Investigation System/MirrorController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/InputManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/InteractionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/InteractionManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Search.settings" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Search.settings" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" show_ignored="true" />
+  <component name="DpaMonitoringSettings">
+    <option name="autoShow" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="Work" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Work" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;barmoglot11&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/barmoglot11/Diploma_IST-211.git&quot;,
+    &quot;accountId&quot;: &quot;03066549-242d-46d5-abb2-136655e091b3&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://D:/UnityProject/Diploma_IST-211/Assets/Scenes/SaintPetersburg 1.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/UnityProject/Diploma_IST-211/Assets/Scenes/SaintPetersburg 1.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/UnityProject/Diploma_IST-211/Assets/Scripts/IO/InputReader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/UnityProject/Diploma_IST-211/Assets/Scripts/Managers/InputManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/UnityProject/Diploma_IST-211/Assets/Scripts/Managers/InteractionManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/Actions/InputActionState.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/InputManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/InputManagerStateMonitors.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="false" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2xAllj6brdoL2rMi3WHnfhCDEI0" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.34204274&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Work&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../DiplomaBuild\Project Viy.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="D:\DiplomaBuild" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="PTY_MODE" value="Auto" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="D:\UnityHub\Hub\2022.3.20f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-projectPath D:\UnityProject\Diploma_IST-211 -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="D:\UnityProject\Diploma_IST-211" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="PTY_MODE" value="Auto" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="D:\UnityHub\Hub\2022.3.20f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath D:\UnityProject\Diploma_IST-211 -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="D:\UnityProject\Diploma_IST-211" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="PTY_MODE" value="Auto" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="runtimes">
+        <list />
+      </option>
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="useMixedMode" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="runtimes">
+        <list />
+      </option>
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="useMixedMode" value="false" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9ff6fca5-cd55-4c3e-a7c6-1201f01550b6" name="Changes" comment="" />
+      <created>1739276644096</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1739276644096</updated>
+      <workItem from="1739276656371" duration="9737000" />
+      <workItem from="1739592415667" duration="899000" />
+      <workItem from="1739600632327" duration="2038000" />
+      <workItem from="1739669474982" duration="875000" />
+      <workItem from="1739755693677" duration="7813000" />
+      <workItem from="1739772880396" duration="1824000" />
+      <workItem from="1739774724027" duration="48000" />
+      <workItem from="1739775001417" duration="8381000" />
+      <workItem from="1739886731924" duration="1016000" />
+      <workItem from="1740101176388" duration="7673000" />
+      <workItem from="1740191431747" duration="3872000" />
+      <workItem from="1740275811715" duration="2185000" />
+      <workItem from="1740334842033" duration="1407000" />
+      <workItem from="1740364739361" duration="2262000" />
+      <workItem from="1740469282928" duration="4159000" />
+      <workItem from="1740619718722" duration="4611000" />
+      <workItem from="1740708325842" duration="4780000" />
+      <workItem from="1740714309501" duration="2155000" />
+      <workItem from="1740720223448" duration="1277000" />
+      <workItem from="1740793355694" duration="3005000" />
+      <workItem from="1741007825541" duration="6462000" />
+      <workItem from="1741015804226" duration="2093000" />
+      <workItem from="1741251540214" duration="1279000" />
+      <workItem from="1741266040502" duration="4361000" />
+      <workItem from="1741341675808" duration="395000" />
+      <workItem from="1741342142999" duration="1229000" />
+      <workItem from="1741402879222" duration="492000" />
+      <workItem from="1741607967219" duration="2851000" />
+      <workItem from="1741748089016" duration="1324000" />
+      <workItem from="1741785637737" duration="1449000" />
+      <workItem from="1741794000939" duration="1710000" />
+      <workItem from="1741920714138" duration="6291000" />
+      <workItem from="1741932169856" duration="1070000" />
+      <workItem from="1742003124725" duration="5456000" />
+      <workItem from="1742015835649" duration="175000" />
+      <workItem from="1742055545044" duration="1643000" />
+      <workItem from="1742057317337" duration="277000" />
+      <workItem from="1742058040752" duration="2269000" />
+      <workItem from="1742060345858" duration="1909000" />
+      <workItem from="1742062409491" duration="164000" />
+      <workItem from="1742062598753" duration="3261000" />
+      <workItem from="1742145000343" duration="492000" />
+      <workItem from="1742176086540" duration="3450000" />
+      <workItem from="1742217070163" duration="833000" />
+      <workItem from="1742218530552" duration="521000" />
+      <workItem from="1742219060137" duration="2735000" />
+      <workItem from="1742301371386" duration="1388000" />
+      <workItem from="1742395100421" duration="4205000" />
+      <workItem from="1742546791055" duration="2059000" />
+      <workItem from="1742607888565" duration="3821000" />
+      <workItem from="1742625079869" duration="13457000" />
+      <workItem from="1742656159781" duration="52000" />
+      <workItem from="1742656321226" duration="19000" />
+      <workItem from="1742736213735" duration="1363000" />
+      <workItem from="1742888744254" duration="2698000" />
+      <workItem from="1742893348792" duration="782000" />
+      <workItem from="1742903137717" duration="5176000" />
+      <workItem from="1743230671809" duration="2107000" />
+      <workItem from="1743234597937" duration="24000" />
+      <workItem from="1743234635521" duration="1356000" />
+      <workItem from="1743247115701" duration="1271000" />
+      <workItem from="1743261309790" duration="5110000" />
+      <workItem from="1743268037964" duration="382000" />
+      <workItem from="1743301779182" duration="9514000" />
+      <workItem from="1743336968321" duration="16377000" />
+      <workItem from="1743386629831" duration="3837000" />
+      <workItem from="1743416974085" duration="16000" />
+      <workItem from="1743417155504" duration="2656000" />
+      <workItem from="1743662622891" duration="3841000" />
+      <workItem from="1743773187669" duration="4728000" />
+      <workItem from="1743874158402" duration="344000" />
+      <workItem from="1743931618614" duration="966000" />
+      <workItem from="1743943774730" duration="729000" />
+      <workItem from="1743960885007" duration="416000" />
+      <workItem from="1743998002995" duration="3037000" />
+      <workItem from="1744108482339" duration="2741000" />
+      <workItem from="1744462333561" duration="1927000" />
+      <workItem from="1744553561052" duration="107000" />
+      <workItem from="1744555986964" duration="2343000" />
+      <workItem from="1744610914443" duration="1706000" />
+      <workItem from="1744615283076" duration="194000" />
+      <workItem from="1744631456532" duration="1934000" />
+      <workItem from="1744644023704" duration="1533000" />
+      <workItem from="1744706571156" duration="256000" />
+      <workItem from="1744774813928" duration="1582000" />
+      <workItem from="1744809176328" duration="2952000" />
+      <workItem from="1744847299607" duration="1352000" />
+      <workItem from="1744866532632" duration="4800000" />
+      <workItem from="1744887377000" duration="1006000" />
+      <workItem from="1744906594419" duration="5331000" />
+      <workItem from="1744912466593" duration="166000" />
+      <workItem from="1744957211327" duration="2481000" />
+      <workItem from="1744967288586" duration="4204000" />
+      <workItem from="1744979253192" duration="1490000" />
+      <workItem from="1744980934041" duration="1119000" />
+      <workItem from="1745080033859" duration="214000" />
+      <workItem from="1745120017455" duration="9131000" />
+      <workItem from="1745160838043" duration="36000" />
+      <workItem from="1745162353060" duration="838000" />
+      <workItem from="1745205696802" duration="1085000" />
+      <workItem from="1745207108965" duration="5640000" />
+      <workItem from="1745224908923" duration="7298000" />
+      <workItem from="1745247910745" duration="3405000" />
+      <workItem from="1745252081185" duration="4644000" />
+      <workItem from="1745292939622" duration="3583000" />
+      <workItem from="1745307094841" duration="1021000" />
+      <workItem from="1745310145171" duration="9889000" />
+      <workItem from="1745328880314" duration="92000" />
+      <workItem from="1745413623461" duration="3422000" />
+      <workItem from="1745422397885" duration="3645000" />
+      <workItem from="1745461292072" duration="771000" />
+      <workItem from="1745477585348" duration="1280000" />
+      <workItem from="1745580416644" duration="1267000" />
+      <workItem from="1745587070923" duration="2878000" />
+      <workItem from="1745603579701" duration="3874000" />
+      <workItem from="1745633778504" duration="1408000" />
+      <workItem from="1745654937173" duration="1942000" />
+      <workItem from="1745680030968" duration="2654000" />
+      <workItem from="1745727987327" duration="802000" />
+      <workItem from="1745755092359" duration="4297000" />
+      <workItem from="1745816187070" duration="5528000" />
+      <workItem from="1745827241978" duration="3438000" />
+      <workItem from="1745842856411" duration="6000" />
+      <workItem from="1745844879798" duration="974000" />
+      <workItem from="1745849281244" duration="689000" />
+      <workItem from="1745862745803" duration="1537000" />
+      <workItem from="1745893849139" duration="967000" />
+      <workItem from="1745907658575" duration="113000" />
+      <workItem from="1745913117369" duration="1237000" />
+      <workItem from="1745915066047" duration="917000" />
+      <workItem from="1745979170972" duration="1256000" />
+      <workItem from="1745982774647" duration="1326000" />
+      <workItem from="1746015112594" duration="7150000" />
+      <workItem from="1746031084173" duration="1146000" />
+      <workItem from="1746067601229" duration="2226000" />
+      <workItem from="1746079775245" duration="1396000" />
+      <workItem from="1746162559721" duration="1067000" />
+      <workItem from="1746203010849" duration="1911000" />
+      <workItem from="1746274313046" duration="592000" />
+      <workItem from="1746333312172" duration="586000" />
+      <workItem from="1746360949551" duration="1331000" />
+      <workItem from="1746432613812" duration="392000" />
+      <workItem from="1746464265109" duration="1037000" />
+      <workItem from="1746515791467" duration="6690000" />
+      <workItem from="1746538231780" duration="1278000" />
+      <workItem from="1746543044712" duration="3341000" />
+      <workItem from="1746628699962" duration="170000" />
+      <workItem from="1746634885238" duration="2246000" />
+      <workItem from="1746637258276" duration="87000" />
+      <workItem from="1746639230407" duration="182000" />
+      <workItem from="1746669329517" duration="960000" />
+      <workItem from="1746671732333" duration="657000" />
+      <workItem from="1746687296117" duration="187000" />
+      <workItem from="1746691503516" duration="742000" />
+      <workItem from="1746793897135" duration="1500000" />
+      <workItem from="1747039276718" duration="972000" />
+      <workItem from="1747104686421" duration="2139000" />
+      <workItem from="1747123590075" duration="264000" />
+      <workItem from="1747322830974" duration="150000" />
+      <workItem from="1747382251159" duration="2806000" />
+      <workItem from="1747385193199" duration="1170000" />
+      <workItem from="1747388545432" duration="285000" />
+      <workItem from="1747388914748" duration="573000" />
+      <workItem from="1747392514037" duration="2520000" />
+      <workItem from="1747408364995" duration="1582000" />
+      <workItem from="1747441876314" duration="1550000" />
+      <workItem from="1747443930951" duration="4978000" />
+      <workItem from="1747492957412" duration="2073000" />
+      <workItem from="1747495705604" duration="1863000" />
+      <workItem from="1747498006225" duration="1176000" />
+      <workItem from="1747537578694" duration="3661000" />
+      <workItem from="1747553485281" duration="1409000" />
+      <workItem from="1747556545244" duration="622000" />
+      <workItem from="1747557211741" duration="962000" />
+      <workItem from="1747558185141" duration="173000" />
+      <workItem from="1747558386150" duration="148000" />
+      <workItem from="1747558550840" duration="47000" />
+      <workItem from="1747558736284" duration="3360000" />
+      <workItem from="1747647665387" duration="900000" />
+      <workItem from="1747655466465" duration="4752000" />
+      <workItem from="1747717856683" duration="2891000" />
+      <workItem from="1747721588716" duration="1607000" />
+      <workItem from="1747729724200" duration="533000" />
+      <workItem from="1747730501426" duration="148000" />
+      <workItem from="1747737910431" duration="1810000" />
+      <workItem from="1747819873856" duration="174000" />
+      <workItem from="1747923613771" duration="204000" />
+      <workItem from="1747989947763" duration="836000" />
+      <workItem from="1747997650364" duration="415000" />
+      <workItem from="1748057767015" duration="96000" />
+      <workItem from="1748170562166" duration="375000" />
+    </task>
+    <task id="LOCAL-00001" summary="Developing game&#10;Created dialogue system, inventory, diary and input&#10;Reorganized script folder">
+      <option name="closed" value="true" />
+      <created>1740277935258</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1740277935258</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Ending developing mechanics&#10;Begin merging branches">
+      <option name="closed" value="true" />
+      <created>1742016013289</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1742016013289</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Create save system for json and bin">
+      <option name="closed" value="true" />
+      <created>1742177404322</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1742177404322</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Merged From Sany branch">
+      <option name="closed" value="true" />
+      <created>1742178562189</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1742178562189</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Linking animations">
+      <option name="closed" value="true" />
+      <created>1743235951143</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1743235951143</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Creating first act of demo">
+      <option name="closed" value="true" />
+      <created>1743669295935</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1743669295935</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Start finalizing of development">
+      <option name="closed" value="true" />
+      <created>1744912546294</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1744912546294</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Fixed bug with struct">
+      <option name="closed" value="true" />
+      <created>1744912640884</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1744912640884</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Fixing bugs">
+      <option name="closed" value="true" />
+      <created>1744979337715</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1744979337715</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Fixing interface">
+      <option name="closed" value="true" />
+      <created>1745604843327</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1745604843327</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Finalizing game">
+      <option name="closed" value="true" />
+      <created>1746031803864</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1746031803864</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Beta build">
+      <option name="closed" value="true" />
+      <created>1746543297391</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1746543297391</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Updated .gitignore">
+      <option name="closed" value="true" />
+      <created>1746628849012</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1746628849012</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Fixed bugs">
+      <option name="closed" value="true" />
+      <created>1746628921679</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1746628921679</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Changed README.md">
+      <option name="closed" value="true" />
+      <created>1746637128578</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1746637128578</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Update README.md">
+      <option name="closed" value="true" />
+      <created>1746639425190</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1746639425190</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Updated .gitignore">
+      <option name="closed" value="true" />
+      <created>1746669840556</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1746669840556</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Delete directories remotely, saved local">
+      <option name="closed" value="true" />
+      <created>1746670250117</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1746670250117</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Hotfixes">
+      <option name="closed" value="true" />
+      <created>1747322992551</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1747322992551</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Changing Scripts">
+      <option name="closed" value="true" />
+      <created>1747556644072</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1747556644072</updated>
+    </task>
+    <task id="LOCAL-00021" summary="fix">
+      <option name="closed" value="true" />
+      <created>1747558075564</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1747558075564</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Fixing files and project">
+      <option name="closed" value="true" />
+      <created>1747653428578</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1747653428578</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Returned files to VCS">
+      <option name="closed" value="true" />
+      <created>1747653527811</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1747653527811</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Changed dialogues files Added vfx">
+      <option name="closed" value="true" />
+      <created>1747720660820</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1747720660821</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityProjectDiscoverer">
+    <option name="hasUnityReference" value="true" />
+    <option name="unityProject" value="true" />
+    <option name="unityProjectFolder" value="true" />
+  </component>
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="main" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="Work" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="Work" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Changing Scripts" />
+    <MESSAGE value="fix" />
+    <MESSAGE value="Fixing files and project" />
+    <MESSAGE value="Returned files to VCS" />
+    <MESSAGE value="Changed dialogues files Added vfx" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed dialogues files Added vfx" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.OperationCanceledException" breakIfHandledByOtherCode="false" displayValue="System.OperationCanceledException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.Tasks.TaskCanceledException" breakIfHandledByOtherCode="false" displayValue="System.Threading.Tasks.TaskCanceledException" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

@@ -10,7 +10,7 @@ public class InputReader : ScriptableObject,
     PlayerControlPref.ILokcpickMinigameActions
 {
     #region Event Fields
-    // 1. Приватные поля для хранения делегатов
+
     private Action<Vector2> _moveEvent;
     private Action<bool> _hurryEvent;
     private Action _interactEvent;
@@ -273,7 +273,6 @@ public class InputReader : ScriptableObject,
         Debug.Log($"Move subscribers: {GetMoveSubscribersCount()}");
         Debug.Log($"Interact subscribers: {GetInteractSubscribersCount()}");
         Debug.Log($"Menu subscribers: {GetMenuSubscribersCount()}");
-        // Добавьте другие события по необходимости
     }
     #endregion
 }
