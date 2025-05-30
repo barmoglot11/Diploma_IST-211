@@ -5,28 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ff6fca5-cd55-4c3e-a7c6-1201f01550b6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Diploma_IST-211/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Diploma_IST-211/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Andrew/Animation/newViy/newViy.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Andrew/Animation/newViy/newViy.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Andrew/Prefabs/Characters/Hero.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Andrew/Prefabs/Characters/Hero.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/81POzd9y--L.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/81POzd9y--L.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/BillingMode.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/BillingMode.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Camera (1) Blends.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Camera (1) Blends.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Diploma_IST-211/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2025_14_42_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Diploma_IST-211/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2025_14_42__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Diploma_IST-211/.idea/shelf/Uncommitted_changes_before_Update_at_21_05_2025_15_33_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Diploma_IST-211/.idea/shelf/Uncommitted_changes_before_Update_at_21_05_2025_15_33__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Diploma_IST-211/.idea/shelf/Uncommitted_changes_before_Update_at_23_05_2025_14_49_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Diploma_IST-211/.idea/shelf/Uncommitted_changes_before_Update_at_23_05_2025_14_49__Changes_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Diploma_IST-211/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Diploma_IST-211/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Hutor GTX.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Hutor GTX.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SPB GTX.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SPB GTX.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SSMS-master/SSMS.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SaintPetersburg 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SaintPetersburg 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SaintPetersburg 2.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SaintPetersburg 2.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IO/InputReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/IO/InputReader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueMirror.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogues/DialogueMirror.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IO/GameplayController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/IO/GameplayController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Investigation System/MirrorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Investigation System/MirrorController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/InputManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/InteractionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/InteractionManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MusicController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MusicController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scripts/Interface/ESC Menu/GrabAndRotateObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scripts/Interface/ESC Menu/GrabAndRotateObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Search.settings" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Search.settings" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -370,7 +368,17 @@
       <workItem from="1747989947763" duration="836000" />
       <workItem from="1747997650364" duration="415000" />
       <workItem from="1748057767015" duration="96000" />
-      <workItem from="1748170562166" duration="375000" />
+      <workItem from="1748170562166" duration="463000" />
+      <workItem from="1748426840031" duration="236000" />
+      <workItem from="1748427562640" duration="1000" />
+      <workItem from="1748427657371" duration="362000" />
+      <workItem from="1748507300269" duration="646000" />
+      <workItem from="1748509879770" duration="2543000" />
+      <workItem from="1748519322098" duration="178000" />
+      <workItem from="1748536458827" duration="6000" />
+      <workItem from="1748536667156" duration="649000" />
+      <workItem from="1748537962520" duration="191000" />
+      <workItem from="1748610753087" duration="506000" />
     </task>
     <task id="LOCAL-00001" summary="Developing game&#10;Created dialogue system, inventory, diary and input&#10;Reorganized script folder">
       <option name="closed" value="true" />
@@ -564,7 +572,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747720660821</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Applied MirrorController.cs to prefab">
+      <option name="closed" value="true" />
+      <created>1748171025953</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1748171025953</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -633,7 +649,8 @@
     <MESSAGE value="Fixing files and project" />
     <MESSAGE value="Returned files to VCS" />
     <MESSAGE value="Changed dialogues files Added vfx" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed dialogues files Added vfx" />
+    <MESSAGE value="Applied MirrorController.cs to prefab" />
+    <option name="LAST_COMMIT_MESSAGE" value="Applied MirrorController.cs to prefab" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using AUDIO;
 using UnityEngine;
 using BATTLE;
 
@@ -19,6 +20,9 @@ public class GameplayController: MonoBehaviour
     [SerializeField] private GameObject ExitLabyrinthCollider;
     [SerializeField] private GameObject EnterLabyrinthTrigger;
     [SerializeField] private GameObject ExitLabyrinthTrigger;
+    [SerializeField] private MusicController musicController;
+    [SerializeField] private AudioClip battleMusic;
+    [SerializeField] private AudioClip calmMusic;
     
     [SerializeField] private bool IsBattleStarted = false;
 
@@ -76,6 +80,7 @@ public class GameplayController: MonoBehaviour
         EnterLabyrinthTrigger.gameObject.SetActive(false);
         ExitLabyrinthTrigger.gameObject.SetActive(true);
         IsBattleStarted = true;
+        musicController.CrossFadeTo(battleMusic);
     }
 
     public void StopBattle()
@@ -88,6 +93,7 @@ public class GameplayController: MonoBehaviour
         ExitLabyrinthTrigger.gameObject.SetActive(false);
         PostProcessingManager.Instance.SetProfileByIndexSmooth(0);
         IsBattleStarted = false;
+        musicController.CrossFadeTo(calmMusic);
     }
     
     void OnValidate()

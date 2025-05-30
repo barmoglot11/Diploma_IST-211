@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using MANAGER;
 
 namespace BATTLE
 {
@@ -97,7 +98,7 @@ namespace BATTLE
         private void ProcessShot()
         {
             _audioSource.PlayOneShot(_shotSound);
-            
+            AnimationManager.Instance.ShotCall();
             _shotParticle?.Play();
 
             for (var i = 0; i < 30; i++){

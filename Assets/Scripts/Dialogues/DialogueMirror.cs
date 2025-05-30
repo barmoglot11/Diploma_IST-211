@@ -2,12 +2,15 @@ using CHARACTER;
 using DIALOGUE;
 using System.Collections;
 using Interfaces;
+using INVESTIGATION;
 using UnityEngine;
 
 namespace DIALOGUES
 {
     public class DialogueMirror : MonoBehaviour, IDialogue
     {
+        public GameObject camera;
+        public GameObject cameraPosition;
         public void StartDialogue()
         {
             DialogueSystem.instance.SetupCloseEvent(CloseDialogueEvent);
@@ -28,7 +31,10 @@ namespace DIALOGUES
             yield return mc.Say("Кто ты...?");
             mc.SetSprite(mc.GetSprite($"{mc.name}-Default"));
             mc.UnHightlight();
+            camera.transform.position = cameraPosition.transform.position;
+            camera.transform.rotation = cameraPosition.transform.rotation;
             yield return narrator.Say("В зеркале, сквозь дрожь стекла, на него смотрит девушка. Не моргая. Не дыша. Её глаза — будто два окна в зимнюю ночь.");
+            MirrorController.Instance.SetMaterial(0);
             yield return narrator.Say("Её рука дрожит. Внезапно палец резко указывает на шкатулку в углу. {a}Михаил оборачивается, взгляд скользит по тени на стене, которая дрожит, будто живая.");
             
             mc.Hightlight();
@@ -41,6 +47,8 @@ namespace DIALOGUES
         public void CloseDialogueEvent()
         {
             DialogueSystem.instance.CloseDialogue();
+            CharacterManager.Instance.GetCharacter("Главный герой", createIfDoesNotExist: true).Hide();
+            MirrorController.Instance.SetMaterial();
         }
     }
 }

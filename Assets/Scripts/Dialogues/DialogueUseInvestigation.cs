@@ -4,6 +4,7 @@ using System.Collections;
 using Interfaces;
 using INVESTIGATION;
 using UnityEngine;
+using MANAGER;
 
 namespace DIALOGUES
 {
@@ -15,6 +16,7 @@ namespace DIALOGUES
         public void StartDialogue()
         {
             source.Play();
+            AnimationManager.Instance.AgonyCall();
             DialogueSystem.instance.SetupCloseEvent(CloseDialogueEvent);
             StartCoroutine(Dialogue());
         }

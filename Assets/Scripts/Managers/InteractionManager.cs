@@ -19,7 +19,7 @@ public class InteractionManager : MonoBehaviour
         if (Instance is null)
         {
             Instance = this;
-            //DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject);
         }
         else
         {

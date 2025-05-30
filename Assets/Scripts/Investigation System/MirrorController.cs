@@ -82,7 +82,7 @@ namespace INVESTIGATION
         private IEnumerator FadeMaterial(Material targetMaterial)
         {
             var elapsedTime = 0f;
-            var tempMaterial = new Material(_currentMaterial);
+            var tempMaterial = new Material(targetMaterial);
 
             while (elapsedTime < _fadeDuration)
             {
