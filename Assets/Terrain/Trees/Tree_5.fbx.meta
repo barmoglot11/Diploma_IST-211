@@ -3,59 +3,9 @@ guid: 30f8748a21bd86a44bcac1a931395ef4
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Black
-    second: {fileID: 2100000, guid: 33c525d88823b204e983233ab75a6766, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Black.017
-    second: {fileID: 2100000, guid: 33c525d88823b204e983233ab75a6766, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Black.018
-    second: {fileID: 2100000, guid: 33c525d88823b204e983233ab75a6766, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Black.019
-    second: {fileID: 2100000, guid: 33c525d88823b204e983233ab75a6766, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Black.020
-    second: {fileID: 2100000, guid: 33c525d88823b204e983233ab75a6766, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: LowBlack
-    second: {fileID: 2100000, guid: c18e13d9fb5a6bf4b9b8e64bf344ca21, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: LowBlack.005
-    second: {fileID: 2100000, guid: c18e13d9fb5a6bf4b9b8e64bf344ca21, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: LowBlack.006
-    second: {fileID: 2100000, guid: c18e13d9fb5a6bf4b9b8e64bf344ca21, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: LowBlack.007
-    second: {fileID: 2100000, guid: c18e13d9fb5a6bf4b9b8e64bf344ca21, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: LowBlack.008
-    second: {fileID: 2100000, guid: c18e13d9fb5a6bf4b9b8e64bf344ca21, type: 2}
+  externalObjects: {}
   materials:
-    materialImportMode: 1
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
     materialLocation: 1

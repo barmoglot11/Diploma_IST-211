@@ -4,6 +4,7 @@ using System.Collections;
 using Interfaces;
 using INVESTIGATION;
 using UnityEngine;
+using MANAGER;
 
 namespace DIALOGUES
 {
@@ -15,6 +16,7 @@ namespace DIALOGUES
         public void StartDialogue()
         {
             source.Play();
+            AnimationManager.Instance.AgonyCall();
             DialogueSystem.instance.SetupCloseEvent(CloseDialogueEvent);
             StartCoroutine(Dialogue());
         }
@@ -27,6 +29,7 @@ namespace DIALOGUES
                 mc.Flip(immediate:true);
             mc.SetPosition(Vector2.zero);
             mc.SetSprite(mc.GetSprite($"{mc.name}-Angry"));
+            mc.displayName = "Михаил";
             mc.Show();
             mc.UnHightlight();
             // Активация режима расследования

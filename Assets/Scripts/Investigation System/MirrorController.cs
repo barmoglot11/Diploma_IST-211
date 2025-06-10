@@ -27,7 +27,7 @@ namespace INVESTIGATION
         private Coroutine _fadeCoroutine;
         private Material _currentMaterial;
         
-        private bool IsInvestigating => InvestigationManager.Instance != null && InvestigationManager.Instance.IsInvestigating;
+        private bool IsInvestigating => InvestigationManager.Instance is not null && InvestigationManager.Instance.IsInvestigating;
 
         #region Public Methods
 
@@ -60,7 +60,7 @@ namespace INVESTIGATION
             }
             else
             {
-                if(targetMaterial != null)
+                if(targetMaterial is not null)
                 {
                     _transitionCoroutine = StartCoroutine(FadeMaterial(targetMaterial));
                 }
@@ -82,7 +82,7 @@ namespace INVESTIGATION
         private IEnumerator FadeMaterial(Material targetMaterial)
         {
             var elapsedTime = 0f;
-            var tempMaterial = new Material(_currentMaterial);
+            var tempMaterial = new Material(targetMaterial);
 
             while (elapsedTime < _fadeDuration)
             {

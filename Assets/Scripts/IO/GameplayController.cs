@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using AUDIO;
 using UnityEngine;
 using BATTLE;
 
@@ -17,6 +18,11 @@ public class GameplayController: MonoBehaviour
     
     [SerializeField] private GameObject EnterLabyrinthCollider;
     [SerializeField] private GameObject ExitLabyrinthCollider;
+    [SerializeField] private GameObject EnterLabyrinthTrigger;
+    [SerializeField] private GameObject ExitLabyrinthTrigger;
+    [SerializeField] private MusicController musicController;
+    [SerializeField] private AudioClip battleMusic;
+    [SerializeField] private AudioClip calmMusic;
     
     [SerializeField] private bool IsBattleStarted = false;
 
@@ -71,7 +77,10 @@ public class GameplayController: MonoBehaviour
         Enemy.gameObject.SetActive(true);
         EnterLabyrinthCollider.gameObject.SetActive(true);
         ExitLabyrinthCollider.gameObject.SetActive(false);
+        EnterLabyrinthTrigger.gameObject.SetActive(false);
+        ExitLabyrinthTrigger.gameObject.SetActive(true);
         IsBattleStarted = true;
+        musicController.CrossFadeTo(battleMusic);
     }
 
     public void StopBattle()
@@ -80,8 +89,11 @@ public class GameplayController: MonoBehaviour
         Enemy.gameObject.SetActive(false);
         EnterLabyrinthCollider.gameObject.SetActive(false);
         ExitLabyrinthCollider.gameObject.SetActive(true);
+        EnterLabyrinthTrigger.gameObject.SetActive(true);
+        ExitLabyrinthTrigger.gameObject.SetActive(false);
         PostProcessingManager.Instance.SetProfileByIndexSmooth(0);
         IsBattleStarted = false;
+        musicController.CrossFadeTo(calmMusic);
     }
     
     void OnValidate()

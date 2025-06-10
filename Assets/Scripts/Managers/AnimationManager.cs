@@ -11,6 +11,8 @@ namespace MANAGER
         private static readonly int Walking = Animator.StringToHash("IsWalking");
         private static readonly int Running = Animator.StringToHash("IsRunning");
         private static readonly int Sniping = Animator.StringToHash("IsSniping");
+        private static readonly int Agony = Animator.StringToHash("Agony");
+        private static readonly int Shot = Animator.StringToHash("Shot");
         public static AnimationManager Instance { get; private set; }
 
         [Header("Основные компоненты")]
@@ -87,6 +89,14 @@ namespace MANAGER
         }
 
         #region Основные методы
+        public void AgonyCall()
+        {
+            _animator.SetTrigger(Agony);
+        }
+        public void ShotCall()
+        {
+            _animator.SetTrigger(Shot);
+        }
         private void InitializeSingleton()
         {
             if (Instance == null)

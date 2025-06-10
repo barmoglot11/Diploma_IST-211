@@ -28,6 +28,7 @@ namespace Dialogues
                 mc.Flip(immediate:true);
             mc.SetPosition(Vector2.zero);
             // Подход к церкви
+            mc.displayName = "Михаил";
             yield return narrator.Say("Дверь церкви скрипит, приоткрываясь на несколько ладоней. Сквозь щель пахнет сыростью и ладаном.");
 
 // Михаил стучит

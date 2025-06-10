@@ -1,5 +1,8 @@
+using System;
 using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
+using MANAGER;
 
 namespace BATTLE
 {
@@ -15,36 +18,23 @@ namespace BATTLE
         [SerializeField] private int _maxAmmo = 2;
         [SerializeField] private float _shotRange = 10f;
         [SerializeField] private LayerMask _shotLayerMask;
+        [SerializeField]private ParticleEffectObject _shotParticle;
         //[SerializeField] private DrawLine _drawLine;
 
         private AudioSource _audioSource;
         private int _currentAmmo;
         private bool _isCoolingDown;
         private bool _isEquipped;
-        private ParticleSystem _shotParticle;
+        
 
         private void Awake()
         {
             _audioSource = GetComponent<AudioSource>();
             _currentAmmo = _maxAmmo;
         }
+        private void OnEnable() => Equip();
 
-        private void OnEnable()
-        {
-            Equip();
-        }
-
-        private void OnDisable()
-        {
-            Unequip();
-        }
-
-        private void Update()
-        {
-            Debug.DrawRay(_shotOrigin.position, -_shotOrigin.forward * _shotRange, 
-                         _currentAmmo > 0 ? Color.green : Color.red);
-            
-        }
+        private void OnDisable() => Unequip();
 
         public void LinkInput()
         {
@@ -108,17 +98,39 @@ namespace BATTLE
         private void ProcessShot()
         {
             _audioSource.PlayOneShot(_shotSound);
+            AnimationManager.Instance.ShotCall();
+            _shotParticle?.Play();
 
-            _shotParticle.Play();
-            
-            if (Physics.Raycast(_shotOrigin.position, -_shotOrigin.forward, 
-                               out RaycastHit hit, _shotRange, _shotLayerMask))
-            {
-                if (hit.collider.TryGetComponent<Enemy>(out var enemy))
+            for (var i = 0; i < 30; i++){
+                if (ShootCone(out var hit, 25f))
                 {
-                    enemy.Stagger();
+                    if (hit.collider.TryGetComponent<Enemy>(out var enemy))
+                    {
+                        enemy.Stagger();
+                    }
                 }
             }
+
+            
+        }
+
+        private bool ShootCone(out RaycastHit hit, float spreadAngle)
+        {
+            Vector3 direction = RandomConeDirection(-_shotOrigin.forward, spreadAngle);
+            
+            Ray ray = new Ray(_shotOrigin.position, direction);
+            Debug.DrawRay(ray.origin, ray.direction*_shotRange,
+                _currentAmmo > 0 ? Color.green : Color.red);
+            
+            return Physics.Raycast(ray, out hit, _shotRange, _shotLayerMask);
+
+        }
+        
+        private Vector3 RandomConeDirection(Vector3 forward, float angle)
+        {
+            float spread = Mathf.Tan(Mathf.Deg2Rad * angle / 2);
+            Vector2 randomCircle = Random.insideUnitCircle * spread;
+            return Quaternion.LookRotation(forward) * new Vector3(randomCircle.x, randomCircle.y, 1f).normalized;
         }
 
         private IEnumerator ReloadRoutine()

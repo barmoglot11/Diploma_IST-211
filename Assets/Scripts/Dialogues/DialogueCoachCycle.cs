@@ -36,7 +36,7 @@ namespace Dialogues
                 coach.Hide();
             if (mc is { isVisible: true })
                 mc.Hide();
-            
+            mc.displayName = "Михаил";
 // Сцена у кареты
             yield return narrator.Say("Карета стоит на окраине города, кучер дремлет, развалившись на облучке. Его поношенная шляпа съехала набок, закрывая глаза.");
 

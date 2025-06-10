@@ -24,7 +24,7 @@ namespace DIALOGUES
             if (mc.isFacingLeft)
                 mc.Flip(immediate:true);
             mc.SetPosition(Vector2.zero);
-
+            mc.displayName = "Михаил";
             
             yield return narrator.Say("Следы вели к шкафу — высокому, с резными узорами в виде переплетённых корней. " +
                                       "Дверцы скрипнули, будто протестуя против чужих рук. " +

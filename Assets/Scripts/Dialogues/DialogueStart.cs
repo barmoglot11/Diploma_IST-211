@@ -40,6 +40,8 @@ namespace DIALOGUES
                                       );
             yield return narrator.Say("Особняк стоял тихо, будто выдохнул последние остатки жизни наружу ещё до прибытия Михаила.");
             
+            mc.displayName = "Михаил";
+            
             coach.Show();
             coach.UnHightlight();
             yield return narrator.Say("Кучер останавливает экипаж, не оборачиваясь. Лошадь фыркает, будто чувствуя неладное.");

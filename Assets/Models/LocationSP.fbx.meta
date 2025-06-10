@@ -3,49 +3,9 @@ guid: 57d87211f4e78bb41bb91fe18d1e1a1e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Black
-    second: {fileID: 2100000, guid: 33c525d88823b204e983233ab75a6766, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Footprints
-    second: {fileID: 2100000, guid: 40187253613dd83458d9aac832c85dc1, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Grey
-    second: {fileID: 2100000, guid: 392df53761c314740b3b47f8c9f956ea, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Light
-    second: {fileID: 2100000, guid: 34c2ca6bf21ab204694123586cbb95ce, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: LowBlack
-    second: {fileID: 2100000, guid: c18e13d9fb5a6bf4b9b8e64bf344ca21, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: MoreGrey
-    second: {fileID: 2100000, guid: a9b99f47ce8b1b140bf5ab1a975a1fc8, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Picture_1
-    second: {fileID: 2100000, guid: 5da49aa2ce5b7894893ee57829cdd902, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Picture_2
-    second: {fileID: 2100000, guid: 41c034c6fa4dc124f866fffac4478f2b, type: 2}
+  externalObjects: {}
   materials:
-    materialImportMode: 1
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
     materialLocation: 1

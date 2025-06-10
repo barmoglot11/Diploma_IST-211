@@ -9,9 +9,11 @@ namespace AUDIO
         public AudioSource audioSource1;
         public AudioSource audioSource2;
         public float fadeDuration = 2f;
+        public float maxVolume = 1f;
 
         private AudioSource _currentSource;
         private AudioSource _otherSource;
+        
 
         private void Awake()
         {
@@ -48,8 +50,8 @@ namespace AUDIO
                 timer += Time.deltaTime;
                 float ratio = timer / fadeDuration;
         
-                _currentSource.volume = Mathf.Lerp(1f, 0f, ratio);
-                _otherSource.volume = Mathf.Lerp(0f, 1f, ratio);
+                _currentSource.volume = Mathf.Lerp(maxVolume, 0f, ratio);
+                _otherSource.volume = Mathf.Lerp(0f, maxVolume, ratio);
         
                 yield return null;
             }

@@ -5,108 +5,108 @@ using UnityEngine;
 public class GrabAndRotateObject : MonoBehaviour
 {
     [Header("Settings")]
-    public float rotationSpeed = 10f; // Скорость вращения объекта
-    public float maxDistance = 10f; // Максимальное расстояние для захвата объекта
-    public Camera targetCamera; // Камера, через которую будет происходить захват
+    public float rotationSpeed = 10f; // РЎРєРѕСЂРѕСЃС‚СЊ РІСЂР°С‰РµРЅРёСЏ РѕР±СЉРµРєС‚Р°
+    public float maxDistance = 10f; // РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ СЂР°СЃСЃС‚РѕСЏРЅРёРµ РґР»СЏ Р·Р°С…РІР°С‚Р° РѕР±СЉРµРєС‚Р°
+    public Camera targetCamera; // РљР°РјРµСЂР°, С‡РµСЂРµР· РєРѕС‚РѕСЂСѓСЋ РѕСЃСѓС‰РµСЃС‚РІР»СЏРµС‚СЃСЏ Р·Р°С…РІР°С‚
 
-    private Rigidbody grabbedObject; // Объект, который сейчас захвачен
-    private Vector3 offset; // Смещение между позицией мыши и центром объекта
+    private Rigidbody grabbedObject; // РћР±СЉРµРєС‚, РєРѕС‚РѕСЂС‹Р№ Р±С‹Р» Р·Р°С…РІР°С‡РµРЅ
+    private Vector3 offset; // РЎРјРµС‰РµРЅРёРµ РјРµР¶РґСѓ С‚РѕС‡РєРѕР№ РєР»РёРєР° Рё С†РµРЅС‚СЂРѕРј РѕР±СЉРµРєС‚Р°
 
     private void Start()
     {
-        // Если камера не назначена в инспекторе, используем основную камеру
+        // Р•СЃР»Рё РєР°РјРµСЂР° РЅРµ РЅР°Р·РЅР°С‡РµРЅР°, РїС‹С‚Р°РµРјСЃСЏ РЅР°Р№С‚Рё РѕСЃРЅРѕРІРЅСѓСЋ РєР°РјРµСЂСѓ
         if (targetCamera == null)
         {
             targetCamera = Camera.main;
             if (targetCamera == null)
             {
-                Debug.LogError("No camera assigned and no main camera found in the scene!");
+                Debug.LogError("РљР°РјРµСЂР° РЅРµ РЅР°Р·РЅР°С‡РµРЅР°, Рё РѕСЃРЅРѕРІРЅР°СЏ РєР°РјРµСЂР° РЅРµ РЅР°Р№РґРµРЅР° РІ СЃС†РµРЅРµ!");
             }
         }
     }
 
     private void Update()
     {
-        // Если нажата ЛКМ
+        // РџРѕРїС‹С‚РєР° Р·Р°С…РІР°С‚РёС‚СЊ РѕР±СЉРµРєС‚ РїСЂРё РЅР°Р¶Р°С‚РёРё Р›РљРњ
         if (Input.GetMouseButtonDown(0))
         {
             TryGrabObject();
         }
 
-        // Если ЛКМ отпущена
+        // РћС‚РїСѓСЃС‚РёС‚СЊ РѕР±СЉРµРєС‚ РїСЂРё РѕС‚РїСѓСЃРєР°РЅРёРё Р›РљРњ
         if (Input.GetMouseButtonUp(0))
         {
             ReleaseObject();
         }
 
-        // Если объект захвачен, вращаем его
+        // Р•СЃР»Рё РѕР±СЉРµРєС‚ Р·Р°С…РІР°С‡РµРЅ, РІСЂР°С‰Р°С‚СЊ РµРіРѕ
         if (grabbedObject != null)
         {
             RotateObject();
         }
     }
 
-    // Попытка захватить объект
+    // РњРµС‚РѕРґ РїРѕРїС‹С‚РєРё Р·Р°С…РІР°С‚Р° РѕР±СЉРµРєС‚Р°
     private void TryGrabObject()
     {
-        // Проверяем, есть ли камера
+        // РџСЂРѕРІРµСЂСЏРµРј, РЅР°Р·РЅР°С‡РµРЅР° Р»Рё РєР°РјРµСЂР°
         if (targetCamera == null)
         {
-            Debug.LogError("No camera assigned!");
+            Debug.LogError("РљР°РјРµСЂР° РЅРµ РЅР°Р·РЅР°С‡РµРЅР°!");
             return;
         }
 
-        // Создаем луч из камеры в направлении мыши
+        // РЎРѕР·РґР°С‘Рј Р»СѓС‡ РёР· С‚РѕС‡РєРё РєСѓСЂСЃРѕСЂР° С‡РµСЂРµР· РєР°РјРµСЂСѓ
         Ray ray = targetCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        // Проверяем, попал ли луч в объект с коллайдером
+        // РџСЂРѕРІРµСЂСЏРµРј, РїРѕРїР°Р» Р»Рё Р»СѓС‡ РІ РѕР±СЉРµРєС‚ РЅР° Р·Р°РґР°РЅРЅРѕРј СЂР°СЃСЃС‚РѕСЏРЅРёРё
         if (Physics.Raycast(ray, out hit, maxDistance))
         {
-            // Проверяем, есть ли у объекта Rigidbody
+            // РС‰РµРј РєРѕРјРїРѕРЅРµРЅС‚ Rigidbody Сѓ РїРѕРїР°РІС€РµРіРѕ РѕР±СЉРµРєС‚Р°
             Rigidbody rb = hit.collider.GetComponent<Rigidbody>();
             if (rb != null)
             {
                 grabbedObject = rb;
-                grabbedObject.isKinematic = true; // Отключаем физику для плавного вращения
-                offset = grabbedObject.position - hit.point; // Вычисляем смещение
+                grabbedObject.isKinematic = true; // Р”РµР»Р°РµРј РѕР±СЉРµРєС‚ РєРёРЅРµРјР°С‚РёС‡РµСЃРєРёРј РґР»СЏ СѓРїСЂР°РІР»РµРЅРёСЏ РІСЂР°С‰РµРЅРёРµРј
+                offset = grabbedObject.position - hit.point; // Р’С‹С‡РёСЃР»СЏРµРј СЃРјРµС‰РµРЅРёРµ
             }
             else
             {
-                Debug.LogWarning("No Rigidbody found on the object!");
+                Debug.LogWarning("РЈ РѕР±СЉРµРєС‚Р° РЅРµС‚ РєРѕРјРїРѕРЅРµРЅС‚Р° Rigidbody!");
             }
         }
         else
         {
-            Debug.LogWarning("No object found within the grab distance!");
+            Debug.LogWarning("РќРµС‚ РѕР±СЉРµРєС‚Р° РІ РїСЂРµРґРµР»Р°С… РґРёСЃС‚Р°РЅС†РёРё Р·Р°С…РІР°С‚Р°!");
         }
     }
 
-    // Вращение объекта
+    // РњРµС‚РѕРґ РІСЂР°С‰РµРЅРёСЏ Р·Р°С…РІР°С‡РµРЅРЅРѕРіРѕ РѕР±СЉРµРєС‚Р°
     private void RotateObject()
     {
         if (grabbedObject == null)
         {
-            Debug.LogWarning("Grabbed object is null!");
+            Debug.LogWarning("Р—Р°С…РІР°С‡РµРЅРЅС‹Р№ РѕР±СЉРµРєС‚ СЂР°РІРµРЅ null!");
             return;
         }
 
-        // Получаем движение мыши по осям X и Y
+        // РџРѕР»СѓС‡Р°РµРј Р·РЅР°С‡РµРЅРёСЏ РґРІРёР¶РµРЅРёСЏ РјС‹С€Рё РїРѕ РѕСЃСЏРј X Рё Y
         float mouseX = Input.GetAxis("Mouse X") * rotationSpeed;
         float mouseY = Input.GetAxis("Mouse Y") * rotationSpeed;
 
-        // Вращаем объект
+        // Р’СЂР°С‰Р°РµРј РѕР±СЉРµРєС‚ РІРѕРєСЂСѓРі РјРёСЂРѕРІС‹С… РѕСЃРµР№ Y Рё X
         grabbedObject.transform.Rotate(Vector3.up, -mouseX, Space.World);
         grabbedObject.transform.Rotate(Vector3.right, mouseY, Space.World);
     }
 
-    // Отпустить объект
+    // РњРµС‚РѕРґ РѕС‚РїСѓСЃРєР°РЅРёСЏ РѕР±СЉРµРєС‚Р°
     private void ReleaseObject()
     {
         if (grabbedObject != null)
         {
-            grabbedObject.isKinematic = false; // Включаем физику обратно
-            grabbedObject = null; // Сбрасываем захваченный объект
+            grabbedObject.isKinematic = false; // Р’РѕР·РІСЂР°С‰Р°РµРј С„РёР·РёС‡РµСЃРєРѕРµ СѓРїСЂР°РІР»РµРЅРёРµ РѕР±СЉРµРєС‚РѕРј
+            grabbedObject = null; // РЎР±СЂР°СЃС‹РІР°РµРј СЃСЃС‹Р»РєСѓ РЅР° Р·Р°С…РІР°С‡РµРЅРЅС‹Р№ РѕР±СЉРµРєС‚
         }
     }
 }

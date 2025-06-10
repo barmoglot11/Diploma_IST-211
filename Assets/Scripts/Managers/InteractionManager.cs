@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 /// <summary>
-/// Менеджер управления взаимодействиями с системой событий и защитой от ошибок
+/// Менеджер управления взаимодействиями
 /// </summary>
 public class InteractionManager : MonoBehaviour
 {
@@ -16,10 +16,10 @@ public class InteractionManager : MonoBehaviour
 
     private void InitializeSingleton()
     {
-        if (Instance == null)
+        if (Instance is null)
         {
             Instance = this;
-            //DontDestroyOnLoad(gameObject); // Раскомментировать для сохранения между сценами
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -29,9 +29,7 @@ public class InteractionManager : MonoBehaviour
     #endregion
 
     #region Event Management
-    /// <summary>
-    /// Добавить обработчик взаимодействия с проверкой на null
-    /// </summary>
+    
     public void AddInteract(Action action)
     {
         if (action == null)
@@ -40,7 +38,7 @@ public class InteractionManager : MonoBehaviour
             return;
         }
 
-        if (InputManager.Instance?.IR != null)
+        if (InputManager.Instance?.IR is not null)
         {
             InputManager.Instance.IR.InteractEvent += action;
         }
@@ -49,10 +47,7 @@ public class InteractionManager : MonoBehaviour
             Debug.LogError("InputReader is not available!", this);
         }
     }
-
-    /// <summary>
-    /// Удалить обработчик взаимодействия с проверкой на null
-    /// </summary>
+    
     public void DeleteInteract(Action action)
     {
         if (action == null)
@@ -61,7 +56,7 @@ public class InteractionManager : MonoBehaviour
             return;
         }
 
-        if (InputManager.Instance?.IR != null)
+        if (InputManager.Instance?.IR is not null)
         {
             InputManager.Instance.IR.InteractEvent -= action;
         }
@@ -70,15 +65,11 @@ public class InteractionManager : MonoBehaviour
             Debug.LogError("InputReader is not available!", this);
         }
     }
-
-    /// <summary>
-    /// Очистить все обработчики взаимодействия
-    /// </summary>
+    
     public void ClearAllInteracts()
     {
-        if (InputManager.Instance?.IR != null)
+        if (InputManager.Instance?.IR is not null)
         {
-            // Получаем все подписчики события
             if (InputManager.Instance.IR.GetInteractSubscribersCount() <= 0) return;
             var subscribers = InputManager.Instance.IR.GetInteractDelegate()?.GetInvocationList();
 
@@ -95,7 +86,7 @@ public class InteractionManager : MonoBehaviour
     #region Utility Methods
     private void OnDestroy()
     {
-        // Автоматическая очистка при уничтожении объекта
+        
         if (Instance == this)
         {
             ClearAllInteracts();
